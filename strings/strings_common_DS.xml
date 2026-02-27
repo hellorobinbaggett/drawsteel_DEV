@@ -4,7 +4,7 @@
 	<!-- Used by many rulesets -->
 	<string name="ev">EV</string>
 
-	<!-- Languages -->s
+	<!-- Languages -->
 	<string name="lang_val_speaksall">Speaks all</string>
 	<string name="lang_val_understandsall">Understands all</string>
 	<string name="lang_val_comprehendlanguages">Comprehend languages</string>
