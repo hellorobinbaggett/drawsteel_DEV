@@ -6,7 +6,7 @@ I could not have done this without your help entering in hundreds of pages into 
 Thank you MoonWizard for all of your help with making this a standalone ruleset.
 
 THE HOW
-Want to play Draw Steel? It's easy. 
+
 1. Do you have fantasy grounds unity?
     this ruleset is compatible only with the fantasy grounds unity version
     - You can purchase it from the Steam app OR...
