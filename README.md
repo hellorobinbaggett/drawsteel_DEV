@@ -1,4 +1,4 @@
-- What is this? Where am I? -
+- What is this? Where am I?
 
 This is a custom ruleset that was made for the Fantasy Grounds VTT by Exxodis during the Draw Steel beta. 
 It has now become an extensive collection of rules and mechanics for the published system. You NEED Fantasy Grounds
@@ -7,7 +7,7 @@ Special thanks to Koboldling, JT, DM Rebecca, GildedDragonborn, lil tummy, René
 I could not have done this without your help entering in hundreds of pages into the data modules.
 Thank you MoonWizard for all of your help with making this a standalone ruleset. 
 
-- THE HOW -
+- I want to play Draw Steel! What are the steps to install?
 
 1. Do you have fantasy grounds unity?
     this ruleset is compatible only with the fantasy grounds unity version
@@ -27,7 +27,7 @@ Thank you MoonWizard for all of your help with making this a standalone ruleset.
 
 Congratulations! You now have this extension installed! Easy as that!
 
-- CREATING A DRAW STEEL CAMPAIGN -
+- How do I use this extension once I open up FGU?
 
 When you are ready, you can create your own Draw Steel campaign. Run Fantasy Grounds Unity, then create a campaign.
 Underneath "rulesets" you should see one labeled "Draw Steel". Use that one!
