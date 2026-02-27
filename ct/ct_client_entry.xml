@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="client_ct_entry" merge="join">
+		<script file="ct/scripts/clientct_entry_DS.lua" />
+		<sheetdata>
+			<button_ctentry_active name="active" merge="delete" />
+			<number_clientct_init name="initresult" merge="delete" />
+
+			<number_ctentry_staminamax name="sta_max" source="stamina.max" insertbefore="name" />
+			<number_ctentry_stamina name="sta_curr" source="stamina.current" insertbefore="name" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="client_ct_entry_heroes" copy="client_ct_entry">
+		<sheetdata>
+			<button_initiative_toggle name="initresult" insertbefore="token">
+				<readonly />
+				<script>
+					function onClickDown()
+						return true;
+					end
+					function onClickRelease()
+						if Session.IsHost then
+							CombatManagerDS.Gone(window);
+						else
+							CombatManagerDS.notifyGone(window);
+						end
+					end
+				</script>
+			</button_initiative_toggle>
+		</sheetdata>
+	</windowclass>
+	<windowclass name="client_ct_entry_monsters" copy="client_ct_entry" />
+</root>

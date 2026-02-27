@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+    <template name="template_monster_ability">
+        <script file="campaign/scripts/monster_abilities_ds.lua" />
+            <sheetdata>
+                <anchor_column name="columnanchor" />
+                    Debug.console("campaign/scripts/template_monster_ability");
+                    <line_column name="divider1" />
+
+                    <basicstring name="abilityname">
+                        <font>recordsheet_header</font>
+                        <anchored>
+                            <top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+                            <left offset="60" />
+                            <right offset="-5" />
+                        </anchored>
+                        <multilinespacing>45</multilinespacing>
+                    </basicstring>
+
+                    <label_column name="keywords_label">
+                        <static textres="ability_label_keywords" />
+                    </label_column>
+                    <string_columnh name="keywords" />
+                    <label_column name="type_label">
+                        <static textres="ability_label_type" />
+                    </label_column>
+                    <string_columnh name="type" />
+                    <label_column name="target_label">
+                        <static textres="ability_label_target" />
+                    </label_column>
+                    <string_columnh name="target" />
+
+                    <!-- POWER ROLL -->
+                    <label_column name="characteristic_label">
+                        <static textres="ability_label_powerrollplus" />
+                        <tooltip textres="char_tooltip_modifierdescription" />
+                    </label_column>
+                    <string_columnh name="characteristic" source="ability.characteristic">
+                        <tooltip textres="char_tooltip_modifierdescription" />
+                    </string_columnh>
+
+                    <label_column name="tier1_label">
+                        <static textres="ability_label_tier1" />
+                    </label_column>
+                    <string_columnh name="tier1" source="tier1"/>
+
+                    <label_column name="tier2_label">
+                        <static textres="ability_label_tier2" />
+                    </label_column>
+                    <string_columnh name="tier2" source="tier2" />
+
+                    <label_column name="tier3_label">
+                        <static textres="ability_label_tier3" />
+                    </label_column>
+                    <string_columnh name="tier3" source="tier3" />
+
+                    <!-- OTHER -->
+                    <label_column name="trigger_label">
+                        <static textres="ability_label_trigger" />
+                    </label_column>
+                    <string_columnh name="trigger">
+                        <delaykeyupdate />
+                    </string_columnh>
+                    <label_column name="effect_label">
+                        <static textres="ability_label_effect" />
+                    </label_column>
+                    <string_columnh name="effect" source="effect">
+                        <delaykeyupdate />
+                    </string_columnh>
+                    <label_column name="special_label">
+                        <static textres="ability_label_special" />
+                    </label_column>
+                    <string_columnh name="special">
+                        <delaykeyupdate />
+                    </string_columnh>
+
+                    <!-- // power roll button -->
+                    <power_roll name="power_roll">
+                        <anchored>
+                            <top parent="abilityname" anchor="bottom" relation="relative" offset="7" />
+                            <left offset="97" />
+                            <right offset="-5" />
+                        </anchored>
+                        <bounds>10,14,40,40</bounds>
+                        <tooltip textres="tooltip_pr" />
+                        <script>	
+                            function action(draginfo)
+                                local nodeWin = window.getDatabaseNode();
+                                local abilityName = DB.getValue(nodeWin, "abilityname", "");
+                                local abilityKeywords = DB.getValue(nodeWin, "keywords", "");
+
+                                local characteristic = DB.getValue(nodeWin, "ability.characteristic");
+
+                                if (characteristic or "") == "" then
+                                    characteristic = "0";
+                                end
+
+                                local rActor = ActorManager.resolveActor(window.getDatabaseNode());
+                                local nodePC = ActorManager.getCreatureNode(rActor);
+
+                                local rRoll = { 
+                                    sType = "dice", 
+                                    sDesc = "" .. abilityName .. " \n(" .. abilityKeywords .. ")", 
+                                    aDice = { "d10", "d10" },
+                                    nMod = characteristic,
+                                    t1 = DB.getValue(nodeWin, "tier1"),
+                                    t2 = DB.getValue(nodeWin, "tier2"),
+                                    t3 = DB.getValue(nodeWin, "tier3");
+                                    effect = DB.getValue(nodeWin, "effect");
+                                };
+                                ActionsManager_DS.encodeDesktopMods(rRoll);
+                                ActionsManager.performAction(draginfo, rActor, rRoll);
+                                return true;
+                            end
+                            
+                            function onDragStart(button, x, y, draginfo)
+                                return action(draginfo);
+                            end
+
+                            function onButtonPress()
+                                return action();
+                            end
+                        </script>
+                    </power_roll>
+                </sheetdata>
+    </template>
+
+</root>

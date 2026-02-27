@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="class" copy="record_window_tabbed">
+		<minimize>minimized_reference</minimize>
+		<gmexport>class</gmexport>
+		<sizelimits>
+			<minimum width="590" height="450" />
+			<dynamic />
+		</sizelimits>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>reference_class_main</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>notes</name>
+			<resource>tab_basics</resource>
+			<class>reference_class_basics</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>features</name>
+			<resource>tab_features</resource>
+			<class>reference_class_features</class>
+			<embed />
+		</tab>
+		
+	</windowclass>
+	<!-- TODO: write code for the main class body -->
+	<!-- tip: look at the record_content_notes in corerpg -->
+	<windowclass name="reference_class_main" copy="record_context_text_base">
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tFields = { "notes", };
+				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
+			end
+		</script>
+		<target>notes</target>
+		<sheetdata>
+			<ft_content_noframe_noscroll_top name="notes" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_class_features">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<header_content_framed_headersimple name="features_header">
+				<static textres="class_header_features"/>
+			</header_content_framed_headersimple>
+			<button_iadd name="features_iadd">
+				<anchored to="features_header" position="insidetopright" offset="2,0" />
+				<target>features</target>
+			</button_iadd>
+			<list_content_column name="features">
+				<datasource>.features</datasource>
+				<class>reference_classfeature_listitem</class>
+				<sortby><control>level</control><field>name</field></sortby>
+			</list_content_column>
+
+			<header_content_framed_headersimple name="featurechoices_header">
+				<static textres="class_header_featurechoices"/>
+				<tooltip textres="tooltip_class_featurechoices" />
+			</header_content_framed_headersimple>
+			<buttoncontrol>
+				<icon normal="info_alert" pressed="info_alert" />
+				<tooltip textres="tooltip_class_featurechoices" />
+				<bounds>210,5,20,20</bounds>
+			</buttoncontrol>
+			<button_iadd name="featurechoices_iadd">
+				<anchored to="featurechoices_header" position="insidetopright" offset="2,0" />
+				<target>featurechoices</target>
+			</button_iadd>
+			<list_content_column name="featurechoices">
+				<datasource>.featurechoices</datasource>
+				<class>reference_classfeaturechoice_listitem</class>
+				<sortby><field>level</field><field>choicetype</field><field>name</field></sortby>
+			</list_content_column>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_class_basics">
+		<script file="campaign/scripts/class_basics.lua" />
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<genericcontrol name="basicsframe">
+				<bounds>1,20,-1,290</bounds>
+			</genericcontrol>
+
+			<label_frametop>
+				<anchored to="basicsframe" offset="10,-15"/>
+				<static textres="class_label_startingCharacteristics" />
+			</label_frametop>
+
+			<anchor_column name="columnanchor" />
+			<ft_columnh name="basicnotes" copy="record_window_text" >
+				<anchored>
+					<left offset="5" />
+					<top offset="190" />
+				</anchored>
+			</ft_columnh>
+
+			<number_characteristicscore name="startingStamina" source="startingStamina">
+				<anchored to="basicsframe" position="insidetopleft" offset="320,70" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingStamina_label">
+				<anchored to="startingStamina" width="130"/>
+				<static textres="class_label_startingStamina" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="staminaPerLevel" source="staminaPerLevel">
+				<anchored to="basicsframe" position="insidetopleft" offset="320,100" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="staminaPerLevel_label">
+				<anchored to="staminaPerLevel" width="130"/>
+				<static textres="class_label_staminaPerLevel" />
+			</string_characteristiclabel>		
+
+			<number_characteristicscore name="startingRecoveries" source="startingRecoveries">
+				<anchored to="basicsframe" position="insidetopleft" offset="320,130" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingRecoveries_label">
+				<anchored to="startingRecoveries" width="130"/>
+				<static textres="class_label_startingRecoveries" />
+			</string_characteristiclabel>
+
+			<!-- CHOICE #1 -->
+			<frame_char name="choiceframe1">
+				<bounds>90,23,345,43</bounds>
+			</frame_char>
+
+			<number_characteristicscore name="startingMight" source="startingMight">
+				<anchored to="basicsframe" position="insidetopleft" offset="130,14" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingMight_label">
+				<anchored to="startingMight" width="75" offset="-68,25"/>
+				<static textres="class_label_startingMight" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="startingAgility" source="startingAgility">
+				<anchored to="basicsframe" position="insidetopleft" offset="190,14" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingAgility_label">
+				<anchored to="startingAgility" width="75" offset="-66,25"/>
+				<static textres="class_label_startingAgility" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="startingReason" source="startingReason">
+				<anchored to="basicsframe" position="insidetopleft" offset="250,14" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingReason_label">
+				<anchored to="startingReason" width="75" offset="-63,25"/>
+				<static textres="class_label_startingReason" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="startingIntuition" source="startingIntuition">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="310,14" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingIntuition_label">
+				<anchored to="startingIntuition" width="75" offset="-58,25"/>
+				<static textres="class_label_startingIntuition" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="startingPresence" source="startingPresence">
+				<anchored to="basicsframe" position="insidetopleft" offset="370,14" width="20" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="startingPresence_label">
+				<anchored to="startingPresence" width="75" offset="-59,25"/>
+				<static textres="class_label_startingPresence" />
+			</string_characteristiclabel>	
+
+			<buttoncontrol>
+				<icon normal="info_alert" pressed="info_alert" />
+				<tooltip textres="tooltip_class_basics" />
+				<bounds>172,5,20,20</bounds>
+			</buttoncontrol>
+
+			<!-- <button_checkbox name="choice1">
+				<bounds>90,30,20,20</bounds>
+			</button_checkbox> -->
+
+
+<!-- 
+			<frame_char name="choiceframe2">
+				<bounds>118,23,46,190</bounds>
+			</frame_char>
+
+			<number_characteristicscore name="startingMight2" source="startingMight2">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="130,40" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingAgility2" source="startingAgility2">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="130,70" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingReason2" source="startingReason2">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="130,100" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingIntuition2" source="startingIntuition2">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="130,130" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingPresence2" source="startingPresence2">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="130,160" width="20" />
+			</number_characteristicscore>
+
+			<button_checkbox name="choice2">
+				<bounds>130,30,20,20</bounds>
+			</button_checkbox>
+
+			<frame_char name="choiceframe3">
+				<bounds>158,23,46,190</bounds>
+			</frame_char>
+
+			<number_characteristicscore name="startingMight3" source="startingMight3">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="170,40" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingAgility3" source="startingAgility3">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="170,70" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingReason3" source="startingReason3">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="170,100" width="20" />
+			</number_characteristicscore>
+
+			<number_characteristicscore name="startingIntuition3" source="startingIntuition3">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="170,130" width="20" />
+			</number_characteristicscore>	
+
+			<number_characteristicscore name="startingPresence3" source="startingPresence3">
+				
+				<anchored to="basicsframe" position="insidetopleft" offset="170,160" width="20" />
+			</number_characteristicscore>
+
+			<button_checkbox name="choice3">
+				<bounds>170,30,20,20</bounds>
+			</button_checkbox> -->
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_classfeature_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "level", "name", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_classfeatures</class>
+			</linkc_listitem_left>
+			<number_listitem_left name="level" source="featurelevel">
+				<nodrag />
+			</number_listitem_left>
+
+			<string_listitem_center name="name">
+				<empty textres="library_recordtype_empty_classfeature" />
+				<font>sheetlabel</font>
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_classfeaturechoice_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "choicetype", "level", "name", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_classfeaturechoice</class>
+			</linkc_listitem_left>
+			<number_listitem_left name="level">
+				<nodrag />
+			</number_listitem_left>
+			<string_listitem_left name="name">
+				<anchored width="180" />
+				<empty textres="library_recordtype_empty_classfeaturechoice" />
+				<font>sheetlabel</font>
+			</string_listitem_left>
+			<string_listitem_center name="choicetype">
+				<anchored width="180" />
+				<font>sheetlabel</font>
+				<empty textres="classfeaturechoice_empty_choicetype" />
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_classfeaturechoice" copy="record_window" />
+	<windowclass name="reference_classfeaturechoice_header" copy="record_header">
+		<name_emptyres>library_recordtype_empty_classfeaturechoice</name_emptyres>
+	</windowclass>
+	<windowclass name="reference_classfeaturechoice_main">
+		<margins control="0,0,0,5" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tFields = { "choicetype", "level", "prerequisite", "text", };
+				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_content_top />
+
+			<label_content_column name="choicetype_label">
+				<static textres="label_subclass" />
+			</label_content_column>
+			<string_content_columnh name="choicetype">
+			</string_content_columnh>
+
+			<label_content_column name="level_label">
+				<static textres="level" />
+			</label_content_column>
+			<number_content_column name="level" />
+
+			<label_content_column name="prerequisite_label">
+				<static textres="label_prerequisite" />
+			</label_content_column>
+			<string_content_columnh name="prerequisite" />
+
+			<!-- TODO: investigate why the tooltip for this checkbox is wrong -->
+			<label_content_column name="repeatable_label">
+				<static textres="label_selected_class" />
+				<tooltip textres="char_tooltip_choose" />
+			</label_content_column>
+			<button_checkbox_content_columnh name="checkbox" />
+
+			<ft_content_column_full name="text" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_classfeature_stats_specialization">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<label_content_column name="level_label">
+				<static textres="level" />
+			</label_content_column>
+			<number_content_column name="level">
+				<nodrag />
+			</number_content_column>
+
+			<ft_content_column_full name="text" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="reference_classfeature_stats">
+		<margins control="0,0,0,5" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tFields = { "choicetype", "level", "prerequisite", "text", };
+				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_content_top />
+
+			<label_content_column name="level_label">
+				<static textres="level" />
+			</label_content_column>
+			<number_content_column name="level">
+				<nodrag />
+			</number_content_column>
+
+			<ft_content_column_full name="text" />
+
+			<!-- Dynamically create specializationchoice/specialization for backward compatibility -->
+		</sheetdata>
+	</windowclass>
+
+	<!-- <windowclass name="reference_classfeatures" copy="record_window_text_string"> -->
+
+	<windowclass name="reference_classfeatures" copy="record_window" />
+	<windowclass name="reference_classfeatures_header" copy="record_header">
+		<name_emptyres>library_recordtype_empty_classfeature</name_emptyres>
+	</windowclass>
+	<windowclass name="reference_classfeatures_main">
+		<margins control="0,0,0,5" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tFields = { "featurelevel", "featureext", };
+				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_content_top />
+
+			<label_content_column name="featurelevel_label">
+				<static textres="level" />
+			</label_content_column>
+			<number_content_column name="featurelevel" source="featurelevel" />
+
+			<ft_content_column_full name="featureext" />
+		</sheetdata>
+	</windowclass>
+
+</root>

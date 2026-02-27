@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="combattracker_client" merge="join">
+		<sizelimits>
+			<minimum width="600" height="690" />
+		</sizelimits>
+		<sheetdata>
+			<list_ct_client name="list">
+				<script file="ct/scripts/ct_DS.lua" />
+			</list_ct_client>
+
+			<sub_ct_malice />
+
+			<sub_ct_heroes_client />
+			<sub_ct_monsters_client />
+
+			<ct_initiative_roll />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="sub_ct_header_client" merge="join">
+		<sheetdata>
+			<label_ct_header_initresult name="label_init" merge="delete" />
+		</sheetdata>
+	</windowclass>
+</root>

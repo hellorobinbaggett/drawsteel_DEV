@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<!-- Used by many rulesets -->
+	<string name="ev">EV</string>
+
+	<!-- Languages -->s
+	<string name="lang_val_speaksall">Speaks all</string>
+	<string name="lang_val_understandsall">Understands all</string>
+	<string name="lang_val_comprehendlanguages">Comprehend languages</string>
+	<string name="lang_val_tongues">Tongues</string>
+	<string name="message_chatsetlang_unavailable">Chat language is not available to current identity.</string>
+	<string name="error_chathandlelang_unavailable">[ERROR] Received non-campaign chat language [Language = %s, Message = %s]</string>
+	<string name="message_chathandlelang_understood">understood by</string>
+	<string name="tag_chathandlelang_translation">[Translation]</string>
+	<string name="tag_chathandlelang_partial">[Partial]</string>
+	<string name="tag_chathandlelang_unknown">[Unknown]</string>
+	<!-- <string name="message_gone">[%s &lt;-&gt; %s] has gone.</string> -->
+	<!-- temp until I can fix the above -->
+	<string name="message_gone">This feature is currently not implemented</string>
+</root>

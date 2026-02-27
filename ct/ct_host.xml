@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="combattracker_host" merge="join">
+		<sizelimits>
+			<minimum width="600" height="690" />
+		</sizelimits>
+		<sheetdata>
+			<list_ct_host name="list">
+				<script file="ct/scripts/ct_DS.lua" />
+			</list_ct_host>
+
+			<sub_ct_malice />
+
+			<sub_ct_heroes_host />
+			<sub_ct_monsters_host />
+
+			<ct_initiative_roll />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="sub_ct_header_host" merge="join">
+		<sheetdata>
+			<label_ct_header_initresult name="label_init" merge="delete" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="sub_ct_controls_host" merge="join">
+		<sheetdata>
+			<button_ct_controls_setactive name="button_setactive" merge="delete" />
+			<button_ct_controls_nextturn name="button_nextactor" merge="delete" />
+
+			<area_ct_controls_center name="area_center" merge="delete" />
+			<button_ct_controls_faction_friend name="button_faction_friend" merge="delete" />
+			<button_ct_controls_faction_neutral name="button_faction_neutral" merge="delete" />
+			<button_ct_controls_faction_foe name="button_faction_foe" merge="delete" />
+		</sheetdata>
+	</windowclass>
+</root>

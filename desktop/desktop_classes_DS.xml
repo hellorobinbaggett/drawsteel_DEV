@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- roll modifier buttons -->
+	<windowclass name="modifierstack" merge="join">
+		<sheetdata>
+			<button_modifierkey name="EDGE">
+				<bounds>80,6,60,18</bounds>
+				<text>Edge</text>
+				<tooltip textres="char_tooltip_edge" />
+			</button_modifierkey>		
+			<button_modifierkey name="BANE">
+				<bounds>151,6,60,18</bounds>
+				<text>Bane</text>
+				<tooltip textres="char_tooltip_bane" />
+			</button_modifierkey>		
+			<button_modifierkey name="DOUBLEEDGE">
+				<bounds>80,36,60,18</bounds>
+				<text>x2 Edge</text>
+				<tooltip textres="char_tooltip_doubleedge" />
+			</button_modifierkey>		
+			<button_modifierkey name="DOUBLEBANE">
+				<bounds>151,36,60,18</bounds>
+				<text>x2 Bane</text>
+				<tooltip textres="char_tooltip_doublebane" />
+			</button_modifierkey>	
+			<!-- DEPRECATED: this is now in the character sheet "skills" tab -->
+			<button_modifierkey name="SKILL">
+				<bounds>222,6,60,48</bounds>
+				<text>Skill</text>
+				<tooltip textres="char_tooltip_skill" />
+			</button_modifierkey>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="NarrativeDice">
+		<noclose />
+		<sheetdata>
+			<button_panel_lock name="button_lock">
+				<anchored position="insidetopright" />
+				<invisible />
+				<script>
+					function onButtonPress()
+						window.onLockButtonPressed();
+					end
+				</script>
+			</button_panel_lock>
+			<button_panel_reset name="button_reset">
+				<anchored position="insidetopright" offset="0,20" />
+				<invisible />
+				<script>
+					function onButtonPress()
+						window.onResetButtonPressed();
+					end
+				</script>
+			</button_panel_reset>
+
+			<diepanel name="dAbility">
+				<bounds>0,0,55,55</bounds>
+				<type>dAbility</type>
+				<modifier>mSuccess</modifier>
+				<tooltip>
+					<text>Ability Die</text>
+				</tooltip>
+			</diepanel>
+
+			<diepanel name="dProficiency">
+				<anchored height="55" width="55">
+					<bottom offset="-1" />
+					<left parent="dAbility" relation="relative" anchor="right" />
+				</anchored>
+				<type>dProficiency</type>
+				<modifier>mSuccess</modifier>
+				<tooltip>
+					<text>Proficiency Die</text>
+				</tooltip>
+			</diepanel>
+
+			<diepanel name="dDifficulty">
+				<anchored height="55" width="55">
+					<bottom offset="-1" />
+					<left parent="dAbility" relation="relative" anchor="right" />
+				</anchored>
+				<type>dDifficulty</type>
+				<modifier>mSuccess</modifier>
+				<tooltip>
+					<text>Difficulty Die</text>
+				</tooltip>
+			</diepanel>
+
+			<diepanel name="dChallenge">
+				<anchored height="55" width="55">
+					<bottom offset="-1" />
+					<left parent="dAbility" relation="relative" anchor="right" />
+				</anchored>
+				<type>dChallenge</type>
+				<modifier>mChallenge</modifier>
+				<tooltip>
+					<text>Challenge Die</text>
+				</tooltip>
+			</diepanel>
+
+			<diepanel name="dBoost">
+				<anchored height="55" width="55">
+					<bottom offset="-1" />
+					<left parent="dAbility" relation="relative" anchor="right" />
+				</anchored>
+				<type>dBoost</type>
+				<modifier>mSuccess</modifier>
+				<tooltip>
+					<text>Boost Die</text>
+				</tooltip>
+			</diepanel>
+
+			<diepanel name="dSetback">
+				<anchored height="55" width="55">
+					<bottom offset="-1" />
+					<left parent="dAbility" relation="relative" anchor="right" />
+				</anchored>
+				<type>dSetback</type>
+				<modifier>mSuccess</modifier>
+				<tooltip>
+					<text>Setback Die</text>
+				</tooltip>
+			</diepanel>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="NarrativeTokens">
+		<noclose />
+		<sheetdata>
+			<button_panel_lock name="button_lock">
+				<anchored position="insidetopright" />
+				<invisible />
+				<script>
+					function onButtonPress()
+						window.onLockButtonPressed();
+					end
+				</script>
+			</button_panel_lock>
+			<button_panel_reset name="button_reset">
+				<anchored position="insidetopright" offset="0,20" />
+				<invisible />
+				<script>
+					function onButtonPress()
+						window.onResetButtonPressed();
+					end
+				</script>
+			</button_panel_reset>
+
+			<!-- <chit_pc name="StoryPointPCchit">
+				<chit>StoryPointPC</chit>
+				<bounds>300,0,60,60</bounds>
+				<tooltip textres="tooltip_herotokenpc" />
+			</chit_pc> -->
+			
+			<chit_gm name="StoryPointGMchit">
+				<chit>StoryPointGM</chit>
+				<bounds>70,0,60,60</bounds>
+				<tooltip textres="tooltip_herotokengm" />
+			</chit_gm>
+		</sheetdata>
+	</windowclass>
+</root>

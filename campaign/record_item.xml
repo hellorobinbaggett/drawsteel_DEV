@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="sub_item_type">
+		<sub_content_column name="sub_type">
+			<script>
+				function update(bReadOnly, bID)
+					if bID then
+						local nodeRecord = window.getDatabaseNode();
+						if ItemManager.isWeapon(nodeRecord) then
+							setValue("item_main_weapon", nodeRecord);
+							subwindow.update(bReadOnly, bID);
+							return;
+						end
+						if ItemManager.isArmor(nodeRecord) then
+							setValue("item_main_armor", nodeRecord);
+							subwindow.update(bReadOnly, bID);
+							return;
+						end
+
+						local sTypeKey = StringManager.simplify(DB.getValue(nodeRecord, "type", ""));
+						local bArcaneFocus = StringManager.contains({ "rod", "staff", "wand", }, sTypeKey);
+						if bArcaneFocus then
+							setValue("item_main_arcanefocus", nodeRecord);
+							subwindow.update(bReadOnly, bID);
+							return;
+						end
+
+						local bVehicleComponent = (sTypeKey == "vehiclecomponent");
+						if bVehicleComponent then
+							setValue("item_main_vehicle", nodeRecord);
+							subwindow.update(bReadOnly, bID);
+							return;
+						end
+
+						local bLegacyVehicle = StringManager.contains({ "waterbornevehicles", "mountsandotheranimals", }, sTypeKey);
+						if bLegacyVehicle then
+							setValue("item_main_vehicle_legacy", nodeRecord);
+							subwindow.update(bReadOnly, bID);
+							return;
+						end
+					end
+					setValue("", "");
+				end
+			</script>
+		</sub_content_column>
+	</template>
+
+	<windowclass name="item" copy="record_window_tabbed">
+		<minimize>minimized_item</minimize>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>item_main</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>pictures</name>
+			<resource>tab_pictures</resource>
+			<class>record_content_pictures</class>
+			<embed />
+		</tab>
+		<sheetdata>
+			<sub_content_framed_groupbox_top name="header">
+				<class>item_header</class>
+			</sub_content_framed_groupbox_top>
+
+			<sub_record_version name="sub_version" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="item_header" copy="record_header" /> 
+
+	<!-- Item details -->
+	<windowclass name="item_main">
+		<margins control="0,0,0,2" />
+        <script file="campaign/scripts/item_main_DS.lua" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<sub_record_nonid_notes name="sub_nonid" />
+			<sub_item_standard name="sub_standard" />
+			<sub_item_type name="sub_type" />
+
+			<ft_content_columnh_full name="description" />
+
+			<sub_item_pack name="sub_pack" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="item_main_standard">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				WindowManager.callSafeControlsSetLockMode(self, { "cost", "weight", "type", "keyword", "prerequisite", "projectroll", "projectrollcharacteristic", "projectgoal", }, bReadOnly);
+				parentcontrol.setVisible(WindowManager.getAnyControlVisible(self, { "cost", "weight", "type", "keyword", "prerequisite", "projectroll", "projectrollcharacteristic", "projectgoal", }));
+			end
+			function update(bReadOnly, bID)
+				-- Do Nothing - DEPRECATED call
+			end
+		</script>
+		<sheetdata>
+			<anchor_content_top />
+
+			<label_content_column name="type_label">
+				<static textres="item_label_type" />
+			</label_content_column>
+			<string_content_columnh name="type">
+				<nohide />
+				<delaykeyupdate />
+			</string_content_columnh>
+
+			<label_content_column name="echelon_label">
+				<static textres="item_label_echelon" />
+			</label_content_column>
+			<number_content_columnh name="echelon" >
+                <delaykeyupdate />
+                <script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onTypeChanged");
+					end
+				</script>
+            </number_content_columnh>
+
+			<label_content_column name="keyword_label">
+				<static textres="item_label_keywords" />
+			</label_content_column>
+			<string_content_columnh name="keyword">
+				<delaykeyupdate />
+                <script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onTypeChanged");
+					end
+				</script>
+			</string_content_columnh>
+
+			<label_content_column name="prerequisite_label">
+				<static textres="item_label_prerequisites" />
+			</label_content_column>
+			<string_content_columnh name="prerequisite">
+                <anchored>
+                    <left offset="135" />
+                </anchored>
+				<delaykeyupdate />
+                <script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onTypeChanged");
+					end
+				</script>
+			</string_content_columnh>
+
+			<label_content_column name="projectroll_label">
+				<static textres="item_label_projectroll" />
+			</label_content_column>
+			<string_content_columnh name="projectroll">
+                <delaykeyupdate />
+                <script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onTypeChanged");
+					end
+				</script>
+            </string_content_columnh>
+
+            <label_content_column name="projectrollcharacteristic_label">
+				<static textres="item_label_projectrollcharacteristic" />
+			</label_content_column>
+			<string_content_columnh name="projectrollcharacteristic" >
+                <delaykeyupdate />
+                <script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onTypeChanged");
+					end
+				</script>
+            </string_content_columnh>
+
+			<label_content_column name="projectgoal_label">
+				<static textres="item_label_projectgoal" />
+			</label_content_column>
+			<number_content_columnh name="projectgoal" >
+                <delaykeyupdate />
+                <script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onTypeChanged");
+					end
+				</script>
+            </number_content_columnh>
+
+			<line_content_top name="divider" />
+		</sheetdata>
+	</windowclass>
+
+
+
+</root>

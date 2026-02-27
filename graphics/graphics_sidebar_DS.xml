@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<icon name="sidebar_icon_recordtype_kit" file="graphics/sidebar/sidebar_icon_battle.png" />
+	<icon name="sidebar_icon_recordtype_career" file="graphics/sidebar/sidebar_icon_skill.png" />
+</root>

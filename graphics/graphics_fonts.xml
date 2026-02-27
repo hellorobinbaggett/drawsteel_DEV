@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Language Fonts -->
+	<font name="Abyssal">
+		<ttf file="graphics/fonts/abyssal.ttf" name="Abyssal" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Arabian">
+		<ttf file="graphics/fonts/arabian.ttf" name="Arabian" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Cuneiform">
+		<ttf file="graphics/fonts/cuneiform.ttf" name="Cuneiform" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Cybertronian">
+		<ttf file="graphics/fonts/cybertronian.ttf" name="Cybertronian" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Dovakhiin">
+		<ttf file="graphics/fonts/dovahkiin.ttf" name="Dovakhiin" size="28" />
+		<color value="#000000" />
+	</font>		
+	<font name="Drow">
+		<ttf file="graphics/fonts/drow.ttf" name="Drow" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Dynastic">
+		<ttf file="graphics/fonts/dynastic.ttf" name="Dynastic" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Esoteric">
+		<ttf file="graphics/fonts/esoteric.ttf" name="Esoteric" size="34" />
+		<color value="#000000" />
+	</font>
+	<font name="Hieroglyphs">
+		<ttf file="graphics/fonts/hieroglyphs.ttf" name="Hieroglyphs" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Hindi">
+		<ttf file="graphics/fonts/hindi.ttf" name="Hindi" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Metal">
+		<ttf file="graphics/fonts/metal.ttf" name="Metal" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Norse">
+		<ttf file="graphics/fonts/norse.ttf" name="Norse" size="28" />
+		<color value="#000000" />
+	</font>
+	<font name="Quenya">
+		<ttf file="graphics/fonts/quenya.ttf" name="Quenya" size="28" />
+		<color value="#000000" />
+	</font>		
+	<font name="Runes">
+		<ttf file="graphics/fonts/runes.ttf" name="Runes" size="36" />
+		<color value="#000000" />
+	</font>
+	<font name="Timescape">
+		<ttf file="graphics/fonts/timescape.ttf" name="Timescape" size="28" />
+		<color value="#000000" />
+	</font>
+</root>

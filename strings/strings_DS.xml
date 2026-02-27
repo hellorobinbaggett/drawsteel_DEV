@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<string name="monsters">Monsters</string>
+	<string name="items">Items</string>
+
+	<!-- Utility -->
+	<string name="library_recordtype_label_npc">Monsters</string>
+	<string name="library_recordtype_single_npc">Monster</string>
+	<string name="battle_button_equip">Equip</string>
+	
+	<string name="tab_titles">Titles</string>
+	<string name="tab_main">Main</string>
+	<string name="tab_skills">Skills</string>
+	<string name="tab_abilities">Abilities</string>
+	<string name="tab_notes">Notes</string>
+	<!-- <string name="tab_kit">Kits</string> -->
+	<string name="tab_modifiers">Modifiers</string>
+	<string name="tab_combat">Stats</string>
+	<string name="tab_downtime">Downtime</string>
+	<string name="tab_career">Career</string>
+	<string name="tab_order">Order</string>
+	<string name="tab_other">Other</string>
+	<string name="tab_xp">XP</string>
+	<string name="tab_xp">Abilities</string>
+	<string name="library_recordtype_label_kit">Kits</string>
+	<string name="library_recordtype_label_career">Career</string>
+	<string name="library_recordtype_label_ability">Abilities</string>
+	<string name="library_recordtype_single_ability">Ability</string>
+	<string name="library_recordtype_empty_ability">&#171; New Ability &#187;</string>
+	<string name="library_recordview_label_ability_bytype">By Type</string>
+	<string name="library_recordview_label_ability_byclass">By Class</string>
+	<string name="library_recordview_label_ability_byancestry">By Ancestry</string>
+	<string name="library_recordview_label_items_bytype">By Type</string>
+	<string name="library_recordview_label_items_byechelon">By Echelon</string>
+	<string name="library_recordtype_label_monsters">Monsters</string>
+	<string name="library_recordtype_label_items">Items</string>
+	<string name="library_recordtype_label_ancestry">Ancestries</string>
+	<string name="library_recordtype_single_ancestry">Ancestry</string>
+	<string name="library_recordtype_label_data">Data</string>
+	<string name="library_recordtype_single_data">Data</string>
+	<string name="library_recordtype_empty_ancestry">&#171; New Ancestry &#187;</string>
+	<string name="library_recordview_label_specialability_byclass">By Class</string>
+
+	<string name="label_prerequisite">Prerequisite</string>
+	<string name="label_subclass">Subclass</string>
+	<string name="label_choicetype">Type</string>
+	<string name="label_cost">Cost</string>
+	<string name="class_header_features">FEATURES</string>
+	<string name="class_header_featurechoices">CLASS CHOICES</string>
+	<string name="tooltip_class_featurechoices">Features under "FEATURES" will automatically be added to your character sheet. For "CLASS CHOICES", you will need to select them manually. When you drag this class onto a character sheet, it will add the class choice features with checked boxes.</string>
+	<string name="tooltip_class_basics">You can edit the values of these characteristics. When you drag this class record onto your character sheet, it will automatically set your starting characteristics.</string>
+	<string name="ancestry_header_features">SIGNATURE TRAIT</string>
+	<string name="ancestry_header_featurechoices">PURCHASED TRAITS</string>
+	<string name="library_recordtype_empty_classfeature">&#171; New Class Feature &#187;</string>
+	<string name="library_recordtype_empty_classfeaturechoice">&#171; New Class Feature Choice &#187;</string>
+	<string name="library_recordtype_empty_ancestryfeature">&#171; New Ancestry Feature &#187;</string>
+	<string name="library_recordtype_empty_ancestryfeaturechoice">&#171; New Ancestry Feature Choice &#187;</string>
+	<string name="label_selected">Purchased</string>
+	<string name="label_selected_class">Chosen</string>
+
+
+
+	<string name="tooltip_character_builder">
+	MAKING A HERO
+	1. Set your Hero's level
+	2. Drop Ancestry Record
+	3. Culture (manually add a language and three skills)
+	4. Drop Career Record
+	5. Drop Class Record
+	6. (Optional) Drop Kit Record
+
+	To build your hero, drag and drop record links onto your character sheet.
+	Start by choosing an Ancestry. Drag the icon link and release it over the character sheet.
+	The fields will automatically populate with the record data.
+	</string>
+	<string name="tooltip_character_languages">
+		Anjali - Devils, hobgoblins
+
+		Axiomatic - Memonek
+
+		Caelian - Common language
+
+		Filliaric - Angulotls
+
+		The First Language - Elder dragons
+
+		Hyrallic - High elves
+
+		Illyvric - Shadow elves
+
+		Kalliak - Orcs 
+
+		Kethaic - Kobolds
+
+		Khelt - Bugbears, fey
+
+		Khoursirian - Polder, humans
+
+		High Kuric - giants, ogres, trolls
+
+		Low Kuric - Elementals
+
+		Mindspeech - Voiceless talkers
+
+		Proto-Ctholl - Lower demons
+
+		Szetch - Goblins, radenwights
+
+		Tholl - Higher demons, gnolls
+
+		Urollialic - Olothec
+
+		Variac - World Below denizens
+
+		Vastariax - Dragons, dragon knights
+
+		Vhoric - Hakaan
+
+		Voll - Time raiders
+
+		Yllyric - Wode elves
+
+		Za&#39;hariax - Overminds
+
+		Zaliac - Dwarves
+	</string>
+	<string name="char_label_classresource">CLASS RESOURCE</string>
+	<string name="char_label_class">CLASS</string>
+	<string name="char_label_subclass">SUBCLASS</string>
+	<string name="char_label_level">LEVEL</string>
+	<string name="char_label_echelon">ECHELON</string>
+	<string name="char_label_race">ANCESTRY</string>
+	<string name="char_label_career">CAREER</string>
+	<string name="char_label_title">TITLE</string>
+	<string name="char_label_environment">ENVIRONMENT</string>
+	<string name="char_label_organization">ORGANIZATION</string>
+	<string name="char_label_upbringing">UPBRINGING</string>
+	<string name="char_label_renown">RENOWN</string>
+	<string name="char_label_wealthlevel">Wealth Level</string>
+	<string name="char_label_currentfollowers">Current Followers</string>
+	<string name="char_label_maxfollowers">Max Followers</string>
+	<string name="char_label_project">PROJECT</string>
+	<string name="char_label_points">POINTS</string>
+	<string name="char_label_complication">COMPLICATION</string>
+	<string name="char_label_kit">KIT</string>
+	<string name="char_label_type">TYPE</string>
+	<string name="char_label_equipment">EQUIPMENT</string>
+	<string name="char_label_armor">ARMOR</string>
+	<string name="char_label_weapon">WEAPON</string>
+	<string name="char_label_stamina">Stamina</string>
+	<string name="char_label_speed">SPEED</string>
+	<string name="char_label_stability">STABILITY</string>
+	<string name="char_label_melee">MELEE</string>
+	<string name="char_label_meleedamagebonus">Melee Damage Bonus:</string>
+	<string name="char_label_ranged">RANGED</string>
+	<string name="char_label_reach">REACH BNS</string>
+	<string name="char_label_mobility">MOBILITY</string>
+	<string name="char_label_implement">IMPLEMENT</string><string name="char_label_senses">Senses</string>
+	<string name="char_label_magical">MAGICAL</string>
+	<string name="char_label_distance">DISTANCE</string>
+	<string name="char_label_benefits">NOTES</string>
+	<string name="char_label_area">AREA</string><string name="char_tooltip_portrait">Portrait</string>
+	<string name="char_label_itemweight">En</string>
+	<string name="char_label_userecovery">Use Recovery</string>
+	<string name="tooltip_wip">This feature is not implemented yet</string>
+	<string name="char_tooltip_characteristic_empty">Click to select</string>
+	<string name="char_tooltip_characteristic_might">Might</string>
+	<string name="char_tooltip_characteristic_agility">Agility</string>
+	<string name="char_tooltip_characteristic_reason">Reason</string>
+	<string name="char_tooltip_characteristic_intuition">Intuition</string>
+	<string name="char_tooltip_characteristic_presence">Presence</string>
+	<string name="char_tooltip_itemweight">Encumbrance</string>
+	<string name="char_tooltip_inv_carried">Stowed</string>
+	<string name="char_tooltip_inv_equipped">Readied</string>
+	<string name="char_tooltip_recoverydescription">Recovery value is equal to 1/3 your max stamina.</string>
+	<string name="char_tooltip_recovery">Use Recovery</string>
+	<string name="skill_tooltip">Click to change characteristic</string>
+	<string name="echelon_tooltip">A grouping of heroic levels that informs players of the types of heroic deeds the heroes can achieve. There are four echelons of play: 1st echelon (1st to 3rd level), 2nd echelon (4th to 6th level), 3rd echelon (7th to 9th level), and 4th echelon (10th level). </string>
+	<string name="wip_tooltip">This button has not been fully implemented yet.</string>
+	<string name="char_label_attributes">Attributes</string>
+	<string name="char_label_skills">Skills</string>
+	<string name="char_label_features">Features</string>
+	<string name="char_label_heroicabilities">Heroic Abilities</string>
+	<string name="char_label_kitabilities">Kit Abilities</string>
+	<string name="char_label_signatureability">Signature Ability</string>
+	<string name="char_label_signatureabilities">Signature Abilities</string>
+	<string name="char_label_heroicabilities">Heroic Abilities</string>
+	<string name="char_label_triggeredactions">Triggered Actions</string>
+	<string name="char_label_freestrikes">Free Strikes</string>
+	<string name="char_level_skills">Skills</string>
+	<string name="char_label_itemlocation">Location</string>
+	<string name="char_label_itemname">Name</string>
+	<string name="char_label_totalweight">Total encumbrance</string>
+	<string name="char_label_money">Wealth Level</string>
+	<string name="char_label_appearance">Appearance</string>
+	<string name="char_label_max">Max</string>
+	<string name="char_label_temp">Temp</string>
+	<string name="char_label_classresource">Heroic Resource</string>
+	<string name="char_label_kitbonuses">Kit Bonuses</string>
+	<string name="char_label_damagebonuses">Damage Bonuses</string>
+	<string name="char_label_languages">Languages</string>
+	<string name="char_label_notes">Notes</string>
+	<string name="char_label_perks">Perks &#38; Titles</string>
+	<string name="char_label_projectnotes">Project Notes</string>
+	<string name="char_label_projects">Projects</string>
+	<string name="char_menu_delete">Delete Character</string>
+	<string name="char_menu_ownerclear">Clear owner</string>
+	<string name="char_menu_ownergm">Take ownership (as %s)</string>
+
+	<!-- Combat Tracker -->
+	<string name="ct_label_gone">Gone</string>
+	<string name="ct_label_name">Initiative Order</string>
+	<string name="ct_label_name_heroes">Heroes</string>
+	<string name="ct_label_name_monsters">Monsters</string>
+	<string name="ct_label_triggeredaction">T.A.</string>
+	<string name="ct_label_experience">Experience</string>
+	<string name="ct_label_hp">Stamina</string>
+	<string name="ct_label_stamina">STAMINA</string>
+	<string name="ct_label_order">Order</string>
+	<string name="ct_label_malice">MALICE</string>
+	<string name="ct_label_herotokens">HERO TOKENS</string>
+	<string name="ct_tooltip_gone">Gone</string>
+	<string name="ct_tooltip_ta">Triggered Action</string>
+	<string name="ct_tooltip_action">Action</string>
+	<string name="ct_tooltip_move">Move</string>
+	<string name="ct_tooltip_maneuver">Maneuver</string>
+	<string name="ct_tooltip_menu">Click for CT menu</string>
+	<string name="saveends">Save Ends</string>
+	<string name="endofturn">End of Next Turn</string>
+	<string name="endofencounter">End of Encounter</string>
+	<string name="ct_stamina_tooltip">Stamina</string>
+	<string name="ct_menu_initreset">Reset Initiative</string>
+	<string name="ct_menu_itemdeleteall">Delete All Combatants</string>
+	<string name="ct_staminamax_tooltip">Maximum Stamina</string>
+	<string name="ct_stamina2_tooltip">NEW STAMINA</string>
+
+	<!-- Languages -->
+	<string name="language_value_caelian">Caelian</string>
+
+	<!-- Valsoiran Human Languages -->
+	<string name="language_value_uvalic">Uvalic</string>
+	<string name="language_value_higaran">Higaran</string>
+	<string name="language_value_oaxuatl">Oaxuatl</string>
+	<string name="language_value_khemaric">Khemharic</string>
+	<string name="language_value_khoursirian">Khoursirian</string>
+	<string name="language_value_phaedran">Phaedran</string>
+	<string name="language_value_riojan">Riojan</string>
+	<string name="language_value_vanric">Vaniric</string>
+	<string name="language_value_vaslorian">Vaslorian</string>
+
+	<!-- Non-human Languages -->
+	<string name="language_value_anjali">Anjali</string>
+	<string name="language_value_axiomatic">Axiomatic</string>
+	<string name="language_value_filliaric">Filliaric</string>
+	<string name="language_value_thefirstlanguage">The First Language</string>
+	<string name="language_value_hyrallic">Hyrallic</string>
+	<string name="language_value_illyvric">Illyvric</string>
+	<string name="language_value_kalliak">Kalliak</string>
+	<string name="language_value_kethaic">Kethaic</string>
+	<string name="language_value_khelt">Khelt</string>
+	<string name="language_value_khoursirian">Khoursirian</string>
+	<string name="language_value_highkuric">High Kuric</string>
+	<string name="language_value_lowkuric">Low Kuric</string>
+	<string name="language_value_mindspeech">Mindspeech</string>
+	<string name="language_value_protoctholl">Proto-Ctholl</string>
+	<string name="language_value_szetch">Szetch</string>
+	<string name="language_value_tholl">Tholl</string>
+	<string name="language_value_urollialic">Urollialic</string>
+	<string name="language_value_variac">Variac</string>
+	<string name="language_value_vastariax">Vastariax</string>
+	<string name="language_value_vhoric">Vhoric</string>
+	<string name="language_value_voll">Voll</string>
+	<string name="language_value_yllyric">Yllyric</string>
+	<string name="language_value_zahariax">Za'hariax</string>
+	<string name="language_value_zaliac">Zaliac</string>
+	
+	<!-- Dead Languages -->
+	<string name="language_value_ananjali">Ananjali</string>
+	<string name="language_value_high_rhyvian">High Rhyvian</string>
+	<string name="language_value_khamish">Khamish</string>
+	<string name="language_value_kheltivari">Kheltivari</string>
+	<string name="language_value_low_rhyvian">Low Rhyvian</string>
+	<string name="language_value_old_variac">Old Variac</string>
+	<string name="language_value_phorialtic">Phorialtic</string>
+	<string name="language_value_rallarian">Rallarian</string>
+	<string name="language_value_ullorvic">Ullorvic</string>
+
+	<!-- Vaslorian Languages by Ancestry -->
+	<string name="language_ancestry_value_anjali">Anjali (devils)</string>
+	<string name="language_ancestry_value_axiomatic">Axiomatic (memonek)</string>
+	<string name="language_ancestry_value_caelian">Caelian (orden denizens)</string>
+	<string name="language_ancestry_value_filliaric">Filliaric (angulotls)</string>
+	<string name="language_ancestry_value_thefirstlanguage">The First Language (elder dragon)</string>
+	<string name="language_ancestry_value_hyrallic">Hyrallic (high elf)</string>
+	<string name="language_ancestry_value_illyvric">Illyvric (shadow elf)</string>
+	<string name="language_ancestry_value_kalliak">Kalliak (orc)</string>
+	<string name="language_ancestry_value_kethaic">Kethaic (kobold)</string>
+	<string name="language_ancestry_value_khelt">Khelt (fey)</string>
+	<string name="language_ancestry_value_khoursirian">Khoursirian (polder)</string>
+	<string name="language_ancestry_value_highkuric">High Kuric (giants)</string>
+	<string name="language_ancestry_value_lowkuric">Low Kuric (elemental)</string>
+	<string name="language_ancestry_value_mindspeech">Mindspeech (voiceless talker)</string>
+	<string name="language_ancestry_value_protoctholl">Proto-Ctholl (lower demons)</string>
+	<string name="language_ancestry_value_szetch">Szetch (goblin)</string>
+	<string name="language_ancestry_value_tholl">Tholl (higher demons)</string>
+	<string name="language_ancestry_value_urollialic">Urollialic (olothec)</string>
+	<string name="language_ancestry_value_variac">Variac (gnomes)</string>
+	<string name="language_ancestry_value_vastariax">Vastariax (dragon)</string>
+	<string name="language_ancestry_value_vhoric">Vhoric (hakaan)</string>
+	<string name="language_ancestry_value_voll">Voll (time raider)</string>
+	<string name="language_ancestry_value_yllyric">Yllyric (wode elf)</string>
+	<string name="language_ancestry_value_zahariax">Za'hariax (overmind)</string>
+	<string name="language_ancestry_value_zaliac">Zaliac (dwarf)</string>
+
+	<!-- Modifiers -->
+	<string name="modifier_category_powerroll">POWER ROLL</string>
+	<string name="modifier_label_EDGE">Edge</string>
+	<string name="modifier_label_BANE">Bane</string>
+	<string name="modifier_label_DOUBLEEDGE">x2 Edge</string>
+	<string name="modifier_label_DOUBLEBANE">x2 Bane</string>
+
+	<!-- Common -->
+	<string name="value">Value (1/3 Max)</string>
+	<string name="slash">/</string>
+	<string name="mgt">MGT</string>
+	<string name="agl">AGL</string>
+	<string name="rea">REA</string>
+	<string name="inu">INU</string>
+	<string name="prs">PRS</string>
+	<string name="might">Might</string>
+	<string name="agility">Agility</string>
+	<string name="reason">Reason</string>
+	<string name="intuition">Intuition</string>
+	<string name="presence">Presence</string>
+	<string name="reach">Reach</string>
+	<string name="experience">XP/Epic</string>
+	<string name="size">Size</string>
+	<string name="weak">Weak</string>
+	<string name="average">Average</string>
+	<string name="strong">Strong</string>
+	<string name="speed">Speed</string>
+	<string name="stability">Stability</string>
+	<string name="disengage">Disengage</string>
+	<string name="potencies">POTENCIES</string>
+	<string name="weight">Weight</string>
+	<string name="victories">Victories</string>
+	<string name="char_label_value">Recovery Value</string>
+	<string name="effect_header_pseudoconditions">OTHER</string>
+
+	<!-- Skills -->
+	<string name="alchemy">Alchemy</string>
+	<string name="architecture">Architecture</string>
+	<string name="blacksmithing">Blacksmithing</string>
+	<string name="carpentry">Carpentry</string>
+	<string name="cooking">Cooking</string>
+	<string name="fletching">Fletching</string>
+	<string name="forgery">Forgery</string>
+	<string name="jewelry">Jewelry</string>
+	<string name="mechanics">Mechanics</string>
+	<string name="tailoring">Tailoring</string>
+
+	<string name="climb">Climb</string>
+	<string name="drive">Drive</string>
+	<string name="endurance">Endurance</string>
+	<string name="gymnastics">Gymnastics</string>
+	<string name="heal">Heal</string>
+	<string name="jump">Jump</string>
+	<string name="lift">Lift</string>
+	<string name="navigate">Navigate</string>
+	<string name="ride">Ride</string>
+	<string name="swim">Swim</string>
+
+	<string name="brag">Brag</string>
+	<string name="empathize">Empathize</string>
+	<string name="flirt">Flirt</string>
+	<string name="gamble">Gamble</string>
+	<string name="handleanimals">Handle Animals</string>
+	<string name="interrogate">Interrogate</string>
+	<string name="intimidate">Intimidate</string>
+	<string name="lead">Lead</string>
+	<string name="lie">Lie</string>
+	<string name="music">Music</string>
+	<string name="perform">Perform</string>
+	<string name="persuade">Persuade</string>
+	<string name="readperson">Read Person</string>
+
+	<string name="alertness">Alertness</string>
+	<string name="concealobject">Conceal Object</string>
+	<string name="disguise">Disguise</string>
+	<string name="eavesdrop">Eavesdrop</string>
+	<string name="escapeartist">Escape Artist</string>
+	<string name="hide">Hide</string>
+	<string name="picklock">Pick Lock</string>
+	<string name="pickpocket">Pick Pocket</string>
+	<string name="sabotage">Sabotage</string>
+	<string name="search">Search</string>
+	<string name="sneak">Sneak</string>
+	<string name="track">Track</string>
+
+	<string name="culture">Culture</string>
+	<string name="criminalunderworld">Crm. Undrwrld</string>
+	<string name="history">History</string>
+	<string name="magic">Magic</string>
+	<string name="monsters">Monsters</string>
+	<string name="nature">Nature</string>
+	<string name="psionics">Psionics</string>
+	<string name="religion">Religion</string>
+	<string name="rumors">Rumors</string>
+	<string name="society">Society</string>
+	<string name="strategy">Strategy</string>
+	<string name="timescape">Timescape</string>
+	<string name="tooltip_pr">Power Roll</string>
+	<string name="tooltip_ir">Roll Initiative</string>
+	<string name="tooltip_st">Saving Throw</string>
+	<string name="tooltip_drawsteel">Draw Steel!</string>
+
+	<!-- Characters -->
+	<string name="char_label_skills">Skills</string>
+	<string name="char_label_craftingskill">Crafting Skills</string>
+	<string name="char_label_exploration">Exploration Skills</string>
+	<string name="char_label_interpersonal">Interpersonal Skills</string>
+	<string name="char_label_intrigue">Intrigue Skills</string>
+	<string name="char_label_lore">Lore Skills</string>
+	<string name="char_label_characteristics">Characteristics</string>
+	<string name="char_label_characteristic">Characteristic:</string>
+	<string name="char_label_skillplus">+</string>
+	<string name="char_label_stats">Stats</string>
+	<string name="char_label_surges">Surges</string>
+	<string name="char_label_herotokens">Hero Tokens</string>
+	<string name="char_label_shields">Shields</string>
+	<string name="char_tooltip_mgt">Might score</string>
+	<string name="char_tooltip_agl">Agility score</string>
+	<string name="char_tooltip_rea">Reason score</string>
+	<string name="char_tooltip_inu">Intuition score</string>
+	<string name="char_tooltip_prs">Presence score</string>
+	<string name="char_tooltip_reach">Reach</string>
+	<string name="char_tooltip_size">Size</string>
+	<string name="char_tooltip_speed">Speed</string>
+	<string name="char_tooltip_stability">Stability</string>
+	<string name="char_tooltip_classresource">d3</string>
+	<string name="char_tooltip_stamina">Current Stamina</string>
+	<string name="char_tooltip_max">Max Stamina</string>
+	<string name="char_tooltip_surges">Surges</string>
+	<string name="char_tooltip_edge">+2 to Power Roll</string>
+	<string name="char_tooltip_bane">-2 to Power Roll</string>
+	<string name="char_tooltip_doubleedge">Tier Upgrade</string>
+	<string name="char_tooltip_doublebane">Tier Downgrade</string>
+	<string name="char_tooltip_skill">+2 for skills</string>
+	<string name="char_tooltip_respite">Take A Respite</string>
+	<string name="char_tooltip_surgesdescription">Spend up to 3 surges on an attack to deal extra damage (each surge deals damage equal to your highest characteristic score). 
+	\n Spend 2 surges to increase the potency by 1 for one target</string>
+	<string name="char_tooltip_herotokendescription">At the start of a new game session, the heroes have a number of hero tokens equal to the number of heroes in the party. 
+	\nSpend 1 token to gain 2 surges. 
+	\nSpend 1 hero token to succeed on a save. 
+	\nSpend 1 to reroll a test. You must use the new roll.
+	\nSpend 2 tokens to regain stamina equal to your Recovery value.</string>
+	<string name="char_tooltip_herotokenbtn_surge">Spend 1 token to gain 2 surges.</string>
+	<string name="char_tooltip_herotokenbtn_heal">Spend 2 tokens to regain stamina equal to your Recovery value.</string>
+	<string name="char_tooltip_modifierdescription">Only use this for NPCs (enter the modifier to the power roll)</string>
+	<string name="char_tooltip_shields">Shields</string>
+	<string name="char_tooltip_shieldsdescription">Each shield has a value equal to your highest characteristic score</string>
+	<string name="char_tooltip_temp">Temporary Stamina</string>
+	<string name="char_tooltip_winded">Winded Value</string>
+	<string name="char_tooltip_weight">Weight</string>
+	<string name="char_tooltip_victories">Victories</string>
+	<string name="char_tooltip_currentrecoveries">Current Recoveries</string>
+	<string name="char_tooltip_maxrecoveries">Max Recoveries</string>
+	<string name="char_tooltip_recoveryvalue">Recovery Value</string>
+	<string name="char_tooltip_choose">Choose</string>
+	<string name="char_label_strength">Strength</string>
+	<string name="char_label_agility">Agility</string>
+	<string name="char_label_intuition">Intuition</string>
+	<string name="char_label_reason">Reason</string>
+	<string name="char_label_presence">Presence</string>
+	<string name="char_label_classresource">CLASS RESOURCE</string>
+	<string name="char_label_class">CLASS</string>
+	<string name="char_label_subclass">SUBCLASS</string>
+	<string name="char_label_level">LEVEL</string>
+	<string name="char_label_echelon">ECHELON</string>
+	<string name="char_label_race">ANCESTRY</string>
+	<string name="char_label_gender">GENDER</string>
+	<string name="char_label_age">AGE</string>
+	<string name="char_label_height">HEIGHT</string>
+	<string name="char_label_weight">WEIGHT</string>
+	<string name="char_label_career">CAREER</string>
+	<string name="char_label_title">TITLE</string>
+	<string name="char_label_environment">ENVIRONMENT</string>
+	<string name="char_label_organization">ORGANIZATION</string>
+	<string name="char_label_upbringing">UPBRINGING</string>
+	<string name="char_label_renown">RENOWN</string>
+	<string name="char_label_project">PROJECT</string>
+	<string name="char_label_points">POINTS</string>
+	<string name="char_label_complication">COMPLICATION</string>
+	<string name="char_label_kit">KIT</string>
+	<string name="char_label_modifier">KIT</string>
+	<string name="char_label_stats">STATS</string>
+	<string name="char_label_type">TYPE</string>
+	<string name="char_label_name">NAME</string>
+	<string name="char_label_equipment">EQUIPMENT</string>
+	<string name="char_label_armor">ARMOR</string>
+	<string name="char_label_weapon">WEAPON</string>
+	<string name="char_label_skill">Skill</string>
+	<string name="char_label_stamina">Stamina</string>
+	<string name="char_label_speed">SPEED</string>
+	<string name="char_label_project">PROJECT</string>
+	<string name="char_label_assigned">ASSIGNED</string>
+	<string name="char_label_points">POINTS</string>
+	<string name="char_label_roll">ROLL</string>
+	<string name="char_label_stability">STABILITY</string>
+	<string name="char_label_melee">MELEE</string>
+	<string name="char_label_ranged">RANGED</string>
+	<string name="char_label_reach">REACH BNS</string>
+	<string name="char_label_mobility">MOBILITY</string>
+	<string name="char_label_implement">IMPLEMENT</string><string name="char_label_senses">Senses</string>
+	<string name="char_label_magical">MAGICAL</string>
+	<string name="char_label_distance">DISTANCE BNS</string>
+	<string name="char_label_area">AREA</string><string name="char_tooltip_portrait">Portrait</string>
+	<string name="char_label_disengage">DISENGAGE</string><string name="char_tooltip_portrait">Portrait</string>
+	<string name="char_label_meleedistance">Melee Dist</string><string name="char_tooltip_portrait">Portrait</string>
+	<string name="char_label_rangeddistance">Ranged Dist</string><string name="char_tooltip_portrait">Portrait</string>
+	<string name="char_tooltip_token">Token</string>
+	<string name="char_label_features">Features</string>
+	<string name="char_label_abilities">Abilities</string>
+	<string name="char_label_kitabilities">Kit Abilities</string>
+	<string name="char_label_signatureabilities">Signature Abilities</string>
+	<string name="char_label_heroicabilities">Heroic Abilities</string>
+	<string name="char_label_maneuversandtriggeredactions">Maneuver|Triggered</string>
+    <string name="char_label_actions">Actions</string>
+	<string name="char_label_abilities">Abilities</string>
+	<string name="char_label_ancestrytraits">Ancestry Traits</string>
+	<string name="char_label_titletraits">Perks &#38; Titles</string>
+	<string name="char_label_classfeatures">Class Features</string>
+	<string name="char_label_classfeaturechoices">Class Choices</string>
+	<string name="char_label_features">Features</string>
+    <string name="char_label_maneuvers">Maneuvers</string>
+	<string name="char_label_triggeredactions">Triggered Actions</string>
+	<string name="char_label_freestrikes">Free Strikes</string>
+	<string name="char_label_max">Max</string>
+	<string name="char_label_maxhp">Max</string>
+	<string name="char_label_temp">Temp</string>
+	<string name="char_label_winded">Winded</string>
+	<string name="char_label_current">Current</string>
+	<string name="char_label_savingthrow">Saving Throw</string>
+	<string name="char_label_kitbonuses">Kit Bonuses</string>
+	<string name="char_label_recoveries">Recoveries</string>
+	<string name="char_label_immunities">Immunity</string>
+	<string name="char_label_weaknessess">Vulnerability</string>
+	<string name="char_label_uniqueeffects">Unique Effects</string>
+	<string name="char_label_conditions">Conditions</string>
+	<string name="char_label_weak">Weak Potency</string>
+	<string name="char_label_strong">Strong Potency</string>
+	<string name="char_label_average">Average Potency</string>
+	<string name="char_label_movement">Movement</string>
+	<string name="char_label_skills">Skills</string>
+	<string name="char_label_crafting">Crafting</string>
+	<string name="char_label_classresource">Heroic Resource</string>
+	<string name="char_label_complications">Complication</string>
+	<string name="char_label_victories">Victories</string>
+	<string name="char_label_titles">Titles</string>
+	<string name="char_label_kit1">Kit #1</string>
+	<string name="char_label_kit2">Kit #2</string>
+	<string name="char_label_damagebonuses">Damage Bonuses</string>
+	<string name="char_label_languages">Languages</string>
+	<string name="char_label_notes">Notes</string>
+	<string name="char_label_notesanddowntime">Notes &amp; Downtime Projects</string>
+	<string name="char_label_damages">Damage Vulnerabilities and Immunities</string>
+	
+	<!-- BATTLE -->
+	<string name="battle_tooltip_refreshev">Calculate EV</string>
+
+	<!-- NPCs -->
+	<string name="organization_tooltip">Organization</string>
+	<string name="role_tooltip">Role</string>
+	<string name="ev_rider_tooltip">Specify EV. Example: "(6 for four minions)" </string>
+	<string name="maximum_stamina_tooltip">Maximum Stamina</string>
+	<string name="trait_title_tooltip">Trait title</string>
+	<string name="trait_tooltip">The description of the trait</string>
+	<string name="npc_label_ev">EV</string>
+	<string name="npc_label_unidentified">Non-ID Name</string>
+	<string name="npc_label_type">Type</string>
+	<string name="npc_label_level">Level</string>
+	<string name="npc_label_organization">Organization</string>
+	<string name="npc_label_role">Role</string>
+	<string name="npc_label_keywords">Keywords</string>
+	<string name="npc_label_stamina">Stamina</string>
+	<string name="npc_label_currentstamina">Current</string>
+	<string name="npc_label_maxstamina">Max Stamina</string>
+	<string name="npc_label_stability">Stability</string>
+	<string name="npc_label_freestrike">Free Strike</string>
+	<string name="npc_label_withcaptain">With Captain</string>
+	<string name="npc_label_size">Size</string>
+	<string name="npc_label_speed">Speed</string>
+	<string name="npc_label_movement">Movement</string>
+	<string name="npc_label_reach">Reach</string>
+	<string name="npc_label_senses">Senses</string>
+	<string name="npc_label_skills">Rolls</string>
+	<string name="npc_label_items">Equipment</string>
+	<string name="npc_label_languages">Languages</string>
+	<string name="npc_label_traits">Traits</string>
+	<string name="npc_label_weaknesses">Vulnerabilities</string>
+	<string name="npc_label_immunities">Immunities</string>
+	<string name="npc_label_sizenote">Size Note</string>
+	<string name="npc_label_staminanote">Stamina Note</string>
+	<string name="npc_label_weight">Weight</string>
+	<string name="npc_label_mgt_full">MIGHT</string>
+	<string name="npc_label_agl_full">AGILITY</string>
+	<string name="npc_label_rea_full">REASON</string>
+	<string name="npc_label_inu_full">INTUITION</string>
+	<string name="npc_label_prs_full">PRESENCE</string>
+	<string name="npc_label_mgt">M</string>
+	<string name="npc_label_agl">A</string>
+	<string name="npc_label_rea">R</string>
+	<string name="npc_label_inu">I</string>
+	<string name="npc_label_prs">P</string>
+	<string name="npc_label_interest">Interest:</string>
+	<string name="npc_label_patience">Patience:</string>
+	<string name="npc_label_impressionscore">Impression:</string>
+	<string name="npc_label_motivations">Motivations</string>
+	<string name="npc_label_pitfalls">Pitfalls</string>
+	<string name="npc_label_outcomes">Outcomes</string>
+
+		<!-- Items -->
+	<string name="item_button_template">Templates</string>
+	<string name="item_button_parcel">Parcels</string>
+	<string name="item_label_unidentified">Non-ID Name</string>
+	<string name="item_label_unidentifiednotes">Notes</string>
+	<string name="item_label_cost">Cost</string>
+	<string name="item_label_prerequisites">Item Prerequisites</string>
+	<string name="item_label_researchmaterials">Materials</string>
+	<string name="item_label_projectroll">Source</string>
+	<string name="item_label_keywords">Keywords</string>
+	<string name="item_label_level">Level</string>
+	<string name="item_label_type">Type</string>
+	<string name="item_label_echelon">Echelon</string>
+	<string name="item_label_projectroll">Project Source</string>
+	<string name="item_label_projectrollcharacteristic">Characteristic</string>
+	<string name="item_label_projectgoal">Project Goal</string>
+	<string name="item_label_weight">Weight</string>
+	<string name="item_label_subitems">Included Items</string>
+
+	<!-- Abilities -->
+	<string name="ability_label_name">Name</string>
+	<string name="ability_label_cost">Cost</string>
+	<string name="ability_label_cost_string">Resource</string>
+	<string name="ability_label_resource">Resource</string>
+	<string name="ability_label_class">Class</string>
+	<string name="ability_label_subclass">Subclass</string>
+	<string name="ability_label_ancestry">Ancestry</string>
+	<string name="ability_label_abilitytype">Ability Type</string>
+	<string name="ability_label_abilitylevel">Level</string>
+	<string name="ability_label_keywords">Keywords</string>
+	<string name="ability_label_type">Type</string>
+	<string name="ability_label_distance">Distance</string>
+	<string name="ability_label_target">Target</string>
+	<string name="ability_label_effect">Effect</string>
+	<string name="ability_label_special">Special</string>
+	<string name="ability_label_trigger">Trigger</string>
+	<string name="ability_label_spendresource">Spend Resource</string>
+	<string name="ability_label_powerroll">Power Roll</string>
+	<string name="ability_label_powerrollplus">Power Roll + </string>
+	<string name="ability_label_tier1"> &lt; 12</string>
+	<string name="ability_label_tier2">12-16</string>
+	<string name="ability_label_tier3">17+</string>
+	<string name="ability_grouped_label_name">Name</string>
+	<string name="npc_grouped_label_name">Name</string>
+	<string name="npc_grouped_label_echelon">Name</string>
+	<string name="ability_grouped_label_cost">Cost</string>
+	<string name="npc_grouped_label_level">Level</string>
+	<string name="ability_message_resource">%s spent %s heroic resources</string>
+	<string name="ability_message_resourcewarning">You don't have enough class resources</string>
+
+	<!-- Character Builder -->
+	<string name="char_abilities_message_warning">---ERROR ADDING CLASS--- \n You must select one column for starting characteristics.</string>
+	<string name="char_abilities_message_add">%s: %s to '%s'.</string>
+	<string name="char_abilities_message_classadd">Class '%s' added to '%s'.</string>
+	<string name="char_abilities_message_ancestryadd">Ancestry '%s' added to '%s'.</string>
+	<string name="char_abilities_message_kitadd">Kit '%s' added to '%s'.</string>
+	<string name="char_abilities_message_abilityadd">Ability '%s' added to '%s'.</string>
+	<string name="char_abilities_message_careeradd">Career '%s' added to '%s'.</string>
+	<string name="char_emptylist_ancestryfeatures">Drop ancestry link to populate.</string>
+	<string name="char_emptylist_kit">Drop kit link to populate.</string>
+	<string name="char_emptylist_classfeatures">Drop class link to populate.</string>
+
+	<!-- advancement -->
+	<string name="char_emptylist_respite">'%s' has taken a respite.</string>
+	<string name="char_emptylist_levelup">'%s' is now Level '%s'.</string>
+
+
+	<!-- Kits -->
+	<string name="kit_label_equipment">Equipment</string>
+	<string name="kit_label_staminabonus">Stamina Bonus (per echelon)</string>
+	<string name="kit_label_speedbonus">Speed Bonus</string>
+	<string name="kit_label_stabilitybonus">Stability Bonus</string>
+	<string name="kit_label_rangeddistancebonus">Ranged Distance Bonus</string>
+	<string name="kit_label_meleedistancebonus">Melee Distance Bonus</string>
+	<string name="kit_label_ranged">Ranged</string>
+	<string name="kit_label_melee">Melee</string>
+	<string name="kit_label_disengagebonus">Disengage Bonus</string>
+	<string name="kit_label_meleedamagebonus">Melee Damage Bonus</string>
+	<string name="kit_label_rangeddamagebonus">Ranged Damage Bonus</string>
+	<string name="kit_label_weapon">Weapon</string>
+	<string name="kit_label_armor">Armor</string>
+
+	<!-- Class -->
+	<string name="class_label_basics">Basics</string>
+	<string name="class_label_startingCharacteristics">Starting Characteristics</string>
+	<string name="class_label_startingStamina">Starting Stamina</string>
+	<string name="class_label_staminaPerLevel">Stamina Per Level</string>
+	<string name="class_label_startingRecoveries">Starting Recoveries</string>
+	<string name="class_label_startingMight">Might</string>
+	<string name="class_label_startingAgility">Agility</string>
+	<string name="class_label_startingReason">Reason</string>
+	<string name="class_label_startingIntuition">Intuition</string>
+	<string name="class_label_startingPresence">Presence</string>
+
+	<!-- Career -->
+	<string name="career_label_skills">Skills:</string>
+	<string name="career_label_languages">Languages:</string>
+	<string name="career_label_renown">Renown Bonus:</string>
+	<string name="career_label_wealth">Wealth Bonus:</string>
+	<string name="career_label_perk">Perk:</string>
+
+
+	<!-- CT -->
+	<string name="ct_emptylist_heroes">Drop PC links to add entries.</string>
+	<string name="ct_emptylist_monsters">Drop NPC or encounter links to add entries.</string>
+
+	<!-- Hero Tokens -->
+	<string name="tooltip_herotokengm">Hero Token (drag off to remove)
+	\nSpend 1 token to gain 2 surges. 
+	\nSpend 1 hero token to succeed on a save. 
+	\nSpend 1 to reroll a test. You must use the new roll.
+	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
+	<string name="tooltip_herotokengm_gm">Hero Token(drag off to remove)\nCTRL+MouseWheel to manually adjust.
+	\nAt the start of a new game session, the heroes have a number of hero tokens equal to the number of heroes in the party. 
+	\nSpend 1 token to gain 2 surges. 
+	\nSpend 1 hero token to succeed on a save. 
+	\nSpend 1 to reroll a test. You must use the new roll.
+	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
+
+
+	<string name="herotoken_player_user_by_user">'%s' spent a Hero Token.</string>
+	<string name="herotoken_player_played_by_gm">A Hero Token has been spent by the Director.</string>
+	<string name="herotoken_player_user_by_user_for_character">A Hero Token has been spent by '%s', for character '%s'.</string>
+	<string name="herotoken_player_decremented">Hero Tokens are reduced to '%s'.</string>
+	<string name="herotoken_gm_used">The director spent a Hero Token.</string>
+</root>

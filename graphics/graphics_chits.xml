@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+	Please see the license.html file included with this distribution for
+	attribution and copyright information.
+-->
+
+<root>
+	<icon name="StoryPointPCchit" file="graphics/chits/storypointpc.png" />
+	<icon name="StoryPointPCchit1" file="graphics/chits/storypointpc1.png" />
+	<icon name="StoryPointPCchit2" file="graphics/chits/storypointpc2.png" />
+	<icon name="StoryPointPCchit3" file="graphics/chits/storypointpc3.png" />
+	<icon name="StoryPointPCchit4" file="graphics/chits/storypointpc4.png" />
+	<icon name="StoryPointPCchit5" file="graphics/chits/storypointpc5.png" />
+	<icon name="StoryPointPCchit6" file="graphics/chits/storypointpc6.png" />
+	<icon name="StoryPointPCchit7" file="graphics/chits/storypointpc7.png" />
+	<icon name="StoryPointPCchit8more" file="graphics/chits/storypointpc8more.png" />
+	<icon name="StoryPointPCchit0" file="graphics/chits/storypointpc0.png" />
+	<icon name="StoryPointGMchit" file="graphics/chits/storypointgm.png" />
+	<icon name="StoryPointGMchit1" file="graphics/chits/storypointgm1.png" />
+	<icon name="StoryPointGMchit2" file="graphics/chits/storypointgm2.png" />
+	<icon name="StoryPointGMchit3" file="graphics/chits/storypointgm3.png" />
+	<icon name="StoryPointGMchit4" file="graphics/chits/storypointgm4.png" />
+	<icon name="StoryPointGMchit5" file="graphics/chits/storypointgm5.png" />
+	<icon name="StoryPointGMchit6" file="graphics/chits/storypointgm6.png" />
+	<icon name="StoryPointGMchit7" file="graphics/chits/storypointgm7.png" />
+	<icon name="StoryPointGMchit8more" file="graphics/chits/storypointgm8more.png" />
+	<icon name="StoryPointGMchit0" file="graphics/chits/storypointgm0.png" />
+</root>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- General -->
+	<string name="char_label_name">NAME</string>
+	<string name="char_label_classresource">CLASS RESOURCE</string>
+	<string name="char_label_class">CLASS</string>
+	<string name="char_label_subclass">SUBCLASS</string>
+	<string name="char_label_level">LEVEL</string>
+	<string name="char_label_echelon">ECHELON</string>
+	<string name="char_label_xp">XP</string>
+	<string name="char_label_race">ANCESTRY</string>
+	<string name="char_label_career">CAREER</string>
+	<string name="char_label_title">TITLE</string>
+	<string name="char_label_itemweight">En</string>
+	<string name="char_tooltip_itemweight">Encumbrance</string>
+	<string name="char_tooltip_inv_carried">Stowed</string>
+	<string name="char_tooltip_inv_equipped">Readied</string>
+	<string name="char_label_attributes">Attributes</string>
+	<string name="char_label_skills">Skills</string>
+	<string name="char_label_features">Features</string>
+	<string name="char_label_abilities">Abilities</string>
+	<string name="char_label_heroicabilities">Heroic Abilities</string>
+	<string name="char_label_kitabilities">Kit Abilities</string>
+	<string name="char_label_signatureabilities">Signature Abilities</string>
+	<string name="char_label_heroicabilities">Heroic Abilities</string>
+	<string name="char_label_triggeredactions">Triggered Actions</string>
+	<string name="char_label_freestrikes">Free Strikes</string>
+	<string name="char_level_skills">Skills</string>
+	<string name="char_label_totalweight">Total encumbrance</string>
+	<string name="char_label_money">Wealth Level</string>
+	<string name="char_label_max">Max</string>
+	<string name="char_label_temp">Temp</string>
+	<string name="char_label_classresource">Heroic Resource</string>
+	<string name="char_label_kitbonuses">Kit Bonuses</string>
+	<string name="char_label_damagebonuses">Damage Bonuses</string>
+	<string name="char_label_languages">Languages</string>
+	<string name="char_label_notes">Notes</string>
+	<string name="char_label_perks">Perks and Titles</string>
+	<string name="char_label_projectnotes">Project Notes</string>
+	<string name="char_label_projects">Projects</string>
+	<string name="char_menu_delete">Delete Character</string>
+	<string name="char_menu_ownerclear">Clear owner</string>
+	<string name="char_menu_ownergm">Take ownership (as %s)</string>
+
+	<!-- NPCs -->
+	<string name="npc_label_ev">EV</string>
+	<string name="npc_label_type">Type</string>
+	<string name="npc_label_stamina">Stamina</string>
+	<string name="npc_label_maxstamina">Max Stamina</string>
+	<string name="npc_label_stability">Stability</string>
+	<string name="npc_label_freestrike">Free Strike</string>
+	<string name="npc_label_size">Size</string>
+	<string name="npc_label_speed">Speed</string>
+	<string name="npc_label_reach">Reach</string>
+	<string name="npc_label_senses">Senses</string>
+	<string name="npc_label_skills">Rolls</string>
+	<string name="npc_label_items">Equipment</string>
+	<string name="npc_label_languages">Languages</string>
+	<string name="npc_label_traits">Traits</string>
+	<string name="npc_label_weaknesses">Weaknesses</string>
+	<string name="npc_label_immunities">Immunities</string>
+	<string name="npc_label_weight">Weight</string>
+	<string name="npc_label_mgt">MGT</string>
+	<string name="npc_label_agl">AGL</string>
+	<string name="npc_label_rea">REA</string>
+	<string name="npc_label_inu">INU</string>
+	<string name="npc_label_prs">PRS</string>
+	<string name="npc_label_interest">Interest:</string>
+	<string name="npc_label_patience">Patience:</string>
+	<string name="npc_label_impressionscore">Impression:</string>
+	<string name="npc_label_motivations">Motivations</string>
+	<string name="npc_label_pitfalls">Pitfalls</string>
+	<string name="npc_label_outcomes">Outcomes</string>
+
+	<!-- Abilities -->
+	<string name="ability_label_name">Name</string>
+	<string name="ability_label_cost">Cost</string>
+	<string name="ability_label_class">Class</string>
+	<string name="ability_label_subclass">Subclass</string>
+	<string name="ability_label_abilitytype">Ability Type</string>
+	<string name="ability_label_abilitylevel">Level</string>
+	<string name="ability_label_keywords">Keywords</string>
+	<string name="ability_label_type">Type</string>
+	<string name="ability_label_distance">Distance</string>
+	<string name="ability_label_target">Target</string>
+	<string name="ability_label_effect">Effect</string>
+	<string name="ability_label_special">Special</string>
+	<string name="ability_label_trigger">Trigger</string>
+	<string name="ability_label_spendresource">Spend Resource</string>
+	<string name="ability_label_powerroll">Power Roll</string>
+	<string name="ability_label_powerrollplus">Power Roll + </string>
+	<string name="ability_label_tier1"> &lt; 12</string>
+	<string name="ability_label_tier2">12-16</string>
+	<string name="ability_label_tier3">17+</string>
+	<string name="ability_grouped_label_name">Name</string>
+	<string name="ability_grouped_label_cost">Cost</string>
+	
+</root>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="label_ct_header_name_v2">
+		<label>
+			<static textres="ct_label_name" />
+			<bounds>90,4,300,14</bounds>
+		</label>
+	</template>
+	<template name="label_ct_header_init">
+		<label>
+			<static textres="ct_label_init" />
+			<bounds>-195,4,300,14</bounds>
+		</label>
+	</template>
+	<template name="label_ct_header_stamina">
+		<label>
+			<static textres="ct_label_stamina" />
+			<bounds>-190,4,300,14</bounds>
+		</label>
+	</template>
+
+	<template name="button_ct_controls_nextturn" merge="join">
+		<buttoncontrol>
+			<script>
+				function onButtonPress()
+					CombatManagerDS.nextTurn();
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+
+	<template name="ct_initiative_roll">
+		<initiative_roll>
+			<bounds>100,-77,60,60</bounds>
+			<tooltip textres="tooltip_ir" />
+			<script>	
+				function action(draginfo)
+					local nodeWin = window.getDatabaseNode();
+
+					local rRoll = { 
+						sType = "dice", 
+						sDesc = "Initiative Roll:", 
+						aDice = { "d10" },
+						nMod = 0,
+					};
+					ActionsManager.performAction(draginfo, rActor, rRoll);
+					return true;
+				end
+				function onDragStart(button, x, y, draginfo)
+					return action(draginfo);
+				end
+				function onButtonPress()
+					return action();
+				end
+			</script>
+		</initiative_roll>
+	</template>
+
+	<template name="sub_ct_malice">
+		<subwindow name="sub_malice">
+			<anchored to="sub_header" width="90" height="65">
+				<top offset="-20" />
+				<left anchor="center" offset="-35" />
+			</anchored>
+			<frame name="groupbox" />
+			<class>ct_malice</class>
+			<activate />
+			<fastinit />
+		</subwindow>
+	</template>
+	<windowclass name="ct_malice">
+		<sheetdata>
+			<basicnumber name="malice">
+				<anchored width="40" height="20">
+					<top offset="15" />
+					<left anchor="center" offset="-20" />
+				</anchored>
+				<font>reference-b-large</font>
+				<gmeditonly />
+			</basicnumber>
+			<label name="label_malice">
+				<anchored position="insidetop">
+					<top parent="malice" anchor="bottom" />
+				</anchored>
+				<static textres="ct_label_malice" />
+				<center />
+			</label>
+		</sheetdata>
+	</windowclass>
+
+	<template name="sub_ct_heroes_base">
+		<sub_content_bottom name="sub_heroes">
+			<anchored height="300">
+				<right anchor="center" />
+			</anchored>
+		</sub_content_bottom>
+	</template>
+	<template name="sub_ct_monsters_base">
+		<sub_content_base name="sub_monsters">
+			<anchored>
+				<top parent="sub_heroes" />
+				<bottom parent="sub_heroes" />
+				<left anchor="center" />
+			</anchored>
+		</sub_content_base>
+	</template>
+
+	<template name="sub_ct_heroes_host">
+		<sub_ct_heroes_base>
+			<class>ct_heroes_host</class>
+		</sub_ct_heroes_base>
+	</template>
+	<template name="sub_ct_monsters_host">
+		<sub_ct_monsters_base>
+			<class>ct_monsters_host</class>
+		</sub_ct_monsters_base>
+	</template>
+	<windowclass name="ct_heroes_host">
+		<sheetdata>
+			<anchor_content_top />
+			<anchor_content_bottom />
+
+			<area_content_framed_groupbox_top name="header">
+				<anchored height="30" />
+			</area_content_framed_groupbox_top>
+			<label name="label">
+				<anchored to="header" position="insidetop" offset="0,5" />
+				<static textres="ct_label_name_heroes" />
+				<center />
+			</label>
+
+			<list_ct_heroes_host name="list">
+				<script file="ct/scripts/ct_DS.lua" />
+			</list_ct_heroes_host>
+			<scrollbar_list name="scrollbar_list" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="ct_monsters_host">
+		<sheetdata>
+			<anchor_content_top />
+			<anchor_content_bottom />
+
+			<area_content_framed_groupbox_top name="header">
+				<anchored height="30" />
+			</area_content_framed_groupbox_top>
+			<label name="label">
+				<anchored to="header" position="insidetop" offset="0,5" />
+				<static textres="ct_label_name_monsters" />
+				<center />
+			</label>
+
+			<list_ct_monsters_host name="list">
+				<script file="ct/scripts/ct_DS.lua" />
+			</list_ct_monsters_host>
+			<scrollbar_list name="scrollbar_list" />
+		</sheetdata>
+	</windowclass>
+
+	<template name="sub_ct_heroes_client">
+		<sub_ct_heroes_base>
+			<class>ct_heroes_client</class>
+		</sub_ct_heroes_base>
+	</template>
+	<template name="sub_ct_monsters_client">
+		<sub_ct_monsters_base>
+			<class>ct_monsters_client</class>
+		</sub_ct_monsters_base>
+	</template>
+	<windowclass name="ct_heroes_client">
+		<sheetdata>
+			<anchor_content_top />
+			<anchor_content_bottom />
+
+			<area_content_framed_groupbox_top name="header">
+				<anchored height="30" />
+			</area_content_framed_groupbox_top>
+			<label name="label">
+				<anchored to="header" position="insidetop" offset="0,5" />
+				<static textres="ct_label_name_heroes" />
+				<center />
+			</label>
+
+			<list_ct_heroes_client name="list">
+				<script file="ct/scripts/ct_DS.lua" />
+			</list_ct_heroes_client>
+			<scrollbar_list />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="ct_monsters_client">
+		<sheetdata>
+			<anchor_content_top />
+			<anchor_content_bottom />
+
+			<area_content_framed_groupbox_top name="header">
+				<anchored height="30" />
+			</area_content_framed_groupbox_top>
+			<label name="label">
+				<anchored to="header" position="insidetop" offset="0,5" />
+				<static textres="ct_label_name_monsters" />
+				<center />
+			</label>
+
+			<list_ct_monsters_client name="list">
+				<script file="ct/scripts/ct_DS.lua" />
+			</list_ct_monsters_client>
+			<scrollbar_list />
+		</sheetdata>
+	</windowclass>
+
+	<template name="list_ct_heroes_base">
+		<list_content name="list_heroes">
+			<datasource>.list</datasource>
+			<flag_heroes />
+		</list_content>
+	</template>
+	<template name="list_ct_monsters_base">
+		<list_content name="list_monsters">
+			<datasource>.list</datasource>
+			<flag_monsters />
+		</list_content>
+	</template>
+	<template name="list_ct_heroes_host">
+		<list_ct_heroes_base>
+			<class>ct_entry_heroes</class>
+			<empty font="list-empty-ct" textres="ct_emptylist_heroes" />
+			<allowcreate />
+			<script file="ct/scripts/ct.lua" />
+		</list_ct_heroes_base>
+	</template>
+	<template name="list_ct_monsters_host">
+		<list_ct_monsters_base>
+			<class>ct_entry_monsters</class>
+			<empty font="list-empty-ct" textres="ct_emptylist_monsters" />
+			<allowcreate />
+			<script file="ct/scripts/ct.lua" />
+		</list_ct_monsters_base>
+	</template>
+	<template name="list_ct_heroes_client">
+		<list_ct_heroes_base>
+			<class>client_ct_entry_heroes</class>
+			<empty font="list-empty-ct" textres="ct_emptylist_heroes" />
+			<script file="ct/scripts/clientct.lua" />
+		</list_ct_heroes_base>
+	</template>
+	<template name="list_ct_monsters_client">
+		<list_ct_monsters_base>
+			<class>client_ct_entry_monsters</class>
+			<empty font="list-empty-ct" textres="ct_emptylist_monsters" />
+			<script file="ct/scripts/clientct.lua" />
+		</list_ct_monsters_base>
+	</template>
+	
+	<template name="button_ct_controls_menu" merge="join">
+		<button_listitem_text_left_sm>
+			<script file="ct/scripts/ct_menu_DS.lua" />
+		</button_listitem_text_left_sm>
+	</template>
+	<template name="button_ct_controls_nextround" merge="join">
+		<buttoncontrol>
+			<script>
+				function onButtonPress()
+					CombatManagerDS.nextRound(1);
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+
+	<template name="number_ctentry_stamina">
+		<number_ct_crosslink name="stamina">
+			<anchored to="rightanchor" width="30" height="20">
+				<top />
+				<right anchor="left" relation="relative" offset="-5" />
+			</anchored>
+		</number_ct_crosslink>
+	</template>
+	<template name="number_ctentry_staminamax">
+		<number_ct_crosslink name="stamina.max">
+			<anchored to="rightanchor" width="30" height="20">
+				<top />
+				<right anchor="left" relation="relative" offset="-20" />
+			</anchored>
+			<tooltip textres="ct_staminamax_tooltip" />
+			<readonly />
+		</number_ct_crosslink>
+	</template>
+	<template name="button_initiative_toggle">
+		<buttonfield name="initresult">
+			<anchored to="leftanchor" width="28" height="28">
+				<top offset="-5" />
+				<left anchor="right" relation="relative" offset="-10" postoffset="2" />
+			</anchored>
+			<tooltip textres="ct_tooltip_remove" />
+			<state icon="ct_remove" />
+			<state icon="ct_gone" />
+			<gmeditonly />
+		</buttonfield>
+	</template>
+</root>

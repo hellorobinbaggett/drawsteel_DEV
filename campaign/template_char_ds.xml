@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="number_charstamina">
+		<basicnumber name="stamina" source="stamina">
+		<datasource>stamina</datasource>
+			<script>
+				function onInit()
+					if super.onInit then
+						super.onInit();
+					end
+
+					OptionsManager.registerCallback("WNDC", onValueChanged);
+					onValueChanged();
+				end
+
+				function onClose()
+					OptionsManager.unregisterCallback("WNDC", onValueChanged);
+				end
+
+				function onDrop(x, y, draginfo)
+					if draginfo.getType() == "number" then
+						local rActor = ActorManager.resolveActor(window.getDatabaseNode());
+						local rRoll = { sDesc = draginfo.getDescription(), nTotal = draginfo.getNumberData() };
+						ActionDamage.applyDamage(nil, rActor, rRoll);
+					end
+					return true;
+				end
+
+				function onValueChanged()
+				end
+			</script>
+		</basicnumber>
+	</template>
+
+	<template name="string_labeled_resource">
+		<stringu>
+			<underlineoffset>-30</underlineoffset>
+			<script>
+				labelwidget = nil;
+			
+				function onInit()
+					if labelres then
+						labelwidget = addTextWidget({ 
+							font = "sheetlabelinline", 
+							text = Interface.getString(labelres[1]):upper(),
+						});
+					elseif label then
+						labelwidget = addTextWidget({ 
+							font = "sheetlabelinline", 
+							text = label[1]:upper(),
+						});
+					end
+					if labelwidget then
+						local w,h = labelwidget.getSize();
+						labelwidget.setPosition("bottomleft", w/2, h/2-3);
+					end
+				end
+			</script>
+		</stringu>
+	</template>
+
+	<template name="list_charskillcategory">
+		<windowlist>
+			<class>char_skills_category</class>
+			<datasource>.skillcategorylist</datasource> 
+			<columns width="222" filldown="true" />
+			<allowcreate />
+			<allowdelete />
+			<sortby><field>label</field></sortby>
+			<script>
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.header.subwindow.label.setFocus();
+					end
+					return w;
+				end
+			</script>
+		</windowlist>
+	</template>
+	<template name="list_charskillcategory_ds">
+		<windowlist>
+			<class>char_skills_category_ds</class>
+			<datasource>.skillcategorylist_ds</datasource> 
+			<columns width="222" filldown="true" />
+			<allowcreate />
+			<allowdelete />
+			<sortby><field>label</field></sortby>
+			<script>
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.header.subwindow.label.setFocus();
+					end
+					return w;
+				end
+			</script>
+		</windowlist>
+	</template>
+
+	<template name="list_charmainattribute">
+		<windowlist>
+			<child></child>
+			<child><backcolor>1A40301E</backcolor></child>
+			<datasource>.attributelist</datasource>
+			<class>char_attribute</class>
+			<allowcreate />
+			<allowdelete />
+			<noscroll />
+			<sortby><field>label</field></sortby>
+			<script>
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.label.setFocus();
+					end
+					return w;
+				end
+				
+				function onDrop(x, y, draginfo)
+					local sDragType = draginfo.getType();
+					if sDragType == "number" then
+						local w = addEntry(true);
+						if w then
+							w.label.setValue(draginfo.getDescription());
+							w.bonus.setValue(draginfo.getNumberData());
+						end
+						return true;
+					elseif sDragType == "dice" then
+						local aDropDice = draginfo.getDiceData();
+						local w = getWindowAt(x,y);
+						if w then
+							for _,vDie in ipairs(aDropDice) do
+								w.dice.addDie(vDie.type);
+							end
+						end
+						return true;
+					end
+				end
+			</script>
+		</windowlist>
+	</template>
+	<template name="list_charskillsattribute">
+		<windowlist>
+			<child></child>
+			<child><backcolor>1A40301E</backcolor></child>
+			<datasource>.skillsattributelist</datasource>
+			<class>char_skillsattribute</class>
+			<allowcreate />
+			<allowdelete />
+			<noscroll />
+			<sortby><field>label</field></sortby>
+			<script>
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.label.setFocus();
+					end
+					return w;
+				end
+				
+				function onDrop(x, y, draginfo)
+					local sDragType = draginfo.getType();
+					if sDragType == "number" then
+						local w = addEntry(true);
+						if w then
+							w.label.setValue(draginfo.getDescription());
+							w.bonus.setValue(draginfo.getNumberData());
+						end
+						return true;
+					elseif sDragType == "dice" then
+						local aDropDice = draginfo.getDiceData();
+						local w = getWindowAt(x,y);
+						if w then
+							for _,vDie in ipairs(aDropDice) do
+								w.dice.addDie(vDie.type);
+							end
+						end
+						return true;
+					end
+				end
+			</script>
+		</windowlist>
+	</template>
+
+	<template name="number_characteristicscore">
+		<basicnumber>
+			<anchored position="belowleft" offset="0,8" width="32" height="22" />
+			<default>0</default>
+		</basicnumber>
+	</template>
+	<template name="string_characteristiclabel">
+		<label>
+			<anchored position="lefthigh" width="70" height="24" />
+			<static />
+		</label>
+	</template>
+	<template name="string_skilllabel">
+		<label>
+			<anchored position="lefthigh" width="100" height="24" />
+			<static />
+		</label>
+	</template>
+
+	<template name="number_powerroll_characteristic">
+		<basicnumber>
+			<anchored position="belowleft" offset="0,8" width="32" height="22" />
+			<default>0</default>
+			<rollable />
+			<script>		
+				function action(draginfo)
+				local characteristic = tostring(target[1]);
+
+				if(characteristic == "mgt") or (characteristic == "MGT") then
+					characteristic = "Might"
+				elseif (characteristic == "agl") or (characteristic == "AGL") then
+					characteristic = "Agility"
+				elseif (characteristic == "rea") or (characteristic == "REA") then
+					characteristic = "Reason"
+				elseif (characteristic == "inu") or (characteristic == "INU") then
+					characteristic = "Intuition"
+				elseif (characteristic == "prs") or (characteristic == "PRS") then
+					characteristic = "Presence"
+				end
+
+				local rActor = ActorManager.resolveActor(window.getDatabaseNode());
+				local nodePC = ActorManager.getCreatureNode(rActor);
+					local rRoll = { 
+						sType = "dice", 
+						sDesc = "(Power Roll + " .. characteristic .. ")", 
+						aDice = { "d10", "d10" },
+						nMod = DB.getValue(nodePC, tostring(target[1]), 0);
+					};
+					ActionsManager_DS.encodeDesktopMods(rRoll);
+					ActionsManager.performAction(draginfo, rActor, rRoll);
+					return true;
+				end
+				
+				function onDragStart(button, x, y, draginfo)
+					return action(draginfo);
+				end
+
+				function onDoubleClick(x,y)
+					return action();
+				end
+			</script>
+		</basicnumber>
+	</template>
+
+	<template name="button_prof">
+		<buttonfield>
+			<state icon="button_prof" tooltipres="char_tooltip_prof_off" />
+			<state icon="button_prof_down" tooltipres="char_tooltip_prof_on" />
+		</buttonfield>
+	</template>
+
+	<template name="button_characteristic">
+		<buttonfield>
+			<state icon="empty_block" tooltipres="char_tooltip_characteristic_empty" />
+			<state icon="might_block" tooltipres="char_tooltip_characteristic_might" />
+			<state icon="agility_block" tooltipres="char_tooltip_characteristic_agility" />
+			<state icon="reason_block" tooltipres="char_tooltip_characteristic_reason" />
+			<state icon="intuition_block" tooltipres="char_tooltip_characteristic_intuition" />
+			<state icon="presence_block" tooltipres="char_tooltip_characteristic_presence" />
+		</buttonfield>
+	</template>
+</root>

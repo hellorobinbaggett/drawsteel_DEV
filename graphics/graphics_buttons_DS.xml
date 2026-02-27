@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Draw Steel Graphics -->
+	<icon name="power_roll" file="graphics/buttons/DS_power_roll_2d10.png" />
+	<icon name="power_roll_down" file="graphics/buttons/DS_power_roll_2d10_down.png" />
+	<icon name="NEW_power_roll" file="graphics/buttons/NEW_power_roll_red.png" />
+	<icon name="NEW_power_roll_down" file="graphics/buttons/NEW_power_roll_red_down.png" />
+
+	<icon name="might_block" file="graphics/buttons/M_black.png" />
+	<icon name="agility_block" file="graphics/buttons/A_black.png" />
+	<icon name="intuition_block" file="graphics/buttons/I_black.png" />
+	<icon name="reason_block" file="graphics/buttons/R_black.png" />
+	<icon name="presence_block" file="graphics/buttons/P_black.png" />
+	<icon name="empty_block" file="graphics/buttons/blank_black.png" />
+
+	<icon name="info_alert" file="graphics/buttons/button_info.png" />
+	<icon name="info_warning" file="graphics/buttons/button_info_yellow.png" />
+
+	<icon name="respite" file="graphics/buttons/respite.png" />
+	<icon name="respite_down" file="graphics/buttons/respite_down.png" />
+	
+    <!-- Skills -->
+	<icon name="button_prof" file="graphics/buttons/button_prof.png" />
+	<icon name="button_prof_down" file="graphics/buttons/button_prof_down.png" />
+	<icon name="ct_gone" file="graphics/token/token_cond_helpless.png" />
+	<icon name="ct_remove" file="graphics/token/token_cond_helpless_old.png" />
+</root>

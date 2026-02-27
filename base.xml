@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root version="1.0" release="1" logo="logo.png">
+	<announcement text="Draw Steel Ruleset (v0.92) by EXXODIS" font="emotefont" icon="" />
+
+	<!-- Attributes -->
+	<description>
+		<displayname>Draw Steel (DEV)</displayname>
+		<author>EXXODIS, MoonWizard</author>
+		<website>https://www.fantasygrounds.com</website>
+	</description>
+
+	<!-- Announcements --> 
+	<announcement text="Draw Steel Ruleset is an independent product published under the DRAW STEEL Creator License and is not affiliated with MCDM Productions, LLC. DRAW STEEL &#169; 2024 MCDM Productions, LLC. https://www.mcdmproductions.com/draw-steel-creator-license
+	" font="emotefont" icon="" />
+	<announcement text="Check out these community modules:" />
+	<announcement text="\r\n Heroes for Draw Steel https://forge.fantasygrounds.com/shop/items/2300/view
+	" font="emotefont" icon="" />
+	<announcement text="\r\n Monsters for Draw Steel https://forge.fantasygrounds.com/shop/items/2335/view
+	" font="emotefont" icon="" />
+	
+	<!-- This allows the ruleset to pull from CoreRPG for the basic scripts and functionality -->
+	<importruleset source="CoreRPG" />
+
+	<!-- Graphics -->
+	<includefile source="graphics/graphics_buttons_DS.xml" />
+	<includefile source="graphics/graphics_chits.xml" />
+	<includefile source="graphics/graphics_fonts.xml" />
+	<includefile source="graphics/graphics_sidebar_DS.xml" />
+	
+	<!-- String resources -->
+	<includefile source="strings/strings_common_DS.xml" />
+	<includefile source="strings/strings_utility_DS.xml" />
+	<includefile source="strings/strings_campaign_DS.xml" />
+	<includefile source="strings/strings_ct_DS.xml" />
+	<includefile source="strings/strings_DS.xml" />
+
+	<!-- Common templates -->
+	<includefile source="common/template_buttons_DS.xml" />
+
+	<!-- Desktop -->
+	<script name="Desktop_DS" file="scripts/data_desktop_DS.lua" />
+	<includefile source="desktop/template_desktop.xml" />
+	<includefile source="desktop/desktop_classes_DS.xml" />
+	<includefile source="desktop/desktop_panels.xml" />
+
+	<!-- Top Level Windows -->
+	<includefile source="campaign/campaign_masterindex_DS.xml" />
+	<includefile source="utility/utility_effects_DS.xml" />
+
+	<!-- Campaign Records -->
+	<includefile source="campaign/template_monster_ability.xml" />
+	<includefile source="campaign/record_ability_DS.xml" />
+	<includefile source="campaign/record_ancestry_DS.xml" /> 
+	<includefile source="campaign/record_career_DS.xml" /> 
+	<includefile source="campaign/record_class_DS.xml" /> 
+	<includefile source="campaign/record_feat_DS.xml" /> 
+	<includefile source="campaign/record_item.xml" />
+	<includefile source="campaign/record_monster_DS.xml" />
+	<includefile source="campaign/record_kit_DS.xml" /> 
+
+	<includefile source="campaign/template_char_ds.xml" />
+	<includefile source="campaign/record_char_DS.xml" />
+	<includefile source="campaign/record_char_main_DS.xml" />
+	<includefile source="campaign/record_char_abilities_DS.xml" />
+	<includefile source="campaign/record_char_features_DS.xml" />
+	<includefile source="campaign/record_char_inventory_DS.xml" />
+	<includefile source="campaign/record_char_skills_DS.xml" />
+	<includefile source="campaign/record_char_notes_DS.xml" />
+	<includefile source="campaign/record_char_kits_DS.xml" />
+
+	<!-- COMBAT TRACKER -->
+	<includefile source="ct/template_ct.xml" />
+	<includefile source="ct/ct_host.xml" />
+	<includefile source="ct/ct_client.xml" />
+	<includefile source="ct/ct_host_entry.xml" />
+	<includefile source="ct/ct_client_entry.xml" />
+
+	<!-- Global scripts -->
+	<script name="GameSystem" file="scripts/manager_gamesystem.lua" />
+	<script name="DataCommon" file="scripts/data_common_DS.lua" />
+	<script name="LibraryData_DS" file="scripts/data_library_DS.lua" />
+	<script name="OptionsDS" file="scripts/data_options_DS.lua" />
+
+	<script name="Desktop" file="scripts/data_desktop.lua" />
+	<script name="ActionsManager" file="scripts/manager_actions.lua" />
+	<script name="CombatRecordManager" file="scripts/manager_combat_record.lua" />
+	<script name="EffectManager" file="scripts/manager_effect.lua" />
+
+	<script name="ActionsManager_DS" file="scripts/manager_actions_DS.lua" />
+	<script name="ActorManager_DS" file="scripts/manager_actor_DS.lua" />
+	<script name="CombatDropManager2" file="scripts/manager_combat_drop2.lua" />
+	<script name="CombatManagerDS" file="scripts/manager_combat_DS.lua" />
+	<script name="CombatManagerMonsters" file="scripts/manager_monsters_combat.lua" />
+	<script name="CombatManagerHeroes" file="scripts/manager_heroes_combat.lua" />
+	<script name="EffectManager_DS" file="scripts/manager_effect_DS.lua" />
+	<script name="InitiativeManager" file="scripts/manager_initiative_DS.lua" />
+	<script name="ManagerGetRefData" file="scripts/manager_get_ref_data.lua" />
+	<script name="PowerRollManager" file="scripts/manager_powerroll.lua" />
+	<script name="ResourceManager" file="scripts/manager_resource_DS.lua" />
+	<script name="RollManager_DS" file="scripts/manager_rolls_DS.lua" />
+	<script name="StaminaManager" file="campaign/scripts/stamina.lua" />
+	<script name="StaminaManagerMonster" file="campaign/scripts/stamina_monster.lua" />
+	<script name="TokenManager_DS" file="scripts/manager_token_DS.lua" />
+	<script name="WindowManager_DS" file="scripts/manager_window_DS.lua" />
+</root>

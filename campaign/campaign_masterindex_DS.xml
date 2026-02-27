@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="masterindexitem_icon_right">
+		<masterindexitem_icon_base>
+			<anchored to="rightanchor">
+				<top />
+				<right relation="relative" offset="-2" postoffset="-2" />
+			</anchored>
+		</masterindexitem_icon_base>
+	</template>
+	<template name="masterindexitem_icon_base">
+		<genericcontrol>
+			<anchored width="20" height="20" />
+			<frame name="fieldlight" offset="3,3,3,3" />
+			<script>
+				function onInit()
+					if window.name then
+						setColor(Interface.getFontColor(window.name.getFont()));
+					else
+						setColor("000000")
+					end
+				end
+				function onClickDown(button, x, y)
+					return true;
+				end
+				function onClickRelease(button, x, y)
+					window.link.activate();
+					return true;
+				end
+			</script>
+		</genericcontrol>
+	</template>
+
+	<windowclass name="masterindexitem_class" copy="masterindexitem">
+		<script>
+			function onInit()
+				super.onInit();
+
+				local c;
+				if LibraryData.getRecordDisplayClass("class", getDatabasePath()) == "referencemanualpage" then
+					subtype.setIcon("button_toolbar_story_advanced");
+					subtype.setTooltipText(Interface.getString("story_tooltip_advanced"));
+				else
+					subtype.setIcon("button_toolbar_story_simple");
+					subtype.setTooltipText(Interface.getString("story_tooltip_simple"));
+				end
+			end
+		</script>
+		<sheetdata>
+			<masterindexitem_icon_right name="subtype" insertbefore="access" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="masterindexitem_ancestry" copy="masterindexitem">
+		<script>
+			function onInit()
+				super.onInit();
+
+				local c;
+				if LibraryData.getRecordDisplayClass("ancestry", getDatabasePath()) == "referencemanualpage" then
+					subtype.setIcon("button_toolbar_story_advanced");
+					subtype.setTooltipText(Interface.getString("story_tooltip_advanced"));
+				else
+					subtype.setIcon("button_toolbar_story_simple");
+					subtype.setTooltipText(Interface.getString("story_tooltip_simple"));
+				end
+			end
+		</script>
+		<sheetdata>
+			<masterindexitem_icon_right name="subtype" insertbefore="access" />
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="chit">
+		<genericcontrol>
+			<script file="desktop/scripts/chit.lua" />
+		</genericcontrol>
+	</template>
+	<template name="chit_pc">
+		<genericcontrol>
+			<script file="desktop/scripts/chit_pc.lua" />
+		</genericcontrol>
+	</template>
+	<template name="chit_gm">
+		<genericcontrol>
+			<script file="desktop/scripts/chit_gm.lua" />
+		</genericcontrol>
+	</template>
+</root>

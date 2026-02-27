@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- The power roll logic is in ability_window class -->
+	<windowclass name="ability" copy="record_window">
+		<minimize>minimized_item</minimize>
+		<sheetdata>
+			<NEW_power_roll name="abilityroll" insertbefore="content">
+				<bounds>15,41,47,47</bounds>
+				<tooltip textres="tooltip_pr" />
+				<script file="common/scripts/power_roll_button.lua" />
+			</NEW_power_roll>
+		</sheetdata>
+	</windowclass>
+	
+	<windowclass name="ability_main">
+		<margins control="0,0,0,2" />
+		<script file="campaign/scripts/ability_main.lua" />
+		<sheetdata name="sheetdata_ability">
+			<anchor_column name="columnanchor" />
+			
+			<!-- DESCRIPTION -->
+			<ft_columnh name="notes" copy="record_window_text" >
+			</ft_columnh>
+
+			<line_column name="divider1" />
+			<!-- KEYWORDS -->
+			<label_column name="keywords_label">
+				<static textres="ability_label_keywords" />
+			</label_column>
+			<string_columnh name="keywords">
+				<script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onSummaryChanged");
+					end
+				</script>
+			</string_columnh>
+
+			<!-- TYPE -->
+			<label_column name="type_label">
+				<static textres="ability_label_type" />
+			</label_column>
+			<string_columnh name="type">
+				<delaykeyupdate />
+			</string_columnh>
+
+
+			<label_column name="distance_label">
+				<static textres="ability_label_distance" />
+			</label_column>
+			<string_columnh name="distance">
+				<delaykeyupdate />
+			</string_columnh>
+
+			<label_column name="target_label">
+				<static textres="ability_label_target" />
+			</label_column>
+			<string_columnh name="target">
+				<delaykeyupdate />
+			</string_columnh>
+
+			<!-- POWER ROLL -->
+			<line_column name="divider2" />
+		
+			<label_column name="characteristic_label" source="characteristic_label">
+				<static textres="ability_label_powerrollplus" />
+				<anchored>
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="5" />
+					<left offset="25" />
+				</anchored>
+			</label_column>
+
+			<button_characteristic name="characteristic" source="characteristic">
+                <anchored width="20" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="-21" />
+					<left offset="105" />
+				</anchored>
+                <default>0</default>
+                <tooltip textres="skill_tooltip" />
+            </button_characteristic>
+			<string_column name="characteristicoption" source="characteristicoption">
+				<anchored width="80" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="-21" />
+					<left offset="136" />
+				</anchored>
+			</string_column>
+
+			<label_column name="tier1_label">
+				<static textres="ability_label_tier1" />
+				<anchored>
+					<left offset="36"/>
+				</anchored>
+			</label_column>
+			<string_columnh name="tier1" source="tier1">
+			</string_columnh>
+
+			<label_column name="tier2_label">
+				<static textres="ability_label_tier2" />
+				<anchored>
+					<left offset="36" />
+				</anchored>
+			</label_column>
+			<string_columnh name="tier2" source="tier2" />
+
+			<label_column name="tier3_label">
+				<static textres="ability_label_tier3" />
+				<anchored>
+					<left offset="36" />
+				</anchored>
+			</label_column>
+			<string_columnh name="tier3" source="tier3" />
+
+			<!-- OTHER -->
+			<line_column name="divider3" />
+			<label_column name="trigger_label">
+				<static textres="ability_label_trigger" />
+			</label_column>
+			<string_columnh name="trigger">
+				<delaykeyupdate />
+			</string_columnh>
+			<label_column name="effect_label">
+				<static textres="ability_label_effect" />
+			</label_column>
+			<string_columnh name="effect" source="effect">
+				<delaykeyupdate />
+			</string_columnh>
+			<label_column name="special_label">
+				<static textres="ability_label_special" />
+			</label_column>
+			<string_columnh name="special">
+				<delaykeyupdate />
+			</string_columnh>
+
+			<!-- CLASS SUBCLASS TAGS -->
+			<line_column name="divider4" />
+
+			<label_column name="class_label">
+				<static textres="ability_label_class" />
+			</label_column>
+			<string_columnh name="class">
+			</string_columnh>
+
+			<label_column name="subclass_label">
+				<static textres="ability_label_subclass" />
+			</label_column>
+			<string_columnh name="subclass">
+				<delaykeyupdate />
+			</string_columnh>
+
+			<label_column name="ancestry_label">
+				<static textres="ability_label_ancestry" />
+			</label_column>
+			<string_columnh name="ancestry">
+			</string_columnh>
+
+			<label_column name="abilitytype_label">
+				<static textres="ability_label_abilitytype" />
+			</label_column>
+			<string_columnh name="abilitytype">
+			</string_columnh>
+
+			<label_column name="ability_cost_label">
+				<static textres="ability_label_cost" />
+			</label_column>
+			<number_columnh name="ability_cost">
+			</number_columnh>
+
+			<label_column name="ability_cost_string_label">
+				<static textres="ability_label_resource" />
+			</label_column>
+			<string_columnh name="ability_cost_string">
+			</string_columnh>
+
+			<label_column name="ability_level_label">
+				<static textres="ability_label_abilitylevel" />
+			</label_column>
+			<number_columnh name="ability_level">
+			</number_columnh>
+		</sheetdata>
+	</windowclass>
+</root>

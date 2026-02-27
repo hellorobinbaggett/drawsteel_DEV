@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_main_ds">
+		<script file="campaign/scripts/char_main_ds.lua" />
+		<margins control="0,0,0,0" />
+		<sheetdata>
+
+        <!-- CHARACTERISTICS -->
+            <frame_char name="characteristicsframe">
+				<bounds>0,0,150,200</bounds>
+			</frame_char>
+
+			<label_frametop>
+				<anchored to="characteristicsframe" />
+				<static textres="char_label_characteristics" />
+			</label_frametop>
+            <!-- MGT -->
+            <number_powerroll_characteristic name="might" source="MGT">
+				<anchored to="characteristicsframe" position="insidetopleft" offset="90,40" />
+				<description textres="char_tooltip_mgt" />
+				<target>MGT</target>
+			</number_powerroll_characteristic>
+            <string_characteristiclabel name="might_label">
+				<anchored to="might" />
+				<static textres="might" />
+			</string_characteristiclabel>
+            <!-- AGL -->
+            <number_powerroll_characteristic name="agility" source="AGL">
+				<anchored to="might" />
+				<description textres="char_tooltip_agl" />
+				<target>AGL</target>
+			</number_powerroll_characteristic>
+            <string_characteristiclabel name="agility_label">
+				<anchored to="agility" />
+				<static textres="agility" />
+			</string_characteristiclabel>
+            <!-- REA -->
+            <number_powerroll_characteristic name="reason" source="REA">
+				<anchored to="agility" />
+				<description textres="char_tooltip_rea" />
+				<target>REA</target>
+			</number_powerroll_characteristic>
+            <string_characteristiclabel name="reason_label">
+				<anchored to="reason" />
+				<static textres="reason" />
+			</string_characteristiclabel>
+            <!-- INU -->
+            <number_powerroll_characteristic name="intuition" source="INU">
+				<anchored to="reason" />
+				<description textres="char_tooltip_inu" />
+				<target>INU</target>
+			</number_powerroll_characteristic>
+            <string_characteristiclabel name="intuition_label">
+				<anchored to="intuition" />
+				<static textres="intuition" />
+			</string_characteristiclabel>
+            <!-- PRS -->
+            <number_powerroll_characteristic name="presence" source="PRS">
+				<anchored to="intuition" />
+				<description textres="char_tooltip_prs" />
+				<target>PRS</target>
+			</number_powerroll_characteristic>
+            <string_characteristiclabel name="presence_label">
+				<anchored to="presence" />
+				<static textres="presence" />
+			</string_characteristiclabel>
+
+        <!-- STAMINA -->
+            <frame_char name="staminaframe">
+				<bounds>140,0,210,200</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="staminaframe" />
+				<static textres="char_label_stamina" />
+			</label_frametop>
+			<label_frametop>
+				<anchored to="staminaframe" />
+				<static textres="char_label_savingthrow" />
+				<anchored>
+					<top offset="135" />
+				</anchored>
+			</label_frametop>
+
+			<basicnumber name="stamina" source="stamina.current">
+				<anchored to="staminaframe" width="48" height="30">
+					<top anchor="top" offset="45" />
+					<left anchor="center" offset="-55" />
+				</anchored>
+				<description textres="char_tooltip_stamina" />
+				<font>reference-b-large</font>
+				<script file="campaign/scripts/stamina.lua" />
+			</basicnumber>
+
+			<basicnumber name="max" source="stamina.max">
+				<anchored to="stamina" position="righthigh" offset="15,0" width="48" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_max" />
+				<min value="0" />
+			</basicnumber>
+
+			<basicnumber name="temp" source="stamina.temporary">
+				<anchored to="staminaframe" width="48" height="30">
+					<top anchor="top" offset="95" />
+					<left anchor="center" offset="-55" />
+				</anchored>
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_temp" />
+				<hideonvalue>0</hideonvalue>
+				<color>0000AA</color>
+				<minvalue>0</minvalue>
+				<noreset />
+				<nodrop />
+				<nodrag />
+			</basicnumber>
+
+			<number_linked_framed name="winded" source="hp.winded">
+				<anchored to="temp" position="righthigh" offset="15,0" width="48" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_winded" />
+				<target>max</target>
+				<hideonvalue>0</hideonvalue>
+				<script>
+				function onInit()
+					addSource("stamina.max");
+
+					super.onInit();
+				end
+
+				function onSourceUpdate()
+					local nodeWin = window.getDatabaseNode();
+					local nCurrentScore = DB.getValue(nodeWin, "stamina.max");
+					
+					local nBonus;
+
+					nBonus = math.floor(nCurrentScore / 2);
+
+					setValue(nBonus);
+				end
+
+				function onDoubleClick()
+					local nodeWin = window.getDatabaseNode();
+					local nCurrentScore = DB.getValue(nodeWin, "stamina.max");
+					
+					local nBonus;
+
+					nBonus = math.floor(nCurrentScore / 2);
+
+					setValue(nBonus);
+				end
+				</script>
+				<color>303030</color>
+			</number_linked_framed>
+
+			<label_charfieldtop name="max_label">
+				<anchored to="max" offset="0,-4" />
+				<static textres="char_label_maxhp" />
+				<color>000000</color>
+			</label_charfieldtop>
+
+			<label_charfieldtop name="temp_label">
+				<anchored to="temp" offset="0,-4" />
+				<static textres="char_label_temp" />
+				<color>000000</color>
+			</label_charfieldtop>
+
+			<label_charfieldtop name="stamina_label">
+				<anchored to="stamina" offset="0,-4" />
+				<static textres="char_label_current" />
+				<color>000000</color>
+			</label_charfieldtop>
+
+			<label_charfieldtop name="winded_label">
+				<anchored to="winded" offset="0,-4" />
+				<static textres="char_label_winded" />
+				<color>000000</color>
+			</label_charfieldtop>
+
+
+        <!-- RECOVERIES -->
+            <frame_char name="recoveriesframe">
+				<bounds>340,0,-1,200</bounds>
+			</frame_char>
+
+			<label_frametop>
+				<anchored to="recoveriesframe" />
+				<static textres="char_label_recoveries" />
+			</label_frametop>
+
+			<number_charstamina name="recoverycurrent" source="recoverycurrent">
+				<anchored to="recoveriesframe" width="48" height="30">
+					<top anchor="top" offset="45" />
+					<left anchor="center" offset="-55" />
+				</anchored>
+				<font>reference-b-large</font>
+				<script file="campaign/scripts/stamina.lua" />
+				<min value="0" />
+			</number_charstamina>
+
+			<number_charstamina name="recoverymax" source="recoverymax">
+				<anchored to="recoverycurrent" position="righthigh" offset="15,0" width="48" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_max" />
+				<min value="0" />
+			</number_charstamina>
+
+			<label_charfieldtop name="recoverycurrent_label">
+				<anchored to="recoverycurrent" offset="0,0" />
+				<static textres="char_label_current" />
+				<color>000000</color>
+			</label_charfieldtop>
+
+			<label_charfieldtop name="recoverymax_label">
+				<anchored to="recoverymax" offset="0,0" />
+				<static textres="char_label_max" />
+				<color>000000</color>
+			</label_charfieldtop> 
+
+			<buttoncontrol name="buttonrecovery">
+				<anchored to="recoverycurrent" position="righthigh" offset="-10,52" width="34" height="34" />
+				<icon normal="button_action_heal" pressed="button_action_heal_down" />
+				<tooltip textres="char_tooltip_recovery" />
+				<script>
+					function onButtonPress()
+					local nodeWin = window.getDatabaseNode();
+					local node = window.getDatabaseNode();
+					local recoverycurrent = DB.getChild(node, "recoverycurrent");
+					local current = recoverycurrent.getValue();
+					local nMax = DB.getValue(nodeWin, "stamina.max");
+					local nCurrent = DB.getValue(nodeWin, "stamina.current");
+
+						if(current > 0) then
+							if(nMax > nCurrent) then
+								local total = current - 1;
+								DB.setValue(node, "recoverycurrent", "number", total);
+
+								local stamina = DB.getChild(node, "stamina.current").getValue();
+								local recovery = DB.getChild(node, "recoveryvalue").getValue();
+								local totalStamina = stamina + recovery;
+								DB.setValue(node, "stamina.current", "number", totalStamina);
+							end
+						end
+					end
+				</script>
+			</buttoncontrol>
+
+			<label_frametop name="recoverybutton_label">
+				<anchored to="recoveriesframe" >
+					<top anchor="top" offset="78" />
+				</anchored>
+				<static textres="char_label_userecovery" />
+			</label_frametop>
+
+			<number_linked_framed name="recoveryvalue" source="recoveryvalue">
+				<anchored to="recoveriesframe" width="86" height="30">
+					<top anchor="top" offset="140" />
+					<left anchor="center" offset="-44" />
+				</anchored>
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_recoveryvalue" />
+				<tooltip textres="char_tooltip_recoverydescription" />
+				<target>max</target>
+				<hideonvalue>0</hideonvalue>
+				<script>
+				function onInit()
+					addSource("stamina.max");
+
+					super.onInit();
+				end
+
+				function onSourceUpdate()
+					local nodeWin = window.getDatabaseNode();
+					local nCurrentScore = DB.getValue(nodeWin, "stamina.max");
+					
+					local nBonus;
+
+					nBonus = math.floor(nCurrentScore / 3);
+
+					setValue(nBonus);
+				end
+
+				function onDoubleClick()
+					local nodeWin = window.getDatabaseNode();
+					local nCurrentScore = DB.getValue(nodeWin, "stamina.max");
+					
+					local nBonus;
+
+					nBonus = math.floor(nCurrentScore / 3);
+
+					setValue(nBonus);
+				end
+				</script>
+			</number_linked_framed>
+			<label_frametop name="recoveryvalue_label">
+				<anchored to="recoveriesframe" >
+					<top anchor="top" offset="170" />
+				</anchored>
+				<static textres="char_label_value" />
+				<color>000000</color>
+			</label_frametop>
+
+		<!-- SKILLS -->
+			<frame_char name="skillsframe">
+				<bounds>0,190,350,80</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="skillsframe" />
+				<static textres="char_label_skills" />
+			</label_frametop>
+			<stringu name="skillslist">
+				<anchored to="skillsframe">
+					<top offset="25" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+				<nodrag />
+			</stringu>
+
+		<!-- MOVEMENT -->
+			<frame_char name="movementframe">
+				<bounds>340,190,-1,80</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="movementframe" />
+				<static textres="char_label_movement" />
+			</label_frametop>
+			<stringu name="movement">
+				<anchored to="movementframe">
+					<top offset="25" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+				<nodrag />
+			</stringu>
+
+		<!-- WEAKNESSESS AND IMMUNITIES-->
+			<frame_char name="weaknessframe">
+				<bounds>235,260,-1,60</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="weaknessframe" />
+				<static textres="char_label_weaknessess" />
+			</label_frametop>
+			<stringu name="weaknessess">
+				<anchored to="weaknessframe">
+					<top offset="25" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<nodrag />
+			</stringu>
+			<frame_char name="immunityframe">
+				<bounds>0,260,245,60</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="immunityframe" />
+				<static textres="char_label_immunities" />
+			</label_frametop>
+			<stringu name="immunities">
+				<anchored to="immunityframe">
+					<top offset="25" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<nodrag />
+			</stringu>
+
+		<!-- unique effects/ conditions - -->
+			<!-- <frame_char name="conditionsframe">
+				<bounds>340,230,-1,100</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="conditionsframe" />
+				<static textres="char_label_conditions" />
+			</label_frametop>
+			<stringu name="conditions">
+				<anchored to="conditionsframe">
+					<top offset="25" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+				<nodrag />
+			</stringu> -->
+
+		<!-- VICTORIES -->
+		<label_charframetop name="victoriestitle">
+			<anchored height="20" width="80">
+				<top anchor="bottom" offset="-80" />
+				<left offset="40" />
+			</anchored>
+			<icons>char_stats</icons>
+		</label_charframetop>
+
+		<basicnumber name="victories" source="victories">
+			<anchored to="victoriestitle" width="55" height="30">
+				<top anchor="bottom" offset="8" />
+				<left anchor="center" offset="-25" />
+			</anchored>
+			<font>reference-b-large</font>
+			<script>
+				function onValueChanged()
+				end
+			</script>
+			<target>victories</target>
+		</basicnumber>
+
+		<label_charfieldtop name="victories_label">
+			<anchored to="victories" offset="0,8" />
+			<static textres="char_label_victories" />
+		</label_charfieldtop>
+
+		<!-- CLASS RESOURCE -->
+		<label_charframetop name="classresourcetitle">
+			<anchored height="20" width="136">
+				<top anchor="bottom" offset="-80" />
+				<left offset="170" />
+			</anchored>
+			<icons>char_stats</icons>
+		</label_charframetop>
+
+		<basicnumber name="classresource" source="classresource">
+			<target>classresource</target>
+			<anchored to="classresourcetitle" width="100" height="30">
+				<top anchor="bottom" offset="8" />
+				<left anchor="center" offset="-44" />
+			</anchored>
+			<font>reference-b-large</font>
+			<description textres="char_tooltip_classresource" />
+			<script>
+				function onValueChanged()
+				end
+			</script>
+			<target>classresource</target>
+		</basicnumber>
+
+		<string_labeled_resource name="classresource_label" source="classresource_label">
+			<anchored to="classresource" position="above" offset="0,8" height="20"/>
+			<default>Class Resource</default>
+			<font>subwindowsmalltitle</font>
+			<color value="#FFFFFF" />
+			<center />
+		</string_labeled_resource>
+
+		<!-- SURGES -->
+		<label_charframetop name="surgestitle">
+			<anchored height="20" width="80">
+				<top anchor="bottom" offset="-80" />
+				<left offset="350" />
+			</anchored>
+			<icons>char_stats</icons>
+		</label_charframetop>
+
+		<basicnumber name="surges" source="surges">
+			<anchored to="surgestitle" width="55" height="30">
+				<top anchor="bottom" offset="8" />
+				<left anchor="center" offset="-25" />
+			</anchored>
+			<font>reference-b-large</font>
+			<description textres="char_tooltip_surges" />
+			<tooltip textres="char_tooltip_surgesdescription" />
+			<min value="0" />
+			<script>
+				function onValueChanged()
+				end
+			</script>
+		</basicnumber>
+
+		<label_charfieldtop name="surges_label">
+			<anchored to="surges" offset="0,8" />
+			<static textres="char_label_surges" />
+		</label_charfieldtop>
+
+			<!-- DEPRECATED - tokens have been moved to desktop -->
+			<!-- <basicnumber name="herotokens" source="herotokens">
+				<anchored to="surges" position="righthigh" offset="15,0" width="90" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_herotokens" />
+				<tooltip textres="char_tooltip_herotokendescription" />
+				<min value="0" />
+				<script file="campaign/scripts/char_herotokens.lua" />
+			</basicnumber>
+
+			<buttoncontrol name="surges">
+				<anchored to="surges" position="righthigh" offset="90,-7" width="20" height="20" />
+				<icon normal="button_action_damage" pressed="button_action_damage_down" />
+				<tooltip textres="char_tooltip_herotokenbtn_surge" />
+				<script>
+					function onButtonPress()
+					local node = window.getDatabaseNode();
+					local current = DB.getChild(node, "herotokens").getValue();
+
+						if(current > 0) then
+							local total = current - 1;
+							DB.setValue(node, "herotokens", "number", total);
+
+							local surges = DB.getChild(node, "surges").getValue();
+							local totalSurges = surges + 2;
+							DB.setValue(node, "surges", "number", totalSurges);
+
+							ChatManager.SystemMessage("1 Hero Token has been spent.");
+						end
+					end
+				</script>
+			</buttoncontrol>
+
+			<buttoncontrol name="buttonhealing">
+				<anchored to="surges" position="righthigh" offset="90,14" width="20" height="20" />
+				<icon normal="button_action_heal" pressed="button_action_heal_down" />
+				<tooltip textres="char_tooltip_herotokenbtn_heal" />
+				<script>
+					function onButtonPress()
+					local node = window.getDatabaseNode();
+					local herotokens = DB.getChild(node, "herotokens");
+					local current = herotokens.getValue();
+
+						if(current > 1) then
+							local total = current - 2;
+							DB.setValue(node, "herotokens", "number", total);
+
+							local stamina = DB.getChild(node, "stamina.current").getValue();
+							local recovery = DB.getChild(node, "recoveryvalue").getValue();
+							local totalStamina = stamina + recovery;
+							DB.setValue(node, "stamina.current", "number", totalStamina);
+
+							ChatManager.SystemMessage("2 Hero Tokens have been spent.");
+						end
+					end
+				</script>
+			</buttoncontrol>
+
+			<label_charfieldtop name="herotokens_label">
+				<anchored to="herotokens" offset="300,8" />
+				<static textres="char_label_herotokens" />
+			</label_charfieldtop> -->
+
+
+		<!-- STAMINA SECTION -->
+			<!-- <label_charframetop name="healthtitle">
+				<anchored height="20">
+					<top anchor="bottom" offset="-70" />
+					<left offset="70" />
+					<right offset="-70" />
+				</anchored>
+				<icons>char_stats</icons>
+			</label_charframetop> -->
+
+			<initiative_roll name="classresource_roll">
+                <anchored to="classresourcetitle" width="30" height="30">
+					<top anchor="bottom" offset="8" />
+					<left anchor="center" offset="-60" />
+				</anchored>
+                <tooltip textres="char_tooltip_classresource" />
+                <script>	
+                    function action(draginfo)
+                        local nodeWin = window.getDatabaseNode();
+						local current = DB.getValue(nodeWin, "classresource");
+
+                        local rRoll = { 
+                            sType = "dice", 
+                            sDesc = "Heroic Resource:", 
+                            aDice = { "d3" },
+							nMod = 0,
+                        };
+                        ActionsManager.performAction(draginfo, rActor, rRoll);
+						
+						-- NOT WORKING grab the rolled amount, then add it to class resource
+						-- local node = window.getDatabaseNode();
+
+                        return true;
+                    end
+                    
+                    function onDragStart(button, x, y, draginfo)
+                        return action(draginfo);
+                    end
+
+                    function onButtonPress()
+                        return action();
+                    end
+
+					function incrementResource()
+						
+					end				
+
+					<!-- TODO: write function to add result of roll to Heroic Resources -->
+                </script>
+        	</initiative_roll>
+
+			<initiative_roll name="savingthrow_roll">
+                <bounds>200,149,90,45</bounds>
+                <tooltip textres="tooltip_st" />
+                <script>	
+                    function action(draginfo)
+                        local nodeWin = window.getDatabaseNode();
+
+                        local rRoll = { 
+                            sType = "dice", 
+                            sDesc = "Saving Throw:", 
+                            aDice = { "d10" },
+							nMod = 0,
+                        };
+                        ActionsManager_DS.performAction(draginfo, rActor, rRoll);
+                    end
+                    
+                    function onDragStart(button, x, y, draginfo)
+                        return action(draginfo);
+                    end
+
+                    function onButtonPress()
+                        return action();
+                    end
+                </script>
+        	</initiative_roll>
+
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="char_main_category_header">
+		<margins control="0,0,0,5" />
+		<backcolor>4040301E</backcolor>
+		<sheetdata>
+			<genericcontrol name="leftanchor">
+				<anchored height="0" width="0">
+					<top offset="5" />
+					<left offset="10" />
+				</anchored>
+			</genericcontrol>
+
+			<genericcontrol name="rightanchor">
+				<anchored height="0" width="0">
+					<top offset="5" />
+					<right offset="-10" />
+				</anchored>
+			</genericcontrol>
+
+			<stringfield name="label">
+				<anchored>
+					<top offset="5" />
+					<left offset="30" />
+					<right offset="-30" />
+				</anchored>
+				<stateframe>
+					<keyedit name="fieldfocus" offset="7,5,7,5" />
+					<hover name="fieldfocus" offset="7,5,7,5" hidereadonly="true" />
+					<drophilight name="fieldfocus" offset="7,5,7,5" hidereadonly="true" />
+				</stateframe>
+				<font>reference-b-large</font>
+				<multilinespacing>20</multilinespacing>
+				<center />
+			</stringfield>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="char_main_category">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<subwindow name="header">
+				<anchored position="insidetop">
+				</anchored>
+				<class>char_main_category_header</class>
+				<fastinit />
+				<activate />
+			</subwindow>
+
+			<button_iadd name="attributes_iadd">
+				<anchored position="insidetopleft" offset="15,5" />
+				<target>attributes</target>
+			</button_iadd>
+			<button_idelete name="idelete">
+				<anchored position="insidetopright" offset="15,5" />
+				<editmode>categories_iedit</editmode>
+			</button_idelete>
+
+			<list_charmainattribute name="attributes">
+				<anchored>
+					<top parent="header" anchor="bottom" offset="2" />
+					<left />
+					<right />
+				</anchored>
+			</list_charmainattribute>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="char_attribute">
+		<margins control="0,0,0,3" />
+		<script>
+			function onDragStart(button, x, y, draginfo)
+				if label.isEmpty() and dice.isEmpty() and bonus.getValue() == 0 then
+					return nil;
+				end
+
+				if dice.isEmpty() then
+					draginfo.setType("number");
+					draginfo.setDescription(label.getValue());
+					draginfo.setStringData(label.getValue());
+					draginfo.setNumberData(bonus.getValue());
+				else
+					local rRoll = { sType = "dice", sDesc = label.getValue(), aDice = dice.getDice(), nMod = bonus.getValue() };
+					ActionsManager.performAction(draginfo, nil, rRoll);
+				end
+				return true;
+			end
+
+			function onDoubleClick(x, y)
+				if dice.isEmpty() then
+					ModifierStack.addSlot(label.getValue(), bonus.getValue());
+				else
+					local rRoll = { sType = "dice", sDesc = label.getValue(), aDice = dice.getDice(), nMod = bonus.getValue() };
+					ActionsManager.performAction(nil, nil, rRoll);
+				end
+				return true;
+			end
+
+			function onDrop(x, y, draginfo)
+				local sDragType = draginfo.getType();
+				if sDragType == "dice" then
+					local aDropDice = draginfo.getDiceData();
+					for _,vDie in ipairs(aDropDice) do
+						dice.addDie(vDie.type);
+					end
+					return true;
+				end
+			end
+		</script>
+		<sheetdata>
+			<genericcontrol name="rightanchor">
+				<anchored height="0" width="0">
+					<top offset="2" />
+					<right />
+				</anchored>
+			</genericcontrol>
+			<button_idelete name="idelete">
+				<anchored to="rightanchor">
+					<top />
+					<right anchor="left" relation="relative" offset="-5" />
+				</anchored>
+				<editmode>categories_iedit</editmode>
+			</button_idelete>
+
+			<basicnumber name="bonus">
+				<anchored to="rightanchor" width="30" height="20">
+					<top />
+					<right anchor="left" relation="relative" offset="-7" />
+				</anchored>
+				<tabtarget prev="label" />
+				<script>
+					function onDragStart(button, x, y, draginfo)
+						return window.onDragStart(button, x, y, draginfo);
+					end
+
+					function onDoubleClick(x, y)
+						return window.onDoubleClick(x, y);
+					end
+
+					function onGainFocus()
+						window.setFrame("rowshade");
+					end
+
+					function onLoseFocus()
+						window.setFrame(nil);
+					end
+				</script>
+			</basicnumber>
+			<basicdice name="dice">
+				<anchored to="rightanchor" width="30" height="20">
+					<top />
+					<right anchor="left" relation="relative" offset="-10" />
+				</anchored>
+				<frame name="fielddark" offset="7,5,7,5" />
+				<invisible />
+				<script>
+					function onInit()
+						onValueChanged();
+					end
+
+					function onValueChanged()
+						setVisible(not isEmpty());
+					end
+
+					function onDragStart(button, x, y, draginfo)
+						return window.onDragStart(button, x, y, draginfo);
+					end
+
+					function onDoubleClick(x, y)
+						return window.onDoubleClick(x, y);
+					end
+				</script>
+			</basicdice>
+			<string_textlistitem name="label">
+				<anchored position="insidetopleft" offset="5,2" height="20">
+					<right parent="rightanchor" anchor="left" relation="relative" offset="-10" />
+				</anchored>
+				<tabtarget next="bonus" />
+				<script>
+					function onDragStart(button, x, y, draginfo)
+						return window.onDragStart(button, x, y, draginfo);
+					end
+
+					function onDoubleClick(x, y)
+						return window.onDoubleClick(x, y);
+					end
+				</script>
+			</string_textlistitem>
+		</sheetdata>
+	</windowclass>
+</root>

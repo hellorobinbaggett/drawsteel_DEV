@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<root>
+	<windowclass name="kit" copy="record_window">
+		<minimize>minimized_item</minimize>
+		<sizelimits>
+			<minimum width="405" height="495" />
+		</sizelimits>
+	</windowclass>
+
+	<windowclass name="kit_main">
+		<margins control="0,0,0,2" />
+		<script file="campaign/scripts/kit_main.lua" />
+		<sheetdata name="sheetdata_kit">
+				<anchor_column name="columnanchor" />
+			<!-- DESCRIPTION -->
+			<ft_columnh name="notes" copy="record_window_text" >
+				<anchored>
+					<left offset="5" />
+				</anchored>
+			</ft_columnh>
+
+			<line_column name="divider1" />
+
+			<label_column name="equipment_label" source="equipment">
+				<static textres="kit_label_equipment" />
+			</label_column>
+			<string_columnh name="equipment">
+				<delaykeyupdate />
+			</string_columnh>
+
+
+			<label_column name="distancebonus_label">
+				<static textres="kit_label_rangeddistancebonus" />
+			</label_column>
+			<basicnumber name="distancebonus" source="distancebonus">
+				<anchored width="30" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left offset="150" />
+				</anchored>
+			</basicnumber>
+
+			<label_column name="meleedistancebonus_label">
+				<static textres="kit_label_meleedistancebonus" />
+			</label_column>
+			<basicnumber name="meleedistancebonus" source="meleedistancebonus">
+				<anchored width="30" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left offset="150" />
+				</anchored>
+			</basicnumber>
+
+
+
+			<label_column name="stability_label">
+				<static textres="kit_label_stabilitybonus" />
+			</label_column>
+			<basicnumber name="stabilitybonus" source="stabilitybonus">
+				<anchored width="30" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left offset="100" />
+				</anchored>
+			</basicnumber>
+
+
+			<label name="disengagebonus_label">
+				<static textres="kit_label_disengagebonus" />
+				<anchored to="stabilitybonus" position="righthigh" offset="16,0" width="105" height="20" />
+			</label>
+			<basicnumber name="disengagebonus" source="disengagebonus">
+				<anchored to="disengagebonus_label" position="righthigh" offset="3,0" width="30" height="20" />
+			</basicnumber>
+
+			<label_column name="stamina_label">
+				<static textres="kit_label_staminabonus" />
+			</label_column>
+			<basicnumber name="staminabonus" source="staminabonus">
+				<anchored width="30" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left offset="180" />
+				</anchored>
+			</basicnumber>
+
+			<label name="speedbonus_label">
+				<static textres="kit_label_speedbonus" />
+				<anchored to="staminabonus" position="righthigh" offset="16,0" width="90" height="20" />
+			</label>
+			<basicnumber name="staminabonus" source="speedbonus">
+				<anchored to="speedbonus_label" position="righthigh" offset="-5,0" width="30" height="20" />
+			</basicnumber>
+
+			<line_column name="divider2" />
+
+			<label_column name="meleedamagebonus_label">
+				<static textres="kit_label_meleedamagebonus" />
+			</label_column>
+			<basicnumber name="meleedamagebonus_tier1" source="meleedamagebonus_tier1">
+				<anchored width="30" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left offset="150" />
+				</anchored>
+			</basicnumber>
+			<basicnumber name="meleedamagebonus_tier2" source="meleedamagebonus_tier2">
+				<anchored to="meleedamagebonus_tier1" position="righthigh" offset="10,0" width="30" height="20" />
+			</basicnumber>
+			<basicnumber name="meleedamagebonus_tier3" source="meleedamagebonus_tier3">
+				<anchored to="meleedamagebonus_tier2" position="righthigh" offset="10,0" width="30" height="20" />
+			</basicnumber>
+
+			<label_column name="rangeddamagebonus_label">
+				<static textres="kit_label_rangeddamagebonus" />
+			</label_column>
+			<basicnumber name="rangeddamagebonus_tier1" source="rangeddamagebonus_tier1">
+				<anchored width="30" height="20">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left offset="150" />
+				</anchored>
+			</basicnumber>
+			<basicnumber name="rangeddamagebonus_tier2" source="rangeddamagebonus_tier2">
+				<anchored to="rangeddamagebonus_tier1" position="righthigh" offset="10,0" width="30" height="20" />
+			</basicnumber>
+			<basicnumber name="rangeddamagebonus_tier3" source="rangeddamagebonus_tier3">
+				<anchored to="rangeddamagebonus_tier2" position="righthigh" offset="10,0" width="30" height="20" />
+			</basicnumber>
+
+
+			<frame_char name="signatureabilitiesframe">
+				<bounds>20,-70,-20,70</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="signatureabilitiesframe" />
+				<static textres="char_label_signatureability" />
+			</label_frametop>
+			<list_text name="signatureabilities">
+				<anchored to="signatureabilitiesframe">
+					<left offset="15" />
+					<top offset="35" />
+					<right offset="-20" />
+					<bottom offset="-10" />
+				</anchored>
+				<datasource>.signatureabilities</datasource>
+				<class>char_action</class>
+				<acceptdrop>
+					<class>ability</class>
+					<field>*</field>
+				</acceptdrop>
+			</list_text>
+
+		</sheetdata>
+	</windowclass>
+</root>

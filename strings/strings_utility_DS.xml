@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<!-- Tabs -->
+	<string name="tab_actions">Actions</string>
+	<string name="tab_features">Features</string>
+	<string name="tab_inventory">Inventory</string>
+	<string name="tab_titles">Titles</string>
+	<string name="tab_main">Main</string>
+	<string name="tab_skills">Skills</string>
+	<string name="tab_abilities">Abilities</string>
+	<string name="tab_notes">Notes</string>
+	<string name="tab_basics">Basics</string>
+	<string name="tab_modifiers">Modifiers</string>
+	<string name="tab_downtime">Downtime</string>
+	<string name="tab_career">Career</string>
+	<string name="tab_order">Order</string>
+	<string name="tab_other">Other</string>
+	<string name="tab_xp">XP</string>
+
+	<string name="library_recordtype_label_ability">Abilities</string>
+	<string name="library_recordtype_single_ability">Ability</string>
+	<string name="library_recordtype_empty_npc">&#171; New Monster &#187;</string>
+	<string name="library_recordtype_empty_ability">&#171; New Ability &#187;</string>
+	<string name="library_recordview_label_ability_bytype">By Type</string>
+	<string name="library_recordview_label_ability_byclass">By Class</string>
+	<string name="library_recordview_label_ability_byancestry">By Ancestry</string>
+	<string name="library_recordview_label_items_bytype">By Type</string>
+	<string name="library_recordview_label_items_byechelon">By Echelon</string>
+	<string name="library_recordview_label_ability_bylevel">By Level</string>
+	<string name="library_recordview_label_npc_bylevel">By Level</string>
+	<string name="library_recordview_label_npc_byrole">By Role</string>
+	<string name="library_recordview_label_npc_byorganization">By Organization</string>
+	<string name="library_recordview_label_item_bytype">By Type</string>
+	<string name="library_recordview_label_item_byechelon">By Echelon</string>
+
+	<string name="library_recordtype_label_ancestry">Ancestries</string>
+	<string name="library_recordtype_single_ancestry">Ancestry</string>
+	<!-- <string name="library_recordtype_label_data">Data</string>
+	<string name="library_recordtype_single_data">Data</string> -->
+	<string name="library_recordtype_empty_ancestry">&#171; New Ancestry &#187;</string>
+
+	<string name="library_recordview_label_specialability_byclass">By Class</string>
+
+	<string name="option_val_fun">Fun</string>
+
+	<!-- Options -->
+	<string name="option_label_HMFP">Combat (GM): Hide malice</string>
+	<string name="option_val_show">Show</string>
+	<string name="option_val_hide">Hide</string>
+
+</root>

@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="npc" copy="record_window_tabbed">
+		<sizelimits>
+			<minimum width="400" height="500" />
+		</sizelimits>
+		<script>
+			function onValueChanged()
+				window.onHealthChanged();
+			end
+
+			function onHealthChanged()
+				stamina.setColor(getPCSheetWoundColor(getDatabaseNode()));
+			end
+
+			function getPCSheetWoundColor(nodePC)
+				local nMaxStamina = 0;
+				local nCurrentStamina = 0;
+				if nodePC then
+					nMaxStamina = math.max(DB.getValue(nodePC, "stamina.max", 0), 0);
+					nCurrentStamina = math.max(DB.getValue(nodePC, "stamina.current", 0), 0);
+				end
+
+				local sColor = "630000";
+
+				local nWindedValue = nMaxStamina / 2;
+
+				if nCurrentStamina > nWindedValue then
+					sColor = "1a6313";
+				end
+
+				if nWindedValue > nCurrentStamina and nCurrentStamina > 0 then
+					sColor = "a37800";
+				end
+
+				return sColor;
+			end
+		</script>
+		<minimize>minimized_npc</minimize>
+		<gmexport>npc</gmexport>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>npc_main</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>abilities</name>
+			<resource>tab_abilities</resource>
+			<class>record_content_abilities</class>
+			<embed />
+		</tab>
+		<!-- <tab merge="add">
+			<name>abilities</name>
+			<resource>tab_abilities</resource>
+			<class>record_content_text</class>
+			<embed />
+		</tab> -->
+		<tab merge="add">
+			<name>notes</name>
+			<resource>tab_notes</resource>
+			<class>record_content_notes</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>negotiation</name>
+			<resource>tab_other</resource>
+			<class>npc_negotiation</class>
+			<embed />
+		</tab>
+	</windowclass>
+
+	<windowclass name="npc_header">
+		<margins control="0,0,0,5" />
+		<script file="common/scripts/record_header.lua" />
+		<sheetdata>
+			<anchor_content_record_header_top />
+			<anchor_content_record_header_left />
+			<anchor_content_record_header_right />
+			<icon_record_header_type name="recordtype" />
+			<string_record_header_name name="name" />
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="npc_main">
+		<margins control="0,0,0,2" />
+		<script file="campaign/scripts/monster_main_ds.lua" />
+		<sheetdata>
+			<label_column name="keywords_name_label">
+				<static textres="npc_label_keywords" />
+				<bounds>5,1,60,20</bounds>
+			</label_column>
+			<string_column name="keywords_name">
+				<bounds>70,1,-5,20</bounds>
+				<nodragselect />
+				<script file="common/scripts/string_keywords_line.lua" />
+				<traittype>creature</traittype>
+			</string_column>
+
+			<label_column name="level_name_label">
+				<static textres="npc_label_level" />
+				<bounds>3,25,60,20</bounds>
+			</label_column>
+			<number_column name="level_name">
+				<bounds>40,25,18,20</bounds>
+				<script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onSummaryChanged");
+					end
+				</script>
+			</number_column>
+
+			<string_column name="organization_name">
+				<bounds>63,25,45,20</bounds>
+				<script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onSummaryChanged");
+					end
+				</script>
+				<tooltip textres="organization_tooltip" />
+			</string_column>
+
+			<string_column name="role_name">
+				<bounds>114,25,62,20</bounds>
+				<script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onSummaryChanged");
+					end
+				</script>
+				<tooltip textres="role_tooltip" />
+			</string_column>
+
+			<label_column name="ev_label">
+				<static textres="npc_label_ev" />
+				<bounds>190,25,60,20</bounds>
+			</label_column>
+			<number_column name="ev">
+				<bounds>210,25,30,20</bounds>
+				<script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onSummaryChanged");
+					end
+				</script>
+			</number_column>
+			<string_column name="ev_description">
+				<bounds>245,25,-5,20</bounds>
+				<script>
+					function onValueChanged()
+						WindowManager.callOuterWindowFunction(window, "onSummaryChanged");
+					end
+				</script>
+				<tooltip textres="ev_rider_tooltip" />
+			</string_column>
+
+			<line_column name="break">
+				<bounds>5,50,-5,3</bounds>
+			</line_column>
+
+			<basicnumber name="space" source="space">
+				<bounds>20,73,40,30</bounds>
+				<target>space</target>
+			</basicnumber>
+			<basicnumber name="speed" source="speed">
+				<bounds>75,73,40,30</bounds>
+				<target>speed</target>
+			</basicnumber>
+			<basicnumber name="stamina" source="stamina.current">
+				<script file="campaign/scripts/stamina_monster.lua" />
+				<bounds>140,70,40,20</bounds>
+				<target>stamina</target>
+				<font>reference-b-large</font>	
+			</basicnumber>
+			<basicnumber name="maxstamina" source="stamina.max">
+				<bounds>140,90,40,17</bounds>
+				<target>maxstamina</target>
+				<tooltip textres="maximum_stamina_tooltip" />
+			</basicnumber>
+			<basicnumber name="stability">
+				<bounds>205,73,40,30</bounds>
+				<target>stability</target>
+			</basicnumber>
+			<basicnumber name="freestrike">
+				<bounds>270,73,40,30</bounds>
+				<target>freestrike</target>
+			</basicnumber>
+
+			<label name="space_label">
+				<static textres="npc_label_size" />
+				<anchored to="space">
+					<top offset="-22" />
+					<left offset="9" />
+				</anchored>
+			</label>
+			<label name="speed_label">
+				<static textres="npc_label_speed" />
+				<anchored to="speed">
+					<top offset="-22" />
+					<left offset="0" />
+				</anchored>
+			</label>
+			<label name="stamina_label">
+				<static textres="npc_label_stamina" />
+				<anchored to="stamina">
+					<top offset="-19" />
+					<left offset="-5" />
+				</anchored>
+			</label>
+			<label name="stability_label_readonly">
+				<readonly />
+				<static textres="npc_label_stability" />
+				<anchored to="stability">
+					<top offset="-22" />
+					<left offset="-5" />
+				</anchored>
+			</label>
+			<label name="freestrike_label">
+				<static textres="npc_label_freestrike" />
+				<anchored to="freestrike">
+					<top offset="-22" />
+					<left offset="-10" />
+				</anchored>
+			</label>
+
+			<anchor_column name="columnanchor" >
+				<anchored>
+					<top offset="105" />
+				</anchored>
+			</anchor_column>
+
+			<!-- immunities & weaknesses -->
+			<label_column name="immunity_name_label">
+				<static textres="npc_label_immunities" />
+				<!-- <bounds>5,112,90,20</bounds> -->
+			</label_column>
+			<string_columnh name="immunity_name" >
+				<!-- <bounds>5,130,160,20</bounds> -->
+			</string_columnh>
+			<label_column name="weakness_name_label">
+				<static textres="npc_label_weaknesses" />
+				<!-- <bounds>-85,112,90,20</bounds> -->
+			</label_column>
+			<string_columnh name="weakness_name" >
+				<!-- <bounds>175,130,-5,20</bounds> -->
+			</string_columnh>
+
+			<!-- movement & captain -->
+			<label_column name="speedtype_name_label">
+				<static textres="npc_label_movement" />
+				<!-- <bounds>5,173,90,20</bounds> -->
+			</label_column>
+			<string_columnh name="speedtype_name">
+				<!-- <bounds>5,153,160,20</bounds> -->
+				<default></default>
+			</string_columnh>
+			<label_column name="withcaptain_label">
+				<static textres="npc_label_withcaptain" />
+				<!-- <bounds>-85,173,90,20</bounds> -->
+			</label_column>
+			<string_columnh name="withcaptain">
+				<!-- <bounds>175,153,-5,20</bounds> -->
+				<default></default>
+			</string_columnh>
+
+			<!-- hazard traits -->
+			<label_column name="sizenote_name_label">
+				<static textres="npc_label_sizenote" />
+				<!-- <bounds>5,112,90,20</bounds> -->
+			</label_column>
+			<string_columnh name="sizenote_name" >
+				<!-- <bounds>5,130,160,20</bounds> -->
+			</string_columnh>
+			<label_column name="staminanote_name_label">
+				<static textres="npc_label_staminanote" />
+				<!-- <bounds>-85,112,90,20</bounds> -->
+			</label_column>
+			<string_columnh name="staminanote_name" >
+				<!-- <bounds>175,130,-5,20</bounds> -->
+			</string_columnh>
+
+			<line_column name="divider1" />
+
+			<!-- <genericcontrol name="divider_section">
+				<anchored height="130">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<left />
+					<right />
+				</anchored>
+			<disabled />
+			</genericcontrol> -->
+
+
+			<anchor_column name="columnanchor2" >
+				<anchored>
+					<top offset="10" />
+				</anchored>
+			</anchor_column>
+
+			<number_powerroll_characteristic name="mgt">
+				<!-- <bounds>20,200,40,30</bounds> -->
+				<anchored to="divider1">
+					<top offset="20" />
+					<left offset="30" />
+				</anchored>
+				<target>mgt</target>
+				<displaysign />
+			</number_powerroll_characteristic>
+			<number_powerroll_characteristic name="agl">
+				<anchored to="mgt">
+					<top offset="0" />
+					<left offset="65" />
+				</anchored>
+				<!-- <bounds>85,200,40,30</bounds> -->
+				<target>agl</target>
+				<displaysign />
+			</number_powerroll_characteristic>
+			<number_powerroll_characteristic name="rea">
+				<anchored to="agl">
+					<top offset="0" />
+					<left offset="65" />
+				</anchored>
+				<!-- <bounds>150,200,40,30</bounds> -->
+				<target>rea</target>
+				<displaysign />
+			</number_powerroll_characteristic>
+			<number_powerroll_characteristic name="inu">
+				<anchored to="rea">
+					<top offset="0" />
+					<left offset="65" />
+				</anchored>
+				<!-- <bounds>215,200,40,30</bounds> -->
+				<target>inu</target>
+				<displaysign />
+			</number_powerroll_characteristic>
+			<number_powerroll_characteristic name="prs">
+				<anchored to="inu">
+					<top offset="0" />
+					<left offset="65" />
+				</anchored>
+				<!-- <bounds>280,200,40,30</bounds> -->
+				<target>prs</target>
+				<displaysign />
+			</number_powerroll_characteristic>
+
+			<label name="mgt_label">
+				<static textres="npc_label_mgt" />
+				<anchored to="mgt">
+					<top offset="-15" />
+					<left offset="13" />
+				</anchored>
+			</label>
+
+			<label name="agl_label">
+				<static textres="npc_label_agl" />
+				<anchored to="agl">
+					<top offset="-15" />
+					<left offset="13" />
+				</anchored>
+			</label>
+
+			<label name="rea_label">
+				<static textres="npc_label_rea" />
+				<anchored to="rea">
+					<top offset="-15" />
+					<left offset="13" />
+				</anchored>
+			</label>
+
+			<label name="inu_label">
+				<static textres="npc_label_inu" />
+				<anchored to="inu">
+					<top offset="-15" />
+					<left offset="13" />
+				</anchored>
+			</label>
+
+			<label name="prs_label">
+				<static textres="npc_label_prs" />
+				<anchored to="prs">
+					<top offset="-15" />
+					<left offset="13" />
+				</anchored>
+			</label>
+
+
+			<genericcontrol>
+				<anchored height="0">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="54" />
+					<left />
+					<right />
+				</anchored>
+				<disabled />
+			</genericcontrol>
+
+			<line_column name="divider_traits" />
+
+			<label name="title_traits">
+				<static textres="npc_label_traits" />
+				<anchored to="divider_traits">
+					<top offset="-16" />
+					<right offset="-160" />
+				</anchored>
+			</label>
+
+			<!-- traits -->
+			<string_column_full name="label_trait1">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name1">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+			<string_column_full name="label_trait2">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name2">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+			<string_column_full name="label_trait3">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name3">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+			<string_column_full name="label_trait4">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name4">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+			<string_column_full name="label_trait5">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name5">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+			<string_column_full name="label_trait6">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name6">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+			<string_column_full name="label_trait7">
+				<font>reference-b-large</font>
+				<tooltip textres="trait_title_tooltip" />
+			</string_column_full>
+			<string_columnh_full name="traits_name7">
+				<tooltip textres="trait_tooltip" />
+			</string_columnh_full>
+
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="npc_negotiation">
+		<margins control="0,0,0,2" />
+		<script file="campaign/scripts/npc_negotiation.lua" />
+		<sheetdata>
+			<anchor_column name="columnanchor" />
+
+			<!-- Interest -->
+			<label_column name="interest_label">
+				<static textres="npc_label_interest" />
+			</label_column>
+			<number_column name="interest">
+				<default>0</default>
+			</number_column>
+			<!-- Patience -->
+			<label_column name="patience_label">
+				<static textres="npc_label_patience" />
+			</label_column>
+			<number_column name="patience">
+				<default>0</default>
+			</number_column>
+			<!-- Impression score -->
+			<label_column name="impressionscore_label">
+				<static textres="npc_label_impressionscore" />
+			</label_column>
+			<number_column name="impressionscore">
+				<default>0</default>
+			</number_column>
+
+
+			<!-- Motivations -->
+			<label_column name="motivations_label">
+				<static textres="npc_label_motivations" />
+			</label_column>
+			<string_columnh name="motivations" />
+
+			<!-- Pitfalls -->
+			<label_column name="pitfalls_label">
+				<static textres="npc_label_pitfalls" />
+			</label_column>
+			<string_columnh name="pitfalls" />
+
+			<!-- Outcomes -->
+			<label_column name="outcomes_label">
+				<static textres="npc_label_outcomes" />
+			</label_column>
+			<string_columnh name="outcomes" />
+		</sheetdata>
+	</windowclass>
+</root>

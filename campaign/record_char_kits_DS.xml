@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_modifiers">
+		<sheetdata>
+			<frame_char name="combatframe">
+				<bounds>0,20,145,200</bounds>
+			</frame_char>
+			<frame_char name="appearanceframe">
+				<bounds>140,20,-1,200</bounds>
+			</frame_char>
+
+			<label_frametop>
+				<anchored to="appearanceframe" offset="180,-15"/>
+				<static textres="char_label_modifier" />
+			</label_frametop>
+
+			<label_frametop>
+				<anchored to="combatframe" offset="30,-15"/>
+				<static textres="char_label_stats" />
+			</label_frametop>
+
+			<string_labeled name="weapon">
+				<anchored to="appearanceframe" position="insidetopleft" offset="80,10" width="80" />
+			</string_labeled>
+            <string_characteristiclabel name="weapon_label">
+				<anchored to="weapon" width="60" />
+				<static textres="kit_label_weapon" />
+			</string_characteristiclabel>
+
+			<string_labeled name="armor">
+				<anchored to="appearanceframe" position="insidetopleft" offset="230,10" width="80" />
+			</string_labeled>
+            <string_characteristiclabel name="armor_label">
+				<anchored to="armor" width="50" />
+				<static textres="kit_label_armor" />
+			</string_characteristiclabel>
+
+			<number_characteristicscore name="distancebonus" source="kit.distancebonus">
+				<anchored to="appearanceframe" position="insidetopleft" offset="70,40" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="distancebonus_label">
+				<anchored to="distancebonus" offset="0,0" width="50" />
+				<static textres="kit_label_ranged" />
+				<tooltip textres="kit_label_rangeddistancebonus" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="meleedistancebonus" source="kit.meleedistancebonus">
+				<anchored to="appearanceframe" position="insidetopleft" offset="160,40" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="meleedistancebonus_label">
+				<anchored to="meleedistancebonus" offset="0,0" width="45" />
+				<static textres="kit_label_melee" />
+				<tooltip textres="kit_label_meleedistancebonus" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="speedbonus" source="kit.speedbonus">
+				<anchored to="appearanceframe" position="insidetopleft" offset="290,40" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="speedbonus_label">
+				<anchored to="speedbonus" offset="0,0" width="85" />
+				<static textres="kit_label_speedbonus" />
+			</string_characteristiclabel>
+
+			<number_characteristicscore name="stabilitybonus" source="kit.stabilitybonus">
+				<anchored to="appearanceframe" position="insidetopleft" offset="120,70" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="stabilitybonus_label">
+				<anchored to="stabilitybonus" offset="0,0" width="100" />
+				<static textres="kit_label_stabilitybonus" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="disengagebonus" source="kit.disengagebonus">
+				<anchored to="appearanceframe" position="insidetopleft" offset="280,70" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="disengage_label">
+				<anchored to="disengagebonus" offset="0,0" width="110" />
+				<static textres="kit_label_disengagebonus" />
+			</string_characteristiclabel>
+
+			<number_characteristicscore name="staminabonus" source="kit.staminabonus">
+				<anchored to="appearanceframe" position="insidetopleft" offset="200,100" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="staminabonus_label">
+				<anchored to="staminabonus" offset="0,0" width="180" />
+				<static textres="kit_label_staminabonus" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="meleedamagebonus_tier1" source="kit.meleedamagebonus_tier1">
+				<anchored to="appearanceframe" position="insidetopleft" offset="180,130" width="30" />
+			</number_characteristicscore>
+			<number_characteristicscore name="meleedamagebonus_tier2" source="kit.meleedamagebonus_tier2">
+				<anchored to="appearanceframe" position="insidetopleft" offset="220,130" width="30" />
+			</number_characteristicscore>
+			<number_characteristicscore name="meleedamagebonus_tier3" source="kit.meleedamagebonus_tier3">
+				<anchored to="appearanceframe" position="insidetopleft" offset="260,130" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="meleebonus_label">
+				<anchored to="meleedamagebonus_tier1" offset="0,0" width="140" />
+				<static textres="kit_label_meleedamagebonus" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="rangeddamagebonus_tier1" source="kit.rangeddamagebonus_tier1">
+				<anchored to="appearanceframe" position="insidetopleft" offset="180,160" width="30" />
+			</number_characteristicscore>
+			<number_characteristicscore name="rangeddamagebonus_tier2" source="kit.rangeddamagebonus_tier2">
+				<anchored to="appearanceframe" position="insidetopleft" offset="220,160" width="30" />
+			</number_characteristicscore>
+			<number_characteristicscore name="rangeddamagebonus_tier3" source="kit.rangeddamagebonus_tier3">
+				<anchored to="appearanceframe" position="insidetopleft" offset="260,160" width="30" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="rangedbonus_label">
+				<anchored to="rangeddamagebonus_tier1" offset="0,0" width="150" />
+				<static textres="kit_label_rangeddamagebonus" />
+			</string_characteristiclabel>	
+			
+
+			<!--vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv-->
+
+
+			<string_labeled name="size">
+				<anchored to="combatframe" position="insidetopleft" offset="95,10" width="20" />
+				<description textres="char_tooltip_size" />
+				<default>1M</default>
+			</string_labeled>
+            <string_characteristiclabel name="size_label">
+				<anchored to="size" />
+				<static textres="size" />
+			</string_characteristiclabel>
+
+			<number_characteristicscore name="stability" source="abilities.stability.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,35" width="20" />
+				<description textres="char_tooltip_stability" />
+				<default>0</default>
+			</number_characteristicscore>
+            <string_characteristiclabel name="stability_label">
+				<anchored to="stability" />
+				<static textres="stability" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="speed" source="abilities.speed.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,60" width="20" />
+				<description textres="char_tooltip_speed" />
+				<default>5</default>
+			</number_characteristicscore>
+            <string_characteristiclabel name="speed_label">
+				<anchored to="speed" />
+				<static textres="speed" />
+			</string_characteristiclabel>		
+
+			<number_characteristicscore name="disengage" source="abilities.disengage.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,85" width="20" />
+				<description textres="char_tooltip_disengage" />
+				<default>1</default>
+			</number_characteristicscore>
+            <string_characteristiclabel name="disengage_label">
+				<anchored to="disengage" />
+				<static textres="disengage" />
+			</string_characteristiclabel>	
+
+			<label>
+				<anchored to="combatframe" position="insidetopleft" offset="33,110" width="80" />
+				<static textres="potencies" />
+			</label>
+
+			<number_characteristicscore name="weak" source="abilities.weak.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,130" width="20" height="17"/>
+				<description textres="char_tooltip_weak" />
+				<default>0</default>
+				<script file="campaign/scripts/w_potency.lua" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="weak_label">
+				<anchored to="weak" />
+				<static textres="weak" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="average" source="abilities.average.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,150" width="20" height="17" />
+				<description textres="char_tooltip_average" />
+				<default>0</default>
+				<script file="campaign/scripts/a_potency.lua" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="average_label">
+				<anchored to="average" />
+				<static textres="average" />
+			</string_characteristiclabel>	
+
+			<number_characteristicscore name="strong" source="abilities.strong.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,170" width="20" height="17" />
+				<description textres="char_tooltip_strong" />
+				<default>0</default>
+				<script file="campaign/scripts/s_potency.lua" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="strong_label">
+				<anchored to="strong" />
+				<static textres="strong" />
+			</string_characteristiclabel>	
+
+			<!-- <string_labeled name="Kit.Magic.Damage.Tier1" source="Kit.Magic.Damage.Tier1">
+				<anchored to="Kit.Ranged.Damage.Tier3" position="righthigh" offset="25,0" width="20" />
+				<labelres>char_label_magical</labelres>
+				<default>+0</default>
+			</string_labeled>		
+			<string_labeled name="Kit.Magic.Damage.Tier2" source="Kit.Magic.Damage.Tier2">
+				<anchored to="Kit.Magic.Damage.Tier1" position="righthigh" offset="5,0" width="20" />
+				<default>+0</default>
+			</string_labeled>
+			<string_labeled name="Kit.Magic.Damage.Tier3" source="Kit.Magic.Damage.Tier3">
+				<anchored to="Kit.Magic.Damage.Tier2" position="righthigh" offset="5,0" width="20" />
+				<default>+0</default>
+			</string_labeled>	 -->
+
+			<frame_char name="notesframe">
+				<bounds>0,215,-1,-6</bounds>
+				<!-- <bounds>0,0,-1,-5</bounds> -->
+			</frame_char>
+			<label_frametop>
+				<anchored to="notesframe" />
+				<static textres="char_label_benefits" />
+			</label_frametop>
+			<stringu name="kitnotes1">
+				<anchored to="notesframe">
+					<top offset="30" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+				<nodrag />
+			</stringu>
+			<scrollbar_list>
+				<anchored to="kitnotes1" />
+				<target>kitnotes1</target>
+			</scrollbar_list>
+		</sheetdata>
+	</windowclass>
+</root>

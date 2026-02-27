@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Draw Steel buttons -->
+	<template name="power_roll">
+		<buttoncontrol>
+			<anchored width="20" height="20" />
+			<icon normal="power_roll" pressed="power_roll_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="NEW_power_roll">
+		<buttoncontrol>
+			<anchored width="200" height="200" />
+			<icon normal="NEW_power_roll" pressed="NEW_power_roll_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="power_roll_skill">
+		<buttoncontrol>
+			<anchored width="32" height="32" />
+			<icon normal="power_roll" pressed="power_roll_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="NEW_power_roll_skill">
+		<buttoncontrol>
+			<anchored width="200" height="200" />
+			<icon normal="NEW_power_roll" pressed="NEW_power_roll_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="initiative_roll">
+		<buttoncontrol>
+			<anchored width="32" height="32" />
+			<icon normal="button_dialog_roll" pressed="button_dialog_roll_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="respite_button">
+		<buttoncontrol>
+			<anchored width="40" height="40" />
+			<icon normal="respite" pressed="respite_down" />
+			<tooltip textres="char_tooltip_respite" />
+		</buttoncontrol>
+	</template>
+</root>

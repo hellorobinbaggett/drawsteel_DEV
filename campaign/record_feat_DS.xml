@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="feat" copy="record_window_tabbed">
+		<minimize>minimized_reference</minimize>
+		<gmexport>feat</gmexport>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>record_content_notes</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>abilities</name>
+			<resource>tab_notes</resource>
+			<class>record_content_text</class>
+			<embed />
+		</tab>
+		
+	</windowclass>
+	<!-- TODO: write code for the main class body -->
+	<!-- tip: look at the record_content_notes in corerpg -->
+
+	<windowclass name="reference_class_features_2024">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<header_content_framed_headersimple name="features_header">
+				<static textres="class_header_features"/>
+			</header_content_framed_headersimple>
+			<button_iadd name="features_iadd">
+				<anchored to="features_header" position="insidetopright" offset="2,0" />
+				<target>features</target>
+			</button_iadd>
+			<list_content_column name="features">
+				<datasource>.features</datasource>
+				<class>reference_classfeature_listitem</class>
+				<sortby><field>level</field><field>name</field></sortby>
+			</list_content_column>
+
+			<header_content_framed_headersimple name="featurechoices_header">
+				<static textres="class_header_featurechoices"/>
+			</header_content_framed_headersimple>
+			<button_iadd name="featurechoices_iadd">
+				<anchored to="featurechoices_header" position="insidetopright" offset="2,0" />
+				<target>featurechoices</target>
+			</button_iadd>
+			<list_content_column name="featurechoices">
+				<datasource>.featurechoices</datasource>
+				<class>reference_classfeaturechoice_listitem</class>
+				<sortby><field>choicetype</field><field>level</field><field>name</field></sortby>
+			</list_content_column>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_classfeature_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "level", "name", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_classfeature</class>
+			</linkc_listitem_left>
+			<number_listitem_left name="level">
+				<nodrag />
+			</number_listitem_left>
+
+			<string_listitem_center name="name">
+				<empty textres="library_recordtype_empty_classfeature" />
+				<font>sheetlabel</font>
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_titles_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "level", "name", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_titles</class>
+			</linkc_listitem_left>
+			<number_listitem_left name="level">
+				<nodrag />
+			</number_listitem_left>
+
+			<string_listitem_center name="name">
+				<empty textres="library_recordtype_empty_title" />
+				<font>sheetlabel</font>
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_classfeaturechoice_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "choicetype", "level", "name", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_classfeaturechoice</class>
+			</linkc_listitem_left>
+			<string_listitem_left name="choicetype">
+				<anchored width="180" />
+				<font>sheetlabel</font>
+				<empty textres="classfeaturechoice_empty_choicetype" />
+			</string_listitem_left>
+			<number_listitem_left name="level">
+				<nodrag />
+			</number_listitem_left>
+
+			<string_listitem_center name="name">
+				<empty textres="library_recordtype_empty_classfeaturechoice" />
+				<font>sheetlabel</font>
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
+</root>

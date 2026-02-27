@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet" copy="charsheet_base">
+		<placement>
+			<size width="525" height="555" />
+		</placement>
+		<sizelimits>
+			<minimum width="525" height="555" />
+			<dynamic />
+		</sizelimits>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>charsheet_main_ds</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>features</name>
+			<resource>tab_features</resource>
+			<class>charsheet_features</class>
+		</tab>
+		<tab merge="add">
+			<name>abilities</name>
+			<resource>tab_abilities</resource>
+			<class>charsheet_abilities</class>
+		</tab>
+		<tab merge="add">
+			<name>skills</name>
+			<resource>tab_skills</resource>
+			<class>charsheet_skills_ds</class>
+		</tab>
+		<tab merge="add">
+			<name>modifiers</name>
+			<resource>tab_combat</resource>
+			<class>charsheet_modifiers</class>
+		</tab>
+		<tab merge="add">
+			<name>notes</name>
+			<resource>tab_notes</resource>
+			<class>charsheet_notes</class>
+		</tab>
+		<tab merge="add">
+			<name>inventory</name>
+			<resource>tab_inventory</resource>
+			<class>charsheet_inventory</class>
+		</tab>
+		<script file="scripts/handle_char_drop.lua" />
+	</windowclass>
+
+	<windowclass name="charsheet_overview" copy="charsheet_overview_base_v2">
+		<sheetdata>
+			<string_labeled name="name">
+				<anchored to="leftanchor" width="155" merge="replace">
+					<top />
+					<left relation="current" offset="10" />
+				</anchored>
+				<font>sheettext</font>
+			</string_labeled>
+
+			<!-- ANCESTRY -->
+			<string_labeled name="ancestry">
+				<anchored to="name" position="righthigh" offset="5,0" width="85" />
+				<labelres>char_label_race</labelres>
+			</string_labeled>
+
+			<!-- KIT (incorrect data field label; but left to avoid breakage) -->
+			<string_labeled name="career"> 
+				<anchored to="ancestry" position="righthigh" offset="5,0" width="80" />
+				<labelres>char_label_kit</labelres>
+			</string_labeled>
+
+			<!-- CLASS -->
+			<string_labeled name="classtitle">
+				<anchored to="name" position="belowleft" offset="0,10" width="90" />
+				<labelres>char_label_class</labelres>
+			</string_labeled>
+
+			<!-- SUBCLASS -->
+			<string_labeled name="subclasstitle">
+				<anchored to="classtitle" position="righthigh" offset="5,0" width="95" />
+				<labelres>char_label_subclass</labelres>
+			</string_labeled>
+
+			<!-- XP -->
+			<number_labeled name="xptitle" >
+				<anchored to="subclasstitle" position="righthigh" offset="5,-3" width="20" />
+				<labelres>char_label_xp</labelres>
+				<default>0</default>
+				<script file="campaign/scripts/level_DS.lua" />
+			</number_labeled>
+
+			<!-- LEVEL -->
+			<number_labeled name="levelnumbertitle">
+				<anchored to="xptitle" position="righthigh" offset="5,0" width="40" />
+				<labelres>char_label_level</labelres>
+				<default>1</default>
+				<script file="campaign/scripts/echelon_DS.lua" />
+			</number_labeled>
+
+			<!-- ECHELON -->
+			<number_labeled name="echelonnumbertitle">
+				<anchored to="levelnumbertitle" position="righthigh" offset="5,0" width="60" />
+				<labelres>char_label_echelon</labelres>
+				<default>1</default>
+				<readonly />
+			</number_labeled>
+
+			<buttonfield name="tutorial">
+				<anchored to="rightanchor" position="lefthigh" offset="5,30" width="20" height="20" />
+				<state icon="info_warning" />
+				<state icon="button_toolbar_help" tooltipres="tooltip_character_builder" />
+			</buttonfield>
+			<respite_button>
+				<anchored to="rightanchor" position="lefthigh" offset="0,0" width="30" height="30" />
+				<script file="campaign/scripts/respite_DS.lua" />
+			</respite_button>
+		</sheetdata>
+	</windowclass>
+</root>

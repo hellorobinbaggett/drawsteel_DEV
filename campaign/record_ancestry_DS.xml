@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="ancestry" copy="record_window_tabbed">
+		<minimize>minimized_reference</minimize>
+		<gmexport>ancestry</gmexport>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>record_content_notes</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>features</name>
+			<resource>tab_features</resource>
+			<class>reference_ancestry_features</class>
+			<embed />
+		</tab>
+		
+	</windowclass>
+	<!-- TODO: write code for the main class body -->
+	<!-- tip: look at the record_content_notes in corerpg -->
+
+	<windowclass name="reference_ancestry_features">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<header_content_framed_headersimple name="features_header">
+				<static textres="char_label_ancestrytraits"/>
+			</header_content_framed_headersimple>
+			<button_iadd name="features_iadd">
+				<anchored to="features_header" position="insidetopright" offset="2,0" />
+				<target>features</target>
+			</button_iadd>
+			<list_content_column name="features">
+				<datasource>.features</datasource>
+				<class>reference_ancestryfeaturechoice_listitem</class>
+				<sortby><field>level</field><field>name</field></sortby>
+			</list_content_column>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_ancestryfeaturechoice_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "choicetype", "choicecost", "name", "text", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_ancestryfeaturechoice</class>
+			</linkc_listitem_left>
+
+			<!-- <number_listitem_left name="level">
+				<nodrag />
+			</number_listitem_left> -->
+
+			<string_listitem_center name="name">
+				<empty textres="library_recordtype_empty_ancestryfeature" />
+				<font>sheetlabel</font>
+				<readonly />
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="reference_ancestryfeaturechoice" copy="record_window" />
+	<windowclass name="reference_ancestryfeaturechoice_header" copy="record_header">
+		<name_emptyres>library_recordtype_empty_ancestryfeature</name_emptyres>
+	</windowclass>
+	<windowclass name="reference_ancestryfeaturechoice_main">
+		<margins control="0,0,0,5" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tFields = { "choicetype", "choicecost", "text", };
+				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_content_top />
+
+			<label_content_column name="choicetype_label">
+				<static textres="label_choicetype" />
+			</label_content_column>
+			<string_content_columnh name="choicetype" />
+
+			<label_content_column name="choicecost_label">
+				<static textres="label_cost" />
+			</label_content_column>
+			<number_content_columnh name="choicecost" />
+
+			<label_content_column name="repeatable_label">
+				<static textres="label_selected" />
+			</label_content_column>
+			<button_checkbox_content_columnh name="repeatable" />
+
+			<ft_content_column_full name="text" />
+		</sheetdata>
+	</windowclass>
+</root>
