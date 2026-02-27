@@ -1,3 +1,6 @@
+DEV NOTE: This version is ONLY for people who want to mod or add to the code. All who enter beware!
+There be bugs ahead!
+
 - What is this? Where am I?
 
 This is a custom ruleset that was made for the Fantasy Grounds VTT by Exxodis during the Draw Steel beta. 
