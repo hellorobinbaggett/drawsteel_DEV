@@ -9,6 +9,7 @@ Unity to run this. It is an extension that lives inside your FGU files.
 Special thanks to Koboldling, JT, DM Rebecca, GildedDragonborn, lil tummy, Renée Wojak, AboveAverageTurtle
 I could not have done this without your help entering in hundreds of pages into the data modules.
 Thank you MoonWizard for all of your help with making this a standalone ruleset. 
+No "AI" (Large Language Models) :)
 
 - I want to play Draw Steel! What are the steps to install?
 
