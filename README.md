@@ -36,3 +36,5 @@ Congratulations! You now have this extension installed! Easy as that!
 When you are ready, you can create your own Draw Steel campaign. Run Fantasy Grounds Unity, then create a campaign.
 Underneath "rulesets" you should see one labeled "Draw Steel". Use that one!
 And now you're ready to....DRAW STEEL!
+
+LEGAL Draw Steel Custom Ruleset for Fantasy Grounds Unity is an independent product published under the DRAW STEEL Creator License and is not affiliated with MCDM Productions, LLC. DRAW STEEL © 2024 MCDM Productions, LLC.
