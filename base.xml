@@ -6,11 +6,11 @@
 -->
 
 <root version="1.0" release="1" logo="logo.png">
-	<announcement text="Draw Steel Ruleset (v0.92) by EXXODIS" font="emotefont" icon="" />
+	<announcement text="Draw Steel Ruleset (v1.0) by EXXODIS" font="emotefont" icon="" />
 
 	<!-- Attributes -->
 	<description>
-		<displayname>Draw Steel (DEV)</displayname>
+		<displayname>Draw Steel_dev</displayname>
 		<author>EXXODIS, MoonWizard</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>
@@ -42,6 +42,7 @@
 
 	<!-- Common templates -->
 	<includefile source="common/template_buttons_DS.xml" />
+	<includefile source="common/template_records_DS.xml" />
 
 	<!-- Desktop -->
 	<script name="Desktop_DS" file="scripts/data_desktop_DS.lua" />
@@ -69,7 +70,8 @@
 	<includefile source="campaign/record_char_main_DS.xml" />
 	<includefile source="campaign/record_char_abilities_DS.xml" />
 	<includefile source="campaign/record_char_features_DS.xml" />
-	<includefile source="campaign/record_char_inventory_DS.xml" />
+	<includefile source="campaign/record_char_inventory_DS.xml" /> <!--old-->
+	<includefile source="campaign/record_char_projects_DS.xml" />
 	<includefile source="campaign/record_char_skills_DS.xml" />
 	<includefile source="campaign/record_char_notes_DS.xml" />
 	<includefile source="campaign/record_char_kits_DS.xml" />

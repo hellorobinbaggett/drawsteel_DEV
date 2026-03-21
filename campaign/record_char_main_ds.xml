@@ -193,9 +193,9 @@
 			</label_frametop>
 
 			<number_charstamina name="recoverycurrent" source="recoverycurrent">
-				<anchored to="recoveriesframe" width="48" height="30">
+				<anchored to="recoveriesframe" width="35" height="30">
 					<top anchor="top" offset="45" />
-					<left anchor="center" offset="-55" />
+					<left anchor="center" offset="-45" />
 				</anchored>
 				<font>reference-b-large</font>
 				<script file="campaign/scripts/stamina.lua" />
@@ -203,7 +203,7 @@
 			</number_charstamina>
 
 			<number_charstamina name="recoverymax" source="recoverymax">
-				<anchored to="recoverycurrent" position="righthigh" offset="15,0" width="48" height="30" />
+				<anchored to="recoverycurrent" position="righthigh" offset="15,0" width="35" height="30" />
 				<font>reference-b-large</font>
 				<description textres="char_tooltip_max" />
 				<min value="0" />
@@ -211,7 +211,7 @@
 
 			<label_charfieldtop name="recoverycurrent_label">
 				<anchored to="recoverycurrent" offset="0,0" />
-				<static textres="char_label_current" />
+				<static textres="char_label_cur" />
 				<color>000000</color>
 			</label_charfieldtop>
 

@@ -1,0 +1,6 @@
+<root>
+    <framedef name="acicon">
+		<bitmap file="graphics/frames/acicon.png" />
+		<topleft rect="0,0,35,39" />
+	</framedef>
+</root>

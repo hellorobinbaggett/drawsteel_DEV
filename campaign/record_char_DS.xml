@@ -46,9 +46,9 @@
 			<class>charsheet_notes</class>
 		</tab>
 		<tab merge="add">
-			<name>inventory</name>
-			<resource>tab_inventory</resource>
-			<class>charsheet_inventory</class>
+			<name>projects</name>
+			<resource>tab_projects</resource>
+			<class>charsheet_projects</class>
 		</tab>
 		<script file="scripts/handle_char_drop.lua" />
 	</windowclass>

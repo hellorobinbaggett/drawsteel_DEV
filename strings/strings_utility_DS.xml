@@ -13,9 +13,11 @@
 	<string name="tab_basics">Basics</string>
 	<string name="tab_modifiers">Modifiers</string>
 	<string name="tab_downtime">Downtime</string>
+	<string name="tab_projects">Projects</string>
 	<string name="tab_career">Career</string>
 	<string name="tab_order">Order</string>
 	<string name="tab_other">Other</string>
+	<string name="tab_negotiate">Negotiate</string>
 	<string name="tab_xp">XP</string>
 
 	<string name="library_recordtype_label_ability">Abilities</string>

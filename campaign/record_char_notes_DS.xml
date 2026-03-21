@@ -9,7 +9,7 @@
 	<windowclass name="charsheet_notes">
 		<sheetdata>
 			<frame_char name="detailframe">
-				<bounds>0,0,-1,70</bounds>
+				<bounds>0,0,-1,76</bounds>
 			</frame_char>
 			<!-- <string_labeled name="race">
 				<anchored to="detailframe" position="insidetopleft" offset="15,10" width="150" />
@@ -45,30 +45,34 @@
 				<labelres>char_label_environment</labelres>
 			</string_labeled>
 			<string_labeled name="organization">
-				<anchored to="environment" position="righthigh" offset="5,0" width="140" />
+				<anchored to="environment" position="righthigh" offset="10,0" width="140" />
 				<labelres>char_label_organization</labelres>
 			</string_labeled>
 			<string_labeled name="upbrining">
-				<anchored to="organization" position="righthigh" offset="5,0" width="140" />
+				<anchored to="organization" position="righthigh" offset="10,0" width="140" />
 				<labelres>char_label_upbringing</labelres>
 			</string_labeled>
 
 			
-			<string_labeled name="career_name">
-				<anchored to="detailframe" position="insidetopleft" offset="15,35" width="60" />
+			<string_labeled name="career">
+				<anchored to="detailframe" position="insidetopleft" offset="15,40" width="120" />
 				<labelres>char_label_career</labelres>
 			</string_labeled>
-			<string_labeled name="renown">
-				<anchored to="career_name" position="righthigh" offset="5,0" width="80" />
+			<number_labeled name="wealth">
+				<anchored to="career" position="righthigh" offset="5,0" width="45" />
+				<labelres>char_label_wealth</labelres>
+			</number_labeled>
+			<number_labeled name="renown">
+				<anchored to="wealth" position="righthigh" offset="5,0" width="60" />
 				<labelres>char_label_renown</labelres>
-			</string_labeled>
-			<string_labeled name="currentfollowers">
-				<anchored to="renown" position="righthigh" offset="5,0" width="140" />
-				<labelres>char_label_currentfollowers</labelres>
-			</string_labeled>
-			<string_labeled name="totalfollowers">
-				<anchored to="currentfollowers" position="righthigh" offset="5,0" width="140" />
-				<labelres>char_label_maxfollowers</labelres>
+			</number_labeled>
+			<number_labeled name="followers">
+				<anchored to="renown" position="righthigh" offset="5,0" width="70" />
+				<labelres>char_label_followers</labelres>
+			</number_labeled>
+			<string_labeled name="retainer">
+				<anchored to="followers" position="righthigh" offset="5,0" width="125" />
+				<labelres>char_label_retainer</labelres>
 			</string_labeled>
 
 			<!-- <string_labeled name="project">

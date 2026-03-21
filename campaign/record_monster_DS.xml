@@ -56,22 +56,22 @@
 			<class>record_content_abilities</class>
 			<embed />
 		</tab>
-		<!-- <tab merge="add">
-			<name>abilities</name>
-			<resource>tab_abilities</resource>
-			<class>record_content_text</class>
-			<embed />
-		</tab> -->
 		<tab merge="add">
-			<name>notes</name>
-			<resource>tab_notes</resource>
-			<class>record_content_notes</class>
+			<name>malice</name>
+			<resource>tab_malice</resource>
+			<class>malice_record_content_abilities</class>
 			<embed />
 		</tab>
 		<tab merge="add">
 			<name>negotiation</name>
-			<resource>tab_other</resource>
+			<resource>tab_negotiate</resource>
 			<class>npc_negotiation</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>notes</name>
+			<resource>tab_notes</resource>
+			<class>record_content_notes</class>
 			<embed />
 		</tab>
 	</windowclass>
@@ -473,46 +473,110 @@
 		<sheetdata>
 			<anchor_column name="columnanchor" />
 
+			<!-- <windowclass name="interest" copy="acicon">
+				<margins control="40,170,30,30" />
+			</windowclass>
+
+			<label_number name="language_label">
+				<static textres="npc_label_language" />
+			</label_number>
+			<number_column name="language">
+				<default>0</default>
+				<bounds>110,20,30,30</bounds>
+			</number_column> -->
+
+			<label_column name="language_name_label">
+				<static textres="npc_label_nativelanguage" />
+				<bounds>1,3,140,20</bounds>
+			</label_column>
+			<string_columnh name="language_name" >
+				<bounds>115,3,-5,20</bounds>
+			</string_columnh>
+
 			<!-- Interest -->
-			<label_column name="interest_label">
+			<number_charstamina name="interest" source="interest">
+				<anchored to="columnanchor" position="righthigh" offset="30,53" width="70" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_max" />
+				<min value="0" />
+			</number_charstamina>
+			<label_charfieldtop name="interest_label">
+				<anchored to="interest" offset="0,0" width="140"/>
 				<static textres="npc_label_interest" />
-			</label_column>
-			<number_column name="interest">
-				<default>0</default>
-			</number_column>
+				<color>000000</color>
+			</label_charfieldtop>
+
 			<!-- Patience -->
-			<label_column name="patience_label">
+			<number_charstamina name="patience" source="patience">
+				<anchored to="interest" position="righthigh" offset="40,0" width="70" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_max" />
+				<min value="0" />
+			</number_charstamina>
+			<label_charfieldtop name="patience_label">
+				<anchored to="patience" offset="0,0" width="20"/>
 				<static textres="npc_label_patience" />
-			</label_column>
-			<number_column name="patience">
-				<default>0</default>
-			</number_column>
+				<color>000000</color>
+			</label_charfieldtop>
+
 			<!-- Impression score -->
-			<label_column name="impressionscore_label">
+			<number_charstamina name="impressionscore" source="impressionscore">
+				<anchored to="patience" position="righthigh" offset="40,0" width="70" height="30" />
+				<font>reference-b-large</font>
+				<description textres="char_tooltip_max" />
+				<min value="0" />
+			</number_charstamina>
+			<label_charfieldtop name="impressionscore_label">
+				<anchored to="impressionscore" offset="0,0" />
 				<static textres="npc_label_impressionscore" />
-			</label_column>
-			<number_column name="impressionscore">
-				<default>0</default>
-			</number_column>
+				<color>000000</color>
+			</label_charfieldtop>
 
+		<!-- motivations-->
+			<frame_char name="motivationsframe">
+				<bounds>0,80,-1,180</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="motivationsframe" />
+				<static textres="char_label_motivations" />
+			</label_frametop>
+			<stringu name="motivations">
+				<anchored to="motivationsframe">
+					<top offset="30" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+				<nodrag />
+			</stringu>
+			<scrollbar_list>
+				<anchored to="motivations" />
+				<target>motivations</target>
+			</scrollbar_list>
 
-			<!-- Motivations -->
-			<label_column name="motivations_label">
-				<static textres="npc_label_motivations" />
-			</label_column>
-			<string_columnh name="motivations" />
-
-			<!-- Pitfalls -->
-			<label_column name="pitfalls_label">
-				<static textres="npc_label_pitfalls" />
-			</label_column>
-			<string_columnh name="pitfalls" />
-
-			<!-- Outcomes -->
-			<label_column name="outcomes_label">
-				<static textres="npc_label_outcomes" />
-			</label_column>
-			<string_columnh name="outcomes" />
+		<!-- pitfalls -->
+			<frame_char name="pitfallsframe">
+				<bounds>0,250,-1,-5</bounds>
+			</frame_char>
+			<label_frametop>
+				<anchored to="pitfallsframe" />
+				<static textres="char_label_pitfalls" />
+			</label_frametop>
+			<stringu name="pitfalls">
+				<anchored to="pitfallsframe">
+					<top offset="30" />
+					<left offset="15" />
+					<right offset="-20" />
+					<bottom offset="-15" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+				<nodrag />
+			</stringu>
+			<scrollbar_list>
+				<anchored to="pitfalls" />
+				<target>pitfalls</target>
+			</scrollbar_list>
 		</sheetdata>
 	</windowclass>
 </root>

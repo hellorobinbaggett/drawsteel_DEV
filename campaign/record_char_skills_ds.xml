@@ -9,40 +9,7 @@
 	<windowclass name="charsheet_skills_ds">
 		<margins control="0,0,0,2" />
 		<sheetdata>
-			<!-- <frame_char name="skillsframe_char">
-				<bounds>0,0,-1,-20</bounds>
-			</frame_char> -->
-
-            <!-- <label_frametop>
-				<anchored to="skillsframe_char" />
-				<static textres="char_label_skills" />
-			</label_frametop> -->
-
-			<!-- <list_charskillcategory name="skills">
-				<anchored to="skillsframe_char">
-					<left offset="15" />
-					<top offset="35" />
-					<right offset="-20" />
-					<bottom offset="-20" />
-				</anchored>
-			</list_charskillcategory> -->
-
-			<!-- <list_charskillcategory_ds name="skills_ds">
-				<anchored to="skillsframe_char">
-					<left offset="15" />
-					<top offset="35" />
-					<right offset="-20" />
-					<bottom offset="-20" />
-				</anchored>
-			</list_charskillcategory_ds> -->
-
-            <!-- CRAFTING SECTION (collapsable?) -->
-            <!-- EXPLORATION SECTION (collapsable?) -->
-            <!-- INTERPERSONAL SECTION (collapsable?) -->
-            <!-- INTRIGUE SECTION (collapsable?) -->
-            <!-- LORE SECTION (collapsable?) -->
-
-            <!-- Crafting Skills -->
+        <!-- CRAFTING SKILLS -->
 
 	        <frame_char name="craftingskillsframe_char">
 				<bounds>0,0,260,395</bounds>
@@ -187,7 +154,7 @@
             <string_labeled name="skill2_label" source="skill.skill2">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,75" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Architecture</default>
+            <default>Architecture</default>
 			</string_labeled>
             <button_prof name="skilled_skill2" source="skill2.prof">
                 <anchored to="skill2_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -274,7 +241,7 @@
             <string_labeled name="skill3_label" source="skill.skill3">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,110" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Blacksmithing</default>
+            <default>Blacksmithing</default>
 			</string_labeled>
             <button_prof name="skilled_skill3" source="skill3.prof">
                 <anchored to="skill3_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -361,7 +328,7 @@
             <string_labeled name="skill4_label" source="skill.skill4">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,145" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Carpentry</default>
+            <default>Carpentry</default>
 			</string_labeled>
             <button_prof name="skilled_skill4" source="skill4.prof">
                 <anchored to="skill4_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -448,7 +415,7 @@
             <string_labeled name="skill5_label" source="skill.skill5">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,180" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Cooking</default>
+            <default>Cooking</default>
 			</string_labeled>
             <button_prof name="skilled_skill5" source="skill5.prof">
                 <anchored to="skill5_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -535,7 +502,7 @@
             <string_labeled name="skill6_label" source="skill.skill6">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,215" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Fletching</default>
+                <default>Fletching</default>
 			</string_labeled>
             <button_prof name="skilled_skill6" source="skill6.prof">
                 <anchored to="skill6_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -622,7 +589,7 @@
             <string_labeled name="skill7_label" source="skill.skill7">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,250" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Forgery</default>
+                <default>Forgery</default>
 			</string_labeled>
             <button_prof name="skilled_skill7" source="skill7.prof">
                 <anchored to="skill7_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -709,7 +676,7 @@
             <string_labeled name="skill8_label" source="skill.skill8">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,285" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Jewelry</default>
+                <default>Jewelry</default>
 			</string_labeled>
             <button_prof name="skilled_skill8" source="skill8.prof">
                 <anchored to="skill8_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -796,7 +763,7 @@
             <string_labeled name="skill9_label" source="skill.skill9">
 				<anchored to="craftingskillsframe_char" position="insidetopleft" offset="50,320" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Mechanics</default>
+                <default>Mechanics</default>
 			</string_labeled>
             <button_prof name="skilled_skill9" source="skill9.prof">
                 <anchored to="skill9_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -969,12 +936,12 @@
 
 
 
-            <!-- EXPLORATION GROUP -->
+        <!-- EXPLORATION SKILLS -->
             <!-- skill1 -->
             <string_labeled name="skill11_label" source="skill.skill11">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,40" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Climb</default>
+            <default>Climb</default>
 			</string_labeled>
             <button_prof name="skilled_skill11" source="skill11.prof">
                 <anchored to="skill11_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1061,7 +1028,7 @@
             <string_labeled name="skill12_label" source="skill.skill12">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,75" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Drive</default>
+                <default>Drive</default>
 			</string_labeled>
             <button_prof name="skilled_skill12" source="skill12.prof">
                 <anchored to="skill12_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1148,7 +1115,7 @@
             <string_labeled name="skill13_label" source="skill.skill13">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,110" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Endurance</default>
+                <default>Endurance</default>
 			</string_labeled>
             <button_prof name="skilled_skill13" source="skill13.prof">
                 <anchored to="skill13_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1235,7 +1202,7 @@
             <string_labeled name="skill14_label" source="skill.skill14">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,145" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Gymnastics</default>
+            <default>Gymnastics</default>
 			</string_labeled>
             <button_prof name="skilled_skill14" source="skill14.prof">
                 <anchored to="skill14_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1322,7 +1289,7 @@
             <string_labeled name="skill15_label" source="skill.skill15">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,180" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Heal</default>
+                <default>Heal</default>
 			</string_labeled>
             <button_prof name="skilled_skill15" source="skill15.prof">
                 <anchored to="skill15_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1409,7 +1376,7 @@
             <string_labeled name="skill16_label" source="skill.skill16">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,215" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Jump</default>
+                <default>Jump</default>
 			</string_labeled>
             <button_prof name="skilled_skill16" source="skill16.prof">
                 <anchored to="skill16_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1496,7 +1463,7 @@
             <string_labeled name="skill17_label" source="skill.skill17">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,250" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Lift</default>
+                <default>Lift</default>
 			</string_labeled>
             <button_prof name="skilled_skill17" source="skill17.prof">
                 <anchored to="skill17_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1583,7 +1550,7 @@
             <string_labeled name="skill18_label" source="skill.skill18">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,285" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Navigate</default>
+                <default>Navigate</default>
 			</string_labeled>
             <button_prof name="skilled_skill18" source="skill18.prof">
                 <anchored to="skill18_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1670,7 +1637,7 @@
             <string_labeled name="skill19_label" source="skill.skill19">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,320" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Ride</default>
+                <default>Ride</default>
 			</string_labeled>
             <button_prof name="skilled_skill19" source="skill19.prof">
                 <anchored to="skill19_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1757,7 +1724,7 @@
             <string_labeled name="skill20_label" source="skill.skill20">
 				<anchored to="explorationskillsframe_char" position="insidetopleft" offset="50,355" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Swim</default>
+                <default>Swim</default>
 			</string_labeled>
             <button_prof name="skilled_skill20" source="skill20.prof">
                 <anchored to="skill20_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1842,12 +1809,12 @@
             </power_roll_skill>
 
 
-            <!-- INTERPERSONAL SKILLS  -->
+        <!-- INTERPERSONAL SKILLS  -->
             <!-- skill1 -->
             <string_labeled name="interpersonal_skill1_label" source="skill.interpersonal_skill1">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,40" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Brag</default>
+            <default>Brag</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonal_skill1" source="interpersonal_skill1.prof">
                 <anchored to="interpersonal_skill1_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -1934,7 +1901,7 @@
             <string_labeled name="interpersonalskill2_label" source="skill.interpersonalskill2">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,75" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Empathize</default>
+                <default>Empathize</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill2" source="interpersonalskill2.prof">
                 <anchored to="interpersonalskill2_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2021,7 +1988,7 @@
             <string_labeled name="interpersonalskill3_label" source="skill.interpersonalskill3">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,110" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Flirt</default>
+                <default>Flirt</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill3" source="interpersonalskill3.prof">
                 <anchored to="interpersonalskill3_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2108,7 +2075,7 @@
             <string_labeled name="interpersonalskill4_label" source="skill.interpersonalskill4">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,145" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Gamble</default>
+                <default>Gamble</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill4" source="interpersonalskill4.prof">
                 <anchored to="interpersonalskill4_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2195,7 +2162,7 @@
             <string_labeled name="interpersonalskill5_label" source="skill.interpersonalskill5">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,180" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Handle Animals</default>
+                <default>Handle Animals</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill5" source="interpersonalskill5.prof">
                 <anchored to="interpersonalskill5_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2282,7 +2249,7 @@
             <string_labeled name="interpersonalskill6_label" source="skill.interpersonalskill6">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,215" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Interrogate</default>
+                <default>Interrogate</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill6" source="interpersonalskill6.prof">
                 <anchored to="interpersonalskill6_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2369,7 +2336,7 @@
             <string_labeled name="interpersonalskill7_label" source="skill.interpersonalskill7">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,250" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Intimidate</default>
+                <default>Intimidate</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill7" source="interpersonalskill7.prof">
                 <anchored to="interpersonalskill7_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2456,7 +2423,7 @@
             <string_labeled name="interpersonalskill8_label" source="skill.interpersonalskill8">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,285" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Lead</default>
+                <default>Lead</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill8" source="interpersonalskill8.prof">
                 <anchored to="interpersonalskill8_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2543,7 +2510,7 @@
             <string_labeled name="interpersonalskill9_label" source="skill.interpersonalskill9">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,320" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Lie</default>
+            <default>Lie</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonalskill9" source="interpersonalskill9.prof">
                 <anchored to="interpersonalskill9_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2630,7 +2597,7 @@
             <string_labeled name="interpersonal_skill10_label" source="skill.interpersonal_skill10">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,355" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Music</default>
+            <default>Music</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonal_skill10" source="interpersonal_skill10.prof">
                 <anchored to="interpersonal_skill10_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2718,7 +2685,7 @@
             <string_labeled name="interpersonal_skill11_label" source="skill.interpersonal_skill11">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,390" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Perform</default>
+                <default>Perform</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonal_skill11" source="interpersonal_skill11.prof">
                 <anchored to="interpersonal_skill11_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2806,7 +2773,7 @@
             <string_labeled name="interpersonal_skill12_label" source="skill.interpersonal_skill12">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,425" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Persuade</default>
+                <default>Persuade</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonal_skill12" source="interpersonal_skill12.prof">
                 <anchored to="interpersonal_skill12_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2894,7 +2861,7 @@
             <string_labeled name="interpersonal_skill13_label" source="skill.interpersonal_skill13">
 				<anchored to="interpersonalskillsframe_char" position="insidetopleft" offset="50,460" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Read Person</default>
+            <default>Read Person</default>
 			</string_labeled>
             <button_prof name="skilled_interpersonal_skill13" source="interpersonal_skill13.prof">
                 <anchored to="interpersonal_skill13_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -2980,12 +2947,12 @@
 
 
 
-            <!-- INTRIGUE GROUP -->
+        <!-- INTRIGUE SKILLS -->
             <!-- skill1 -->
             <string_labeled name="intrigue_skill11_label" source="skill.intrigue_skill11">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,40" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Alertness</default>
+            <default>Alertness</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill11" source="intrigue_skill11.prof">
                 <anchored to="intrigue_skill11_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3072,7 +3039,7 @@
             <string_labeled name="intrigue_skill12_label" source="skill.intrigue_skill12">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,75" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Conceal Object</default>
+                <default>Conceal Object</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill12" source="intrigue_skill12.prof">
                 <anchored to="intrigue_skill12_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3159,7 +3126,7 @@
             <string_labeled name="intrigue_skill13_label" source="skill.intrigue_skill13">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,110" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Disguise</default>
+                <default>Disguise</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill13" source="intrigue_skill13.prof">
                 <anchored to="intrigue_skill13_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3246,7 +3213,7 @@
             <string_labeled name="intrigue_skill14_label" source="skill.intrigue_skill14">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,145" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Eavesdrop</default>
+                <default>Eavesdrop</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill14" source="intrigue_skill14.prof">
                 <anchored to="intrigue_skill14_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3333,7 +3300,7 @@
             <string_labeled name="intrigue_skill15_label" source="skill.intrigue_skill15">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,180" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Escape Artist</default>
+                <default>Escape Artist</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill15" source="intrigue_skill15.prof">
                 <anchored to="intrigue_skill15_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3420,7 +3387,7 @@
             <string_labeled name="intrigue_skill16_label" source="skill.intrigue_skill16">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,215" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Hide</default>
+                <default>Hide</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill16" source="intrigue_skill16.prof">
                 <anchored to="intrigue_skill16_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3507,7 +3474,7 @@
             <string_labeled name="intrigue_skill17_label" source="skill.intrigue_skill17">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,250" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Pick Lock</default>
+                <default>Pick Lock</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill17" source="intrigue_skill17.prof">
                 <anchored to="intrigue_skill17_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3594,7 +3561,7 @@
             <string_labeled name="intrigue_skill18_label" source="skill.intrigue_skill18">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,285" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Pick Pocket</default>
+            <default>Pick Pocket</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill18" source="intrigue_skill18.prof">
                 <anchored to="intrigue_skill18_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3681,7 +3648,7 @@
             <string_labeled name="intrigue_skill19_label" source="skill.intrigue_skill19">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,320" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Sabotage</default>
+            <default>Sabotage</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill19" source="intrigue_skill19.prof">
                 <anchored to="intrigue_skill19_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3768,7 +3735,7 @@
             <string_labeled name="intrigue_skill20_label" source="skill.intrigue_skill20">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,355" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Search</default>
+            <default>Search</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill20" source="intrigue_skill20.prof">
                 <anchored to="intrigue_skill20_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3856,7 +3823,7 @@
             <string_labeled name="intrigue_skill21_label" source="skill.intrigue_skill21">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,390" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Sneak</default>
+                <default>Sneak</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill21" source="intrigue_skill21.prof">
                 <anchored to="intrigue_skill21_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -3944,7 +3911,7 @@
             <string_labeled name="intrigue_skill22_label" source="skill.intrigue_skill22">
 				<anchored to="intrigueskillsframe_char" position="insidetopleft" offset="50,425" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Track</default>
+                <default>Track</default>
 			</string_labeled>
             <button_prof name="skilled_intrigue_skill22" source="intrigue_skill22.prof">
                 <anchored to="intrigue_skill22_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4029,12 +3996,12 @@
             </power_roll_skill>
 
 
-            <!-- lore GROUP -->
+        <!-- LORE SKILLS -->
             <!-- skill1 -->
             <string_labeled name="lore_skill11_label" source="skill.lore_skill11">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,40" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Criminal Underworld</default>
+                <default>Criminal Underworld</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill11" source="lore_skill11.prof">
                 <anchored to="lore_skill11_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4121,7 +4088,7 @@
             <string_labeled name="lore_skill12_label" source="skill.lore_skill12">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,75" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Culture</default>
+                <default>Culture</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill12" source="lore_skill12.prof">
                 <anchored to="lore_skill12_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4208,7 +4175,7 @@
             <string_labeled name="lore_skill13_label" source="skill.lore_skill13">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,110" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>History</default>
+                <default>History</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill13" source="lore_skill13.prof">
                 <anchored to="lore_skill13_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4295,7 +4262,7 @@
             <string_labeled name="lore_skill14_label" source="skill.lore_skill14">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,145" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Magic</default>
+                <default>Magic</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill14" source="lore_skill14.prof">
                 <anchored to="lore_skill14_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4382,7 +4349,7 @@
             <string_labeled name="lore_skill15_label" source="skill.lore_skill15">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,180" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Monsters</default>
+                <default>Monsters</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill15" source="lore_skill15.prof">
                 <anchored to="lore_skill15_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4469,7 +4436,7 @@
             <string_labeled name="lore_skill16_label" source="skill.lore_skill16">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,215" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Nature</default>
+                <default>Nature</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill16" source="lore_skill16.prof">
                 <anchored to="lore_skill16_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4556,7 +4523,7 @@
             <string_labeled name="lore_skill17_label" source="skill.lore_skill17">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,250" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Psionics</default>
+                <default>Psionics</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill17" source="lore_skill17.prof">
                 <anchored to="lore_skill17_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4643,7 +4610,7 @@
             <string_labeled name="lore_skill18_label" source="skill.lore_skill18">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,285" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Religion</default>
+                <default>Religion</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill18" source="lore_skill18.prof">
                 <anchored to="lore_skill18_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4730,7 +4697,7 @@
             <string_labeled name="lore_skill19_label" source="skill.lore_skill19">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,320" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Rumors</default>
+                <default>Rumors</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill19" source="lore_skill19.prof">
                 <anchored to="lore_skill19_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4817,7 +4784,7 @@
             <string_labeled name="lore_skill20_label" source="skill.lore_skill20">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,355" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Society</default>
+                <default>Society</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill20" source="lore_skill20.prof">
                 <anchored to="lore_skill20_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4905,7 +4872,7 @@
             <string_labeled name="lore_skill21_label" source="skill.lore_skill21">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,390" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Strategy</default>
+                <default>Strategy</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill21" source="lore_skill21.prof">
                 <anchored to="lore_skill21_label" position="lefthigh" offset="10,0" height="20" width="20" />
@@ -4993,7 +4960,7 @@
             <string_labeled name="lore_skill22_label" source="skill.lore_skill22">
 				<anchored to="loreskillsframe_char" position="insidetopleft" offset="50,425" width="120" />
 				<labelres>char_label_skilllore</labelres>
-<default>Timescape</default>
+                <default>Timescape</default>
 			</string_labeled>
             <button_prof name="skilled_lore_skill22" source="lore_skill22.prof">
                 <anchored to="lore_skill22_label" position="lefthigh" offset="10,0" height="20" width="20" />

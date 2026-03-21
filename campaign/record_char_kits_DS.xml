@@ -221,7 +221,7 @@
 			</frame_char>
 			<label_frametop>
 				<anchored to="notesframe" />
-				<static textres="char_label_benefits" />
+				<static textres="char_label_kits" />
 			</label_frametop>
 			<stringu name="kitnotes1">
 				<anchored to="notesframe">
