@@ -1227,7 +1227,7 @@ function resetInit()
 	ChatIdentityManager.clearCombatantIdentity();
 
 	-- Reset the round counter
-	DB.setValue(CombatManagerMonsters.CT_ROUND, "number", 1);
+	DB.setValue(CombatManagerMonsters.CT_ROUND, "number", 0);
 
 	CombatManagerMonsters.onCombatResetEvent();
 end

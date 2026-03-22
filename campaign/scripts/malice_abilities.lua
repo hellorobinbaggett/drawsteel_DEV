@@ -4,164 +4,36 @@
 --
 
 function onInit()
-	update();
+	self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 end
 function VisDataCleared()
-	update();
+	self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 end
 function InvisDataAdded()
-	update();
+	self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 end
 
-function update()
-	local nodeRecord = getDatabaseNode();
-	local bReadOnly = WindowManager.getReadOnlyState(nodeRecord);
-	local bID = LibraryData.getIDState("npc", nodeRecord);
+function onLockModeChanged(bReadOnly)
+	WindowManager.callSafeControlsSetLockMode(self, { 
+		"malice_mod", "malice_tier1", "malice_tier2", "malice_tier3", "malice_trigger", "malice_effect", "malice_special", 
+		"malice_ability_cost", "malice_ability_cost_string", "malice_abilityname_ability", "malice_keywords", "malice_type", 
+		"malice_distance", "malice_target", "malice_mod", "malice_tier1", "malice_tier2", "malice_tier3", "malice_trigger", 
+		"malice_effect", "malice_special", "malice_ability_cost", "malice_ability_cost_string",
 
--- ABILITY 1
-	local bSection1 = false;
-	local bSection2 = false;
-	local bSection3 = false;
-	local bSection4 = false;
-	if WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability", bReadOnly) then bSection2 = true; end;if WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability", bReadOnly) then bSection2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_keywords", bReadOnly) then bSection2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_type", bReadOnly) then bSection2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_distance", bReadOnly) then bSection2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_target", bReadOnly) then bSection2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_characteristic_label", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_mod", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier1", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier2", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier3", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_trigger", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_effect", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_special", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string", bReadOnly) then bSection4 = true; end;
-	-- hides fields
-	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_keywords", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_type", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_distance", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_target", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_mod", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier1", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_trigger", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_effect", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_special", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string", bReadOnly);
+		"malice_mod_1", "malice_tier1_1", "malice_tier2_1", "malice_tier3_1", "malice_trigger_1", "malice_effect_1", "malice_special_1", 
+		"malice_ability_cost_1", "malice_ability_cost_string_1", "malice_abilityname_ability_1", "malice_keywords_1", "malice_type_1", 
+		"malice_distance_1", "malice_target_1", "malice_mod_1", "malice_tier1_1", "malice_tier2_1", "malice_tier3_1", "malice_trigger_1", 
+		"malice_effect_1", "malice_special_1", "malice_ability_cost_1", "malice_ability_cost_string",
 
+		"malice_mod_2", "malice_tier1_2", "malice_tier2_2", "malice_tier3_2", "malice_trigger_2", "malice_effect_2", "malice_special_2", 
+		"malice_ability_cost_2", "malice_ability_cost_string_2", "malice_abilityname_ability_2", "malice_keywords_2", "malice_type_2", 
+		"malice_distance_2", "malice_target_2", "malice_mod_2", "malice_tier1_2", "malice_tier2_2", "malice_tier3_2", "malice_trigger_2", 
+		"malice_effect_2", "malice_special_2", "malice_ability_cost_2", "malice_ability_cost_string",
 
--- ABILITY 2
-	local bSection1_2 = false;
-	local bSection2_2 = false;
-	local bSection3_2 = false;
-	local bSection4_2 = false;
-	if WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_2", bReadOnly) then bSection2_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_keywords_2", bReadOnly) then bSection2_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_type_2", bReadOnly) then bSection2_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_distance_2", bReadOnly) then bSection2_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_target_2", bReadOnly) then bSection2_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_mod_2", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_characteristic_label_2", bReadOnly) then bSection3_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier1_2", bReadOnly) then bSection3_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier2_2", bReadOnly) then bSection3_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier3_2", bReadOnly) then bSection3_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_trigger_2", bReadOnly) then bSection4_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_effect_2", bReadOnly) then bSection4_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_special_2", bReadOnly) then bSection4_2 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_2", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_2", bReadOnly) then bSection4 = true; end;
-	-- hides fields
-	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_keywords_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_type_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_distance_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_target_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_mod_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier1_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier2_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier3_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_trigger_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_effect_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_special_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_2", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_2", bReadOnly);
+		"malice_mod_3", "malice_tier1_3", "malice_tier2_3", "malice_tier3_3", "malice_trigger_3", "malice_effect_3", "malice_special_3", 
+		"malice_ability_cost_3", "malice_ability_cost_string_3", "malice_abilityname_ability_3", "malice_keywords_3", "malice_type_3", 
+		"malice_distance_3", "malice_target_3", "malice_mod_3", "malice_tier1_3", "malice_tier2_3", "malice_tier3_3", "malice_trigger_3", 
+		"malice_effect_3", "malice_special_3", "malice_ability_cost_3", "malice_ability_cost_string"
 
-
--- ABILITY 3
-	local bSection1_3 = false;
-	local bSection2_3 = false;
-	local bSection3_3 = false;
-	local bSection4_3 = false;
-	if WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_3", bReadOnly) then bSection2_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_keywords_3", bReadOnly) then bSection2_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_type_3", bReadOnly) then bSection2_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_distance_3", bReadOnly) then bSection2_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_target_3", bReadOnly) then bSection2_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_mod_3", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_characteristic_label_3", bReadOnly) then bSection3_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier1_3", bReadOnly) then bSection3_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier2_3", bReadOnly) then bSection3_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier3_3", bReadOnly) then bSection3_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_trigger_3", bReadOnly) then bSection4_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_effect_3", bReadOnly) then bSection4_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_special_3", bReadOnly) then bSection4_3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_3", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_3", bReadOnly) then bSection4 = true; end;
-	-- hides fields
-	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_keywords_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_type_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_distance_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_target_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_mod_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier1_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier2_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier3_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_trigger_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_effect_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_special_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_3", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_3", bReadOnly);
-
--- ABILITY 4
-	local bSection1_4 = false;
-	local bSection2_4 = false;
-	local bSection3_4 = false;
-	local bSection4_4 = false;
-	if WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_4", bReadOnly) then bSection2_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_keywords_4", bReadOnly) then bSection2_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_type_4", bReadOnly) then bSection2_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_distance_4", bReadOnly) then bSection2_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_target_4", bReadOnly) then bSection2_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_mod_4", bReadOnly) then bSection3 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_characteristic_label_4", bReadOnly) then bSection3_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier1_4", bReadOnly) then bSection3_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier2_4", bReadOnly) then bSection3_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_tier3_4", bReadOnly) then bSection3_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_trigger_4", bReadOnly) then bSection4_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_effect_4", bReadOnly) then bSection4_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_special_4", bReadOnly) then bSection4_4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_4", bReadOnly) then bSection4 = true; end;
-	if WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_4", bReadOnly) then bSection4 = true; end;
-	-- hides fields
-	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_keywords_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_type_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_distance_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_target_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_mod_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier1_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier2_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_tier3_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_trigger_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_effect_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_special_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_4", bReadOnly);
-	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_4", bReadOnly);
-
+	}, bReadOnly);
 end

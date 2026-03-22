@@ -219,7 +219,7 @@
 
 	<!-- Combat Tracker -->
 	<string name="ct_label_gone">Gone</string>
-	<string name="ct_label_name">Initiative Order</string>
+	<string name="ct_label_name"> </string>
 	<string name="ct_label_name_heroes">Heroes</string>
 	<string name="ct_label_name_monsters">Monsters</string>
 	<string name="ct_label_triggeredaction">T.A.</string>
@@ -228,6 +228,7 @@
 	<string name="ct_label_stamina">STAMINA</string>
 	<string name="ct_label_order">Order</string>
 	<string name="ct_label_malice">MALICE</string>
+	<string name="ct_label_victories">Hero Victories</string>
 	<string name="ct_label_herotokens">HERO TOKENS</string>
 	<string name="ct_tooltip_gone">Gone</string>
 	<string name="ct_tooltip_ta">Triggered Action</string>
@@ -420,7 +421,7 @@
 	<string name="strategy">Strategy</string>
 	<string name="timescape">Timescape</string>
 	<string name="tooltip_pr">Power Roll</string>
-	<string name="tooltip_ir">Roll Initiative</string>
+	<string name="tooltip_ir">START COMBAT</string>
 	<string name="tooltip_st">Saving Throw</string>
 	<string name="tooltip_drawsteel">Draw Steel!</string>
 
@@ -434,7 +435,7 @@
 	<string name="char_label_characteristics">Characteristics</string>
 	<string name="char_label_characteristic">Characteristic:</string>
 	<string name="char_label_skillplus">+</string>
-	<string name="char_label_stats">Stats</string>
+	<string name="char_label_kits">Kits</string>
 	<string name="char_label_surges">Surges</string>
 	<string name="char_label_herotokens">Hero Tokens</string>
 	<string name="char_label_shields">Shields</string>

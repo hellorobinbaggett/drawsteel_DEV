@@ -12,6 +12,8 @@ CT_COMBATANT_PATH = "combattracker.list.*";
 CT_COMBATANT_PARENT = "combattracker.list";
 CT_LIST = "combattracker.list";
 CT_ROUND = "combattracker.round";
+CT_MALICE = "combattracker.malice";
+CT_VICTORIES = "combattracker.victories";
 
 local _bTrackersInit = false;
 
@@ -60,9 +62,9 @@ end
 function onTabletopInit()
 	CombatManager.registerStandardCombatHotKeys();
 
-	OOBManager.registerOOBMsgHandler(CombatManager.OOB_MSGTYPE_ENDTURN, CombatManager.handleEndTurn);
-	OOBManager.registerOOBMsgHandler(CombatManager.OOB_MSGTYPE_INITSWAP, CombatManager.handleInitSwap);
-	OOBManager.registerOOBMsgHandler(CombatManagerDS.OOB_MSGTYPE_GONE, CombatManagerDS.handleGone);
+	-- OOBManager.registerOOBMsgHandler(CombatManager.OOB_MSGTYPE_ENDTURN, CombatManager.handleEndTurn);
+	-- OOBManager.registerOOBMsgHandler(CombatManager.OOB_MSGTYPE_INITSWAP, CombatManager.handleInitSwap);
+	-- OOBManager.registerOOBMsgHandler(CombatManagerDS.OOB_MSGTYPE_GONE, CombatManagerDS.handleGone);
 
 	CombatManager.initTrackers();
 
@@ -89,7 +91,8 @@ function onHotKeyNextActor()
 	return true;
 end
 function onHotKeyNextRound()
-	CombatManager.nextRound(1);
+	local nodeWin = window.getDatabaseNode();
+	CombatManager.nextRound(1, nodeWin);
 	return true;
 end
 
@@ -1077,9 +1080,9 @@ function nextActor(bSkipBell, bNoRoundAdvance)
 		end
 		if nIndexNext > nIndexActive then
 			nodeNext = aEntries[nIndexNext];
-			for i = nIndexActive + 1, nIndexNext - 1 do
-				CombatManager.showTurnMessage(aEntries[i], false);
-			end
+			-- for i = nIndexActive + 1, nIndexNext - 1 do
+			-- 	CombatManager.showTurnMessage(aEntries[i], false);
+			-- end
 		end
 	end
 
@@ -1104,20 +1107,57 @@ function nextActor(bSkipBell, bNoRoundAdvance)
 		for i = nIndexActive + 1, #aEntries do
 			CombatManager.showTurnMessage(aEntries[i], false);
 		end
-		CombatManager.nextRound(1);
+		local nodeWin = window.getDatabaseNode();
+		CombatManagerDS.nextRound(1, nodeWin);
 	end
 end
-function nextRound(nRounds)
+function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+function nextRound(nRounds, nodeWin)
 	if not Session.IsHost then
 		return;
 	end
-
 	local nodeActive = CombatManager.getActiveCT();
 	local nCurrent = DB.getValue(CombatManager.CT_ROUND, 0);
 
 	-- If current actor, then advance based on that
 	local nStartCounter = 1;
 	local aEntries = CombatManager.getSortedCombatantList();
+
+	-- Create list of heroes in CT
+	local nodeCT = CombatManager.resolveNode(vEntry);
+	local aHeroes = {};
+	local aVictories = {};
+	for i,v in pairs(aEntries) do
+		local count = 0;
+		local victories = 0;
+		
+		if CombatManager.getFactionFromCT(v) == "friend" then
+			--count number of heroes
+			count = count + 1;
+			table.insert(aHeroes, count);
+		end
+	end
+
+	Debug.chat(aVictories);
+	local victories = DB.getValue(nodeWin, "victories", "number", victories);
+	local currentMalice = DB.getValue(nodeWin, "malice", "number", malice);
+	local numberOfHeroes = CombatManagerDS.tablelength(aHeroes);
+
+	if nCurrent == 1 then
+		local newMalice = numberOfHeroes + currentMalice + nRounds;
+		Debug.chat(newMalice);
+		DB.setValue(nodeWin, "malice", "number", newMalice);
+	else 
+		local firstTurnMalice = victories + numberOfHeroes + currentMalice + nRounds;
+		Debug.chat(firstTurnMalice);
+		DB.setValue(nodeWin, "malice", "number", firstTurnMalice);
+	end
+	
+
 	if nodeActive then
 		DB.setValue(nodeActive, "active", "number", 0);
 		ChatIdentityManager.clearCombatantIdentity();
@@ -1284,13 +1324,16 @@ function resetInit()
 	-- De-activate all entries
 	for _,v in pairs(CombatManager.getCombatantNodes()) do
 		DB.setValue(v, "active", "number", 0);
+		DB.setValue(v, "active", "number", 0);
+		-- need to add malice here
+		--DB.setValue(nodeWin, "malice", "number", 0);
 	end
 
 	-- Clear GM identity additions (based on option)
 	ChatIdentityManager.clearCombatantIdentity();
 
 	-- Reset the round counter
-	DB.setValue(CombatManager.CT_ROUND, "number", 1);
+	DB.setValue(CombatManager.CT_ROUND, "number", 0);
 
 	CombatManager.onCombatResetEvent();
 end

@@ -16,10 +16,12 @@
 			</list_ct_host>
 
 			<sub_ct_malice />
+			<sub_ct_victories />
 
 			<sub_ct_heroes_host />
 			<sub_ct_monsters_host />
 
+			<ct_drawsteel />
 			<ct_initiative_roll />
 		</sheetdata>
 	</windowclass>

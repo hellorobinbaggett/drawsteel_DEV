@@ -38,7 +38,7 @@
 	<template name="initiative_roll">
 		<buttoncontrol>
 			<anchored width="32" height="32" />
-			<icon normal="button_dialog_roll" pressed="button_dialog_roll_down" />
+			<icon normal="ct_initiative" hover="ct_initiative_hover" pressed="ct_initiative_pressed" />
 		</buttoncontrol>
 	</template>
 

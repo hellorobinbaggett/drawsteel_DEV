@@ -18,6 +18,7 @@
 	<string name="tab_order">Order</string>
 	<string name="tab_other">Other</string>
 	<string name="tab_negotiate">Negotiate</string>
+	<string name="tab_kits">Kits</string>
 	<string name="tab_xp">XP</string>
 
 	<string name="library_recordtype_label_ability">Abilities</string>

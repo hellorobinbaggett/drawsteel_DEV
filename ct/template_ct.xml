@@ -11,7 +11,7 @@
 			<static textres="ct_label_name" />
 			<bounds>90,4,300,14</bounds>
 		</label>
-	</template>
+	</template> 
 	<template name="label_ct_header_init">
 		<label>
 			<static textres="ct_label_init" />
@@ -34,11 +34,20 @@
 			</script>
 		</buttoncontrol>
 	</template>
+	<template name="ct_drawsteel">
+		<label name="label_drawsteel">
+			<bounds>219,-70,165,50</bounds>
+			<static textres="ct_label_drawsteel" />
+			<center />
+			<color>dec790</color>
+			<frame name="sidebar_dock_entry_icon" offset="-0,2,0,2"/>
+		</label>
+	</template>
 
 	<template name="ct_initiative_roll">
 		<initiative_roll>
-			<bounds>100,-77,60,60</bounds>
-			<tooltip textres="tooltip_ir" />
+			<bounds>270,-75,60,60</bounds>
+			<!-- <tooltip textres="tooltip_ir" /> -->
 			<script>	
 				function action(draginfo)
 					local nodeWin = window.getDatabaseNode();
@@ -56,19 +65,22 @@
 					return action(draginfo);
 				end
 				function onButtonPress()
-					return action();
+					local nodeWin = window.getDatabaseNode();
+					CombatManagerDS.nextRound(1, nodeWin);
+					return action();				
 				end
+				
 			</script>
 		</initiative_roll>
 	</template>
 
 	<template name="sub_ct_malice">
 		<subwindow name="sub_malice">
-			<anchored to="sub_header" width="90" height="65">
-				<top offset="-20" />
-				<left anchor="center" offset="-35" />
+			<anchored to="sub_header" width="90" height="55">
+				<top offset="-15" />
+				<left anchor="center" offset="-45" />
 			</anchored>
-			<frame name="groupbox" />
+			<frame name="metalplate" />
 			<class>ct_malice</class>
 			<activate />
 			<fastinit />
@@ -76,19 +88,54 @@
 	</template>
 	<windowclass name="ct_malice">
 		<sheetdata>
-			<basicnumber name="malice">
-				<anchored width="40" height="20">
-					<top offset="15" />
-					<left anchor="center" offset="-20" />
+			<number_ct_crosslink name="malice">
+				<source>malice</source>
+				<anchored width="50" height="25">
+					<top offset="8" />
+					<left anchor="center" offset="-25" />
 				</anchored>
 				<font>reference-b-large</font>
 				<gmeditonly />
-			</basicnumber>
+			</number_ct_crosslink>
 			<label name="label_malice">
+				<color>dec790</color>
 				<anchored position="insidetop">
 					<top parent="malice" anchor="bottom" />
 				</anchored>
 				<static textres="ct_label_malice" />
+				<center />
+			</label>
+		</sheetdata>
+	</windowclass>
+
+	<template name="sub_ct_victories">
+		<subwindow name="sub_victories">
+			<anchored to="sub_header" width="100" height="60">
+				<top offset="-23" />
+				<left anchor="right" offset="-110" />
+			</anchored>
+			<class>ct_victories</class>
+			<activate />
+			<fastinit />
+		</subwindow>
+	</template>
+
+	<windowclass name="ct_victories">
+		<sheetdata>
+			<number_ct_crosslink name="victories">
+				<source>victories</source>
+				<anchored width="40" height="20">
+					<top offset="17" />
+					<left anchor="center" offset="-20" />
+				</anchored>
+				<font>reference-b-large</font>
+				<gmeditonly />
+			</number_ct_crosslink>
+			<label name="label_victories">
+				<anchored position="insidetop">
+					<top parent="victories" anchor="bottom" />
+				</anchored>
+				<static textres="ct_label_victories" />
 				<center />
 			</label>
 		</sheetdata>
@@ -265,7 +312,8 @@
 		<buttoncontrol>
 			<script>
 				function onButtonPress()
-					CombatManagerDS.nextRound(1);
+					local nodeWin = window.getDatabaseNode();
+					CombatManagerDS.nextRound(1, nodeWin);
 				end
 			</script>
 		</buttoncontrol>

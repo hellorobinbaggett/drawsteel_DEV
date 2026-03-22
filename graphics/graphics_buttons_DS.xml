@@ -22,6 +22,10 @@
 	<icon name="info_alert" file="graphics/buttons/button_info.png" />
 	<icon name="info_warning" file="graphics/buttons/button_info_yellow.png" />
 
+	<icon name="ct_initiative" file="graphics/buttons/d10.png" />
+	<icon name="ct_initiative_hover" file="graphics/buttons/hover_d10.png" />
+	<icon name="ct_initiative_pressed" file="graphics/buttons/pressed_d10.png" />
+
 	<icon name="respite" file="graphics/buttons/respite.png" />
 	<icon name="respite_down" file="graphics/buttons/respite_down.png" />
 	

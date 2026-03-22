@@ -36,8 +36,6 @@ function update()
 	divider3.setVisible(bSection3);
 	divider4.setVisible(bSection4);
 
-	-- space.setReadOnly(bReadOnly);
-	-- reach.setReadOnly(bReadOnly);
 	WindowManager.callSafeControlUpdate(self, "characteristic", bReadOnly);
 	WindowManager.callSafeControlUpdate(self, "tier1", bReadOnly);
 	WindowManager.callSafeControlUpdate(self, "tier2", bReadOnly);

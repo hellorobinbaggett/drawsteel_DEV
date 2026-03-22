@@ -46,7 +46,8 @@ function onHotKeyNextActor()
 	return true;
 end
 function onHotKeyNextRound()
-	CombatManagerHeroes.nextRound(1);
+	local nodeWin = window.getDatabaseNode();
+	CombatManagerHeroes.nextRound(1, nodeWin);
 	return true;
 end
 
@@ -1061,7 +1062,8 @@ function nextActor(bSkipBell, bNoRoundAdvance)
 		for i = nIndexActive + 1, #aEntries do
 			CombatManagerHeroes.showTurnMessage(aEntries[i], false);
 		end
-		CombatManagerHeroes.nextRound(1);
+		local nodeWin = window.getDatabaseNode();
+		CombatManagerHeroes.nextRound(1, nodeWin);
 	end
 end
 function nextRound(nRounds)
@@ -1227,7 +1229,7 @@ function resetInit()
 	ChatIdentityManager.clearCombatantIdentity();
 
 	-- Reset the round counter
-	DB.setValue(CombatManagerHeroes.CT_ROUND, "number", 1);
+	DB.setValue(CombatManagerHeroes.CT_ROUND, "number", 0);
 
 	CombatManagerHeroes.onCombatResetEvent();
 end

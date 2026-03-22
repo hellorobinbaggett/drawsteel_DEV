@@ -28,12 +28,10 @@ function update()
 
 	local bSection2 = false;
 	if Session.IsHost then
-		if WindowManager.callSafeControlUpdate(self, "language_name", bReadOnly) then bSection2 = true; end;
 		if WindowManager.callSafeControlUpdate(self, "motivations", bReadOnly) then bSection2 = true; end;
 		if WindowManager.callSafeControlUpdate(self, "pitfalls", bReadOnly) then bSection2 = true; end;
 		if WindowManager.callSafeControlUpdate(self, "outcomes", bReadOnly) then bSection2 = true; end;
 	else
-		WindowManager.callSafeControlUpdate(self, "language_name", bReadOnly, true);
 		WindowManager.callSafeControlUpdate(self, "motivations", bReadOnly, true);
 		WindowManager.callSafeControlUpdate(self, "pitfalls", bReadOnly, true);
 		WindowManager.callSafeControlUpdate(self, "outcomes", bReadOnly, true);

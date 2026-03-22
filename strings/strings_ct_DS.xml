@@ -22,6 +22,9 @@
 	<string name="ct_label_stamina">Stamina</string>
 	<string name="ct_label_experience">Experience</string>
 
+	<string name="ct_label_drawsteel">DRAW &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; STEEL!</string>
+	<string name="ct_label_draw">DRAW</string>
+	<string name="ct_label_steel">STEEL!</string>
 	<string name="ct_label_malice">MALICE</string>
 	<string name="ct_label_herotokens">HERO TOKENS</string>
 
