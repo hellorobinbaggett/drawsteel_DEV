@@ -3966,7 +3966,7 @@
 
 <!-- MALICE ABILITIES -->
     <windowclass name="malice_record_content_abilities" copy="record_context_text_base">
-		<script file="campaign/scripts/monster_abilities.lua" />
+		<script file="campaign/scripts/malice_abilities.lua" />
 		<target>abilities</target>
 	<sheetdata name="malice_sheetdata_ability">
 		<anchor_column name="columnanchor" />

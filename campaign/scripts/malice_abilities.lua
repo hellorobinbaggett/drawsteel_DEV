@@ -1,39 +1,78 @@
--- 
--- Please see the license.html file included with this distribution for 
+--
+-- Please see the license.html file included with this distribution for
 -- attribution and copyright information.
 --
 
 function onInit()
-	self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
-end
-function VisDataCleared()
-	self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
-end
-function InvisDataAdded()
-	self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+	self.onStateChanged();
 end
 
-function onLockModeChanged(bReadOnly)
-	WindowManager.callSafeControlsSetLockMode(self, { 
-		"malice_mod", "malice_tier1", "malice_tier2", "malice_tier3", "malice_trigger", "malice_effect", "malice_special", 
-		"malice_ability_cost", "malice_ability_cost_string", "malice_abilityname_ability", "malice_keywords", "malice_type", 
-		"malice_distance", "malice_target", "malice_mod", "malice_tier1", "malice_tier2", "malice_tier3", "malice_trigger", 
-		"malice_effect", "malice_special", "malice_ability_cost", "malice_ability_cost_string",
+function onLockModeChanged()
+	self.onStateChanged();
+end
+function onIDModeChanged()
+	self.onStateChanged();
+end
 
-		"malice_mod_1", "malice_tier1_1", "malice_tier2_1", "malice_tier3_1", "malice_trigger_1", "malice_effect_1", "malice_special_1", 
-		"malice_ability_cost_1", "malice_ability_cost_string_1", "malice_abilityname_ability_1", "malice_keywords_1", "malice_type_1", 
-		"malice_distance_1", "malice_target_1", "malice_mod_1", "malice_tier1_1", "malice_tier2_1", "malice_tier3_1", "malice_trigger_1", 
-		"malice_effect_1", "malice_special_1", "malice_ability_cost_1", "malice_ability_cost_string",
+function onStateChanged()
+	local nodeRecord = getDatabaseNode();
+	local bReadOnly = WindowManager.getReadOnlyState(nodeRecord);
+	local bID = RecordDataManager.getIDState("item", nodeRecord);
+	
+	WindowManager.callSafeControlsSetLockMode(self, { "notes", "description", }, bReadOnly);
+	WindowManager.callSafeControlsSetVisible(self, { "notes", "description", }, bID);
 
-		"malice_mod_2", "malice_tier1_2", "malice_tier2_2", "malice_tier3_2", "malice_trigger_2", "malice_effect_2", "malice_special_2", 
-		"malice_ability_cost_2", "malice_ability_cost_string_2", "malice_abilityname_ability_2", "malice_keywords_2", "malice_type_2", 
-		"malice_distance_2", "malice_target_2", "malice_mod_2", "malice_tier1_2", "malice_tier2_2", "malice_tier3_2", "malice_trigger_2", 
-		"malice_effect_2", "malice_special_2", "malice_ability_cost_2", "malice_ability_cost_string",
+	WindowManager.callSafeControlUpdate(self, "malice_mod", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_trigger", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_effect", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_special", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_distance", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_target", bReadOnly);
 
-		"malice_mod_3", "malice_tier1_3", "malice_tier2_3", "malice_tier3_3", "malice_trigger_3", "malice_effect_3", "malice_special_3", 
-		"malice_ability_cost_3", "malice_ability_cost_string_3", "malice_abilityname_ability_3", "malice_keywords_3", "malice_type_3", 
-		"malice_distance_3", "malice_target_3", "malice_mod_3", "malice_tier1_3", "malice_tier2_3", "malice_tier3_3", "malice_trigger_3", 
-		"malice_effect_3", "malice_special_3", "malice_ability_cost_3", "malice_ability_cost_string"
+	WindowManager.callSafeControlUpdate(self, "malice_mod_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier1_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier2_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier3_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_trigger_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_effect_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_special_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_distance_1", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_target_1", bReadOnly);
 
-	}, bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_mod_1_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier1_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier2_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier3_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_trigger_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_effect_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_special_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_distance_2", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_target_2", bReadOnly);
+
+	WindowManager.callSafeControlUpdate(self, "malice_mod_1_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier1_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier2_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_tier3_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_trigger_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_effect_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_special_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_ability_cost_string_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_abilityname_ability_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_distance_3", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "malice_target_3", bReadOnly);
+
+	WindowManager.callSafeControlUpdate(self, "sub_pack", bReadOnly, bID);
 end

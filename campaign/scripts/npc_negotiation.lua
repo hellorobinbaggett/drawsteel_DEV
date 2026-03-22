@@ -1,39 +1,32 @@
--- 
--- Please see the license.html file included with this distribution for 
+--
+-- Please see the license.html file included with this distribution for
 -- attribution and copyright information.
 --
 
 function onInit()
-	update();
-end
-function VisDataCleared()
-	update();
-end
-function InvisDataAdded()
-	update();
+	self.onStateChanged();
 end
 
-function update()
+function onLockModeChanged()
+	self.onStateChanged();
+end
+function onIDModeChanged()
+	self.onStateChanged();
+end
+
+function onStateChanged()
 	local nodeRecord = getDatabaseNode();
 	local bReadOnly = WindowManager.getReadOnlyState(nodeRecord);
-	local bID = LibraryData.getIDState("npc", nodeRecord);
+	local bID = RecordDataManager.getIDState("item", nodeRecord);
+	
+	WindowManager.callSafeControlsSetLockMode(self, { "notes", "description", }, bReadOnly);
+	WindowManager.callSafeControlsSetVisible(self, { "notes", "description", }, bID);
+	WindowManager.callSafeControlUpdate(self, "motivations", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "pitfalls", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "impressionscore", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "languge_name", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "languge_name_label", bReadOnly);
 
-	local bSection1 = false;
-	if Session.IsHost then
-		if WindowManager.callSafeControlUpdate(self, "impressionscore", bReadOnly) then bSection1 = true; end;
-	else
-		WindowManager.callSafeControlUpdate(self, "impressionscore", bReadOnly, true);
-	end
-	-- divider.setVisible(bSection1);
 
-	local bSection2 = false;
-	if Session.IsHost then
-		if WindowManager.callSafeControlUpdate(self, "motivations", bReadOnly) then bSection2 = true; end;
-		if WindowManager.callSafeControlUpdate(self, "pitfalls", bReadOnly) then bSection2 = true; end;
-		if WindowManager.callSafeControlUpdate(self, "outcomes", bReadOnly) then bSection2 = true; end;
-	else
-		WindowManager.callSafeControlUpdate(self, "motivations", bReadOnly, true);
-		WindowManager.callSafeControlUpdate(self, "pitfalls", bReadOnly, true);
-		WindowManager.callSafeControlUpdate(self, "outcomes", bReadOnly, true);
-	end
+	WindowManager.callSafeControlUpdate(self, "sub_pack", bReadOnly, bID);
 end
