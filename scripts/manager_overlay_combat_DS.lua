@@ -4,7 +4,6 @@
 --
 
 OOB_MSGTYPE_ROUND_NOTIFY = "notify_round";
-OOB_MSGTYPE_TURN_NOTIFY = "notify_turn";
 
 OOB_MSGTYPE_ATTACK_NOTIFY = "notify_attack";
 OOB_MSGTYPE_DAMAGE_NOTIFY = "notify_damage";
@@ -38,31 +37,6 @@ function handleRoundNotify(msgOOB)
 		sText = string.format(Interface.getString("combat_toast_text_round"), msgOOB.nRound or 0);
 	};
 	OverlayManager.showFullScreenMessage(tOverlayData);
-end
-function notifyTurnStart(nodeActor, bNewRound)
-	if bNewRound then
-		return;
-	end
-
-	local msgOOB = {
-		type = OverlayCombatManager.OOB_MSGTYPE_TURN_NOTIFY,
-		sActorNode = DB.getPath(nodeActor),
-	};
-	Comm.deliverOOBMessage(msgOOB);
-end
-function handleTurnNotify(msgOOB)
-	local rActor = ActorManager.resolveActor(msgOOB.sActorNode);
-	if not Session.IsHost and not ActorManager.isVisible(rActor) then
-		return;
-	end
-
-	local tOverlayData = {
-		sOption = "TOAST_TURN",
-		sToastType = "info",
-		sTitle = Interface.getString("combat_toast_title_turn"),
-		sText = string.format(Interface.getString("combat_toast_text_turn"), ActorManager.getDisplayName(rActor)),
-	};
-	OverlayManager.showToastMessage(tOverlayData);
 end
 
 function notifyAttack(rSource, rTarget, rRoll)

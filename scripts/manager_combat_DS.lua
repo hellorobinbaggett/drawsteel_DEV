@@ -1142,18 +1142,15 @@ function nextRound(nRounds, nodeWin)
 		end
 	end
 
-	Debug.chat(aVictories);
 	local victories = DB.getValue(nodeWin, "victories", "number", victories);
 	local currentMalice = DB.getValue(nodeWin, "malice", "number", malice);
 	local numberOfHeroes = CombatManagerDS.tablelength(aHeroes);
 
 	if nCurrent == 1 then
 		local newMalice = numberOfHeroes + currentMalice + nRounds;
-		Debug.chat(newMalice);
 		DB.setValue(nodeWin, "malice", "number", newMalice);
 	else 
 		local firstTurnMalice = victories + numberOfHeroes + currentMalice + nRounds;
-		Debug.chat(firstTurnMalice);
 		DB.setValue(nodeWin, "malice", "number", firstTurnMalice);
 	end
 	
