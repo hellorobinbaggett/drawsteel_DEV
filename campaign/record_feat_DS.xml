@@ -35,7 +35,7 @@
 			</button_iadd>
 			<list_content_column name="features">
 				<datasource>.features</datasource>
-				<class>reference_classfeature_listitem</class>
+				<class>reference_classfeatures_listitem</class>
 				<sortby><field>level</field><field>name</field></sortby>
 			</list_content_column>
 
@@ -54,14 +54,14 @@
 		</sheetdata>
 	</windowclass>
 
-	<windowclass name="reference_classfeature_listitem">
+	<windowclass name="reference_classfeatures_listitem">
 		<margins control="0,0,0,2" />
 		<script>
 			function onInit()
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tControls = { "level", "name", "idelete", };
+				local tControls = { "featurelevel", "name", "idelete", };
 				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
 			end
 		</script>
@@ -71,9 +71,9 @@
 
 			<button_listitem_idelete_left name="idelete" />
 			<linkc_listitem_left name="shortcut">
-				<class>reference_classfeature</class>
+				<class>reference_classfeatures</class>
 			</linkc_listitem_left>
-			<number_listitem_left name="level">
+			<number_listitem_left name="featurelevel">
 				<nodrag />
 			</number_listitem_left>
 
@@ -121,7 +121,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tControls = { "choicetype", "level", "name", "idelete", };
+				local tControls = { "choicetype", "featurelevel", "name", "idelete", };
 				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
 			end
 		</script>

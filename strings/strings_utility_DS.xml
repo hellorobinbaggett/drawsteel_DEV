@@ -4,6 +4,7 @@
 	<!-- Tabs -->
 	<string name="tab_actions">Actions</string>
 	<string name="tab_features">Features</string>
+	<string name="tab_subclass">Subclass</string>
 	<string name="tab_inventory">Inventory</string>
 	<string name="tab_titles">Titles</string>
 	<string name="tab_main">Main</string>

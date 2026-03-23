@@ -98,12 +98,12 @@
 					<bottom offset="-6" />
 				</anchored>
 				<datasource>.featureslist</datasource>
-				<class>reference_classfeature_listitem</class>
+				<class>reference_classfeatures_listitem</class>
 				<acceptdrop>
 					<class>reference_classfeatures</class>
 					<field>*</field>
 				</acceptdrop>
-				<sortby><field>level</field></sortby>
+				<sortby><field>featurelevel</field></sortby>
 			</list_text>
 			<scrollbar_list>
 				<anchored to="features" />

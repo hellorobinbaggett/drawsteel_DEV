@@ -21,6 +21,12 @@
 			<embed />
 		</tab>
 		<tab merge="add">
+			<name>subclass</name>
+			<resource>tab_subclass</resource>
+			<class>reference_class_featurechoices</class>
+			<embed />
+		</tab>
+		<tab merge="add">
 			<name>features</name>
 			<resource>tab_features</resource>
 			<class>reference_class_features</class>
@@ -50,7 +56,7 @@
 		<margins control="0,0,0,5" />
 		<sheetdata>
 			<anchor_content_top />
-
+			<!-- FEATURES -->
 			<header_content_framed_headersimple name="features_header">
 				<static textres="class_header_features"/>
 			</header_content_framed_headersimple>
@@ -60,19 +66,22 @@
 			</button_iadd>
 			<list_content_column name="features">
 				<datasource>.features</datasource>
-				<class>reference_classfeature_listitem</class>
-				<sortby><control>level</control><field>name</field></sortby>
+				<class>reference_classfeatures_listitem</class>
+				<sortby><control>featurelevel</control><field>name</field></sortby>
 			</list_content_column>
+		</sheetdata>
+	</windowclass>
 
+	<windowclass name="reference_class_featurechoices">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<!-- CHOICES -->
 			<header_content_framed_headersimple name="featurechoices_header">
 				<static textres="class_header_featurechoices"/>
 				<tooltip textres="tooltip_class_featurechoices" />
 			</header_content_framed_headersimple>
-			<buttoncontrol>
-				<icon normal="info_alert" pressed="info_alert" />
-				<tooltip textres="tooltip_class_featurechoices" />
-				<bounds>210,5,20,20</bounds>
-			</buttoncontrol>
 			<button_iadd name="featurechoices_iadd">
 				<anchored to="featurechoices_header" position="insidetopright" offset="2,0" />
 				<target>featurechoices</target>
@@ -80,8 +89,15 @@
 			<list_content_column name="featurechoices">
 				<datasource>.featurechoices</datasource>
 				<class>reference_classfeaturechoice_listitem</class>
-				<sortby><field>level</field><field>choicetype</field><field>name</field></sortby>
+				<sortby><field>choicetype</field><field>featurelevel</field><field>name</field></sortby>
 			</list_content_column>
+
+			
+			<buttoncontrol>
+				<icon normal="info_alert" pressed="info_alert" />
+				<tooltip textres="tooltip_class_featurechoices" />
+				<bounds>170,5,20,20</bounds>
+			</buttoncontrol>
 		</sheetdata>
 	</windowclass>
 
@@ -182,88 +198,18 @@
 				<bounds>172,5,20,20</bounds>
 			</buttoncontrol>
 
-			<!-- <button_checkbox name="choice1">
-				<bounds>90,30,20,20</bounds>
-			</button_checkbox> -->
-
-
-<!-- 
-			<frame_char name="choiceframe2">
-				<bounds>118,23,46,190</bounds>
-			</frame_char>
-
-			<number_characteristicscore name="startingMight2" source="startingMight2">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="130,40" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingAgility2" source="startingAgility2">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="130,70" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingReason2" source="startingReason2">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="130,100" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingIntuition2" source="startingIntuition2">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="130,130" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingPresence2" source="startingPresence2">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="130,160" width="20" />
-			</number_characteristicscore>
-
-			<button_checkbox name="choice2">
-				<bounds>130,30,20,20</bounds>
-			</button_checkbox>
-
-			<frame_char name="choiceframe3">
-				<bounds>158,23,46,190</bounds>
-			</frame_char>
-
-			<number_characteristicscore name="startingMight3" source="startingMight3">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="170,40" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingAgility3" source="startingAgility3">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="170,70" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingReason3" source="startingReason3">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="170,100" width="20" />
-			</number_characteristicscore>
-
-			<number_characteristicscore name="startingIntuition3" source="startingIntuition3">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="170,130" width="20" />
-			</number_characteristicscore>	
-
-			<number_characteristicscore name="startingPresence3" source="startingPresence3">
-				
-				<anchored to="basicsframe" position="insidetopleft" offset="170,160" width="20" />
-			</number_characteristicscore>
-
-			<button_checkbox name="choice3">
-				<bounds>170,30,20,20</bounds>
-			</button_checkbox> -->
 		</sheetdata>
 	</windowclass>
 
-	<windowclass name="reference_classfeature_listitem">
+	<!-- FEATURES LIST -->
+	<windowclass name="reference_classfeatures_listitem">
 		<margins control="0,0,0,2" />
 		<script>
 			function onInit()
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tControls = { "level", "name", "idelete", };
+				local tControls = { "featurelevel", "name", "idelete", };
 				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
 			end
 		</script>
@@ -275,17 +221,18 @@
 			<linkc_listitem_left name="shortcut">
 				<class>reference_classfeatures</class>
 			</linkc_listitem_left>
-			<number_listitem_left name="level" source="featurelevel">
+			<number_listitem_left name="featurelevel" source="featurelevel">
 				<nodrag />
 			</number_listitem_left>
 
 			<string_listitem_center name="name">
-				<empty textres="library_recordtype_empty_classfeature" />
+				<empty textres="library_recordtype_empty_classfeatures" />
 				<font>sheetlabel</font>
 			</string_listitem_center>
 		</sheetdata>
 	</windowclass>
 
+	<!-- FEATURES CHOICE -->
 	<windowclass name="reference_classfeaturechoice_listitem">
 		<margins control="0,0,0,2" />
 		<script>
@@ -293,7 +240,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tControls = { "choicetype", "level", "name", "idelete", };
+				local tControls = { "choicetype", "featurelevel", "name", "idelete", };
 				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
 			end
 		</script>
@@ -321,6 +268,8 @@
 		</sheetdata>
 	</windowclass>
 
+
+
 	<windowclass name="reference_classfeaturechoice" copy="record_window" />
 	<windowclass name="reference_classfeaturechoice_header" copy="record_header">
 		<name_emptyres>library_recordtype_empty_classfeaturechoice</name_emptyres>
@@ -332,7 +281,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tFields = { "choicetype", "level", "prerequisite", "text", };
+				local tFields = { "subclass", "level", "prerequisite", "text", };
 				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
 			end
 		</script>
@@ -366,7 +315,7 @@
 		</sheetdata>
 	</windowclass>
 
-	<windowclass name="reference_classfeature_stats_specialization">
+	<windowclass name="reference_classfeatures_stats_specialization">
 		<margins control="0,0,0,5" />
 		<sheetdata>
 			<anchor_content_top />
@@ -381,7 +330,7 @@
 			<ft_content_column_full name="text" />
 		</sheetdata>
 	</windowclass>
-	<windowclass name="reference_classfeature_stats">
+	<windowclass name="reference_classfeatures_stats">
 		<margins control="0,0,0,5" />
 		<script>
 			function onInit()

@@ -3970,10 +3970,14 @@
 		<target>abilities</target>
 	<sheetdata name="malice_sheetdata_ability">
 		<anchor_column name="columnanchor" />
+		<header_content_framed_headersimple name="features_header">
+				<static textres="ability_label_malice"/>
+				<bounds>170,1,60,30</bounds>
+		</header_content_framed_headersimple>
 			<basicstring name="malice_abilityname_ability">
 				<font>recordsheet_header</font>
 				<anchored>
-					<top parent="columnanchor" anchor="bottom" relation="relative" offset="7" />
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="35" />
 					<left offset="60" />
 					<right offset="-5" />
 				</anchored>

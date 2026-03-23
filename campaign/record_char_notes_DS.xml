@@ -11,35 +11,6 @@
 			<frame_char name="detailframe">
 				<bounds>0,0,-1,76</bounds>
 			</frame_char>
-			<!-- <string_labeled name="race">
-				<anchored to="detailframe" position="insidetopleft" offset="15,10" width="150" />
-				<labelres>char_label_race</labelres>
-			</string_labeled>
-			<string_labeled name="gender">
-				<anchored to="race" position="righthigh" offset="5,0" width="70" />
-				<labelres>char_label_gender</labelres>
-			</string_labeled>
-			<string_labeled name="age">
-				<anchored to="gender" position="righthigh" offset="5,0" width="70" />
-				<labelres>char_label_age</labelres>
-			</string_labeled>
-			<string_labeled name="height">
-				<anchored to="age" position="righthigh" offset="5,0" width="70" />
-				<labelres>char_label_height</labelres>
-			</string_labeled>
-			<string_labeled name="weight">
-				<anchored to="height" position="righthigh" offset="5,0" width="70" />
-				<labelres>char_label_weight</labelres>
-			</string_labeled> -->
-
-			<!-- <string_labeled name="career">
-				<anchored to="detailframe" position="insidetopleft" offset="15,10" width="80" />
-				<labelres>char_label_career</labelres>
-			</string_labeled>
-			<string_labeled name="title">
-				<anchored to="career" position="righthigh" offset="5,0" width="94" />
-				<labelres>char_label_title</labelres>
-			</string_labeled> -->
 			<string_labeled name="environment">
 				<anchored to="detailframe" position="insidetopleft" offset="15,10" width="140" />
 				<labelres>char_label_environment</labelres>
@@ -53,13 +24,13 @@
 				<labelres>char_label_upbringing</labelres>
 			</string_labeled>
 
-			
-			<string_labeled name="career">
+			<!-- 3/22/26 changes name to plural "careers" because the Kit field is currently using "career" (see record_char_DS.xml line 72) -->
+			<string_labeled name="careers">
 				<anchored to="detailframe" position="insidetopleft" offset="15,40" width="120" />
 				<labelres>char_label_career</labelres>
 			</string_labeled>
 			<number_labeled name="wealth">
-				<anchored to="career" position="righthigh" offset="5,0" width="45" />
+				<anchored to="careers" position="righthigh" offset="5,0" width="45" />
 				<labelres>char_label_wealth</labelres>
 			</number_labeled>
 			<number_labeled name="renown">
