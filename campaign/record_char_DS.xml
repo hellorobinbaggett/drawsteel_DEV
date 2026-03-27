@@ -99,7 +99,7 @@
 			</string_labeled>
 
 			<!-- KIT (incorrect data field label; but left to avoid breakage) -->
-			<string_labeled name="career"> 
+			<string_labeled name="kittitle"> 
 				<anchored to="ancestry" position="righthigh" offset="5,1" width="80" />
 				<labelres>char_label_kit</labelres>
 			</string_labeled>

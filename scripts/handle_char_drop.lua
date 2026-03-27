@@ -8,7 +8,7 @@ function onDrop(x, y, draginfo)
             if StringManager.contains({ "career" }, sClass) then
                 local nodeSource = DB.findNode(sRecord); -- career record
                 local careerName = DB.getChild(nodeSource, "name"); -- career name
-                local heroCareer = DB.createChild(node, "career_name"); -- charactersheet career details
+                local heroCareer = DB.createChild(node, "career"); -- charactersheet career details
 
                 DB.copyNode(careerName, heroCareer); -- copy career name
                 ChatManager.SystemMessageResource("char_abilities_message_careeradd", tostring(careerName.getValue()), tostring(name));
@@ -20,7 +20,7 @@ function onDrop(x, y, draginfo)
                 local nodeSource = DB.findNode(sRecord); -- kit record
                 local kitName = DB.getChild(nodeSource, "name"); -- kit name
                 local kitAbility = DB.getChild(nodeSource, "signatureabilities"); -- kit ability
-                local heroKit = DB.getChild(node, "career"); -- charactersheet kit title
+                local heroKit = DB.getChild(node, "kittitle"); -- charactersheet kit title
                 local nodeKitList = DB.createChild(node, "kit"); -- charactersheet kit details
                 local nodeKitAbilityList = DB.createChild(node, "signatureabilities"); -- charactersheet abilities
 

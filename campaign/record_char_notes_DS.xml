@@ -24,13 +24,12 @@
 				<labelres>char_label_upbringing</labelres>
 			</string_labeled>
 
-			<!-- 3/22/26 changes name to plural "careers" because the Kit field is currently using "career" (see record_char_DS.xml line 72) -->
-			<string_labeled name="careers">
+			<string_labeled name="career">
 				<anchored to="detailframe" position="insidetopleft" offset="15,40" width="120" />
 				<labelres>char_label_career</labelres>
 			</string_labeled>
 			<number_labeled name="wealth">
-				<anchored to="careers" position="righthigh" offset="5,0" width="45" />
+				<anchored to="career" position="righthigh" offset="5,0" width="45" />
 				<labelres>char_label_wealth</labelres>
 			</number_labeled>
 			<number_labeled name="renown">

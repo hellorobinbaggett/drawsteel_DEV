@@ -11,6 +11,7 @@
 	<!-- Attributes -->
 	<description>
 		<displayname>Draw Steel_dev</displayname>
+		<!-- replace with <displayname>Draw Steel</displayname> for live version -->
 		<author>EXXODIS, MoonWizard</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>
