@@ -14,6 +14,35 @@
 			<minimum width="525" height="555" />
 			<dynamic />
 		</sizelimits>
+		<sheetdata>
+			<windowmenubar_charsheet name="menubar" />
+
+			<anchor_content_charsheet_tabbed_top />
+			<anchor_content_charsheet_bottom />
+
+			<sub_content_top name="overview">
+				<class>charsheet_overview</class>
+			</sub_content_top>
+
+			<!-- toolbar_field -->
+			<!-- button_record_locked -->
+
+			<toolbar_field_step name="locked">
+				<bounds>-130,13,20,20</bounds>
+				<initbyname />
+				<script>
+					function notify()
+						if self.isInitialized() then
+							WindowManager.callInnerWindowFunction(window, "onLockModeChanged", (getValue() == 1));
+						end
+					end
+				</script>
+				<state frame="windowmenubar_button" frameoffset="2,2,2,2" />
+				<state frame="windowmenubar_button_down" frameoffset="2,2,2,2" merge="add" />
+			</toolbar_field_step>
+
+			<resize_charsheet />
+		</sheetdata>
 		<tab>
 			<name>main</name>
 			<resource>tab_main</resource>

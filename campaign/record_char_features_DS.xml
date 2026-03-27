@@ -111,7 +111,7 @@
 			</scrollbar_list>
 
 			<button_iadd name="features_iadd">
-				<anchored to="features" position="aboveright" offset="5,5" />
+				<anchored to="features" position="aboveright" offset="-15,5" />
 				<target>features</target>
 			</button_iadd>
 
@@ -121,7 +121,7 @@
 			</frame_char>
 			<label_frametop>
 				<anchored to="classfeaturechoiceframe" />
-				<static textres="char_label_classfeaturechoices" />
+				<static textres="char_label_subclassfeatures" />
 			</label_frametop>
 			<list_text name="classfeaturechoice">
 				<anchored to="classfeaturechoiceframe">
@@ -131,7 +131,7 @@
 					<bottom offset="-6" />
 				</anchored>
 				<datasource>.classfeaturechoicelist</datasource>
-				<class>reference_classfeaturechoice_listitem</class>
+				<class>reference_subclassfeature_listitem</class>
 				<acceptdrop>
 					<class>reference_classfeaturechoice</class>
 					<field>*</field>
@@ -144,7 +144,7 @@
 			</scrollbar_list>
 
 			<button_iadd name="classfeaturechoice_iadd">
-				<anchored to="classfeaturechoice" position="aboveright" offset="5,5" />
+				<anchored to="classfeaturechoice" position="aboveright" offset="-15,5" />
 				<target>classfeaturechoice</target>
 			</button_iadd>
 		</sheetdata>

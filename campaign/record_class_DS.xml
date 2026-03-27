@@ -89,7 +89,7 @@
 			<list_content_column name="featurechoices">
 				<datasource>.featurechoices</datasource>
 				<class>reference_classfeaturechoice_listitem</class>
-				<sortby><field>choicetype</field><field>featurelevel</field><field>name</field></sortby>
+				<sortby><field>level</field><field>name</field></sortby>
 			</list_content_column>
 
 			
@@ -240,7 +240,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tControls = { "choicetype", "featurelevel", "name", "idelete", };
+				local tControls = { "choicetype", "level", "name", "idelete", };
 				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
 			end
 		</script>
@@ -268,6 +268,37 @@
 		</sheetdata>
 	</windowclass>
 
+	<!-- subclass features list for character sheet -->
+	<windowclass name="reference_subclassfeature_listitem">
+		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "level", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
+		<sheetdata>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
+				<class>reference_classfeaturechoice</class>
+			</linkc_listitem_left>
+			<number_listitem_left name="level">
+				<anchored width="25" />
+				<nodrag />
+			</number_listitem_left>
+			<string_listitem_center name="name">
+				<anchored width="180" />
+				<font>sheetlabel</font>
+				<empty textres="classfeaturechoice_empty_choicetype" />
+			</string_listitem_center>
+		</sheetdata>
+	</windowclass>
 
 
 	<windowclass name="reference_classfeaturechoice" copy="record_window" />
@@ -281,7 +312,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tFields = { "subclass", "level", "prerequisite", "text", };
+				local tFields = { "level", "prerequisite", "text", };
 				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
 			end
 		</script>

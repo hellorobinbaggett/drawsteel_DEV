@@ -49,7 +49,7 @@
 			<list_content_column name="featurechoices">
 				<datasource>.featurechoices</datasource>
 				<class>reference_classfeaturechoice_listitem</class>
-				<sortby><field>choicetype</field><field>level</field><field>name</field></sortby>
+				<sortby><field>level</field><field>choicetype</field><field>name</field></sortby>
 			</list_content_column>
 		</sheetdata>
 	</windowclass>
@@ -74,6 +74,7 @@
 				<class>reference_classfeatures</class>
 			</linkc_listitem_left>
 			<number_listitem_left name="featurelevel">
+				<anchored width="25" />
 				<nodrag />
 			</number_listitem_left>
 
@@ -121,7 +122,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tControls = { "choicetype", "featurelevel", "name", "idelete", };
+				local tControls = { "choicetype", "level", "name", "idelete", };
 				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
 			end
 		</script>
@@ -139,6 +140,7 @@
 				<empty textres="classfeaturechoice_empty_choicetype" />
 			</string_listitem_left>
 			<number_listitem_left name="level">
+				<anchored width="25" />
 				<nodrag />
 			</number_listitem_left>
 

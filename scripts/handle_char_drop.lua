@@ -42,9 +42,15 @@ function onDrop(x, y, draginfo)
                     return nil;
                 end
 
-                DB.copyNode(nodeSourceFeatures, nodeAncestryList);
-                DB.copyNode(ancestryName, heroAncestry);
+                local tNodes = DB.getChildren(nodeSource, "features")
+                for key,value in pairs(tNodes) do
+                    local checkbox = DB.createChild(value, "repeatable");
+                    if(checkbox.getValue() == 1) then
+                        DB.createChildAndCopy(nodeAncestryList, value);
+                    end
+                end
 
+                DB.copyNode(ancestryName, heroAncestry);
                 ChatManager.SystemMessageResource("char_abilities_message_ancestryadd", tostring(ancestryName.getValue()), tostring(name));
             end
 

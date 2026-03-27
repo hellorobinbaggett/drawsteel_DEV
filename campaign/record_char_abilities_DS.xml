@@ -224,12 +224,8 @@
 				<target>abilities</target>
 			</scrollbar_list>
 
-			<button_iedit name="abilities_iedit">
-				<anchored to="abilities" position="aboveright" offset="-15,5" />
-				<edittarget>abilities</edittarget>
-			</button_iedit>
 			<button_iadd name="abilities_iadd">
-				<anchored to="abilities" position="aboveright" offset="5,5" />
+				<anchored to="abilities" position="aboveright" offset="-15,5" />
 				<target>abilities</target>
 			</button_iadd>	
 
@@ -257,12 +253,8 @@
 				<target>signatureabilities</target>
 			</scrollbar_list>
 
-			<button_iedit name="signatureabilities_iedit">
-				<anchored to="signatureabilities" position="aboveright" offset="-15,5" />
-				<edittarget>signatureabilities</edittarget>
-			</button_iedit>
 			<button_iadd name="signatureabilities_iadd">
-				<anchored to="signatureabilities" position="aboveright" offset="5,5" />
+				<anchored to="signatureabilities" position="aboveright" offset="-15,5" />
 				<target>signatureabilities</target>
 			</button_iadd>	
 
@@ -290,12 +282,8 @@
 				<target>heroicabilities</target>
 			</scrollbar_list>
 
-			<button_iedit name="heroicabilities_iedit">
-				<anchored to="heroicabilities" position="aboveright" offset="-15,5" />
-				<edittarget>heroicabilities</edittarget>
-			</button_iedit>
 			<button_iadd name="heroicabilities_iadd">
-				<anchored to="heroicabilities" position="aboveright" offset="5,5" />
+				<anchored to="heroicabilities" position="aboveright" offset="-15,5" />
 				<target>heroicabilities</target>
 			</button_iadd>		
 
@@ -323,12 +311,8 @@
 				<target>triggeredabilities</target>
 			</scrollbar_list>
 
-			<button_iedit name="triggeredabilities_iedit">
-				<anchored to="triggeredabilities" position="aboveright" offset="-15,5" />
-				<edittarget>triggeredabilities</edittarget>
-			</button_iedit>
 			<button_iadd name="triggeredabilities_iadd">
-				<anchored to="triggeredabilities" position="aboveright" offset="5,5" />
+				<anchored to="triggeredabilities" position="aboveright" offset="-15,5" />
 				<target>triggeredabilities</target>
 			</button_iadd>	
 			<!-- <frame_char name="maneuverandtriggeredabilitiesframe">
@@ -406,56 +390,31 @@
 
 	<windowclass name="char_action">
 		<margins control="0,0,0,2" />
+		<script>
+			function onInit()
+				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
+			end
+			function onLockModeChanged(bReadOnly)
+				local tControls = { "name", "ability_level", "idelete", };
+				WindowManager.callSafeControlsSetLockMode(self, tControls, bReadOnly);
+			end
+		</script>
 		<sheetdata>
-			<genericcontrol name="rightanchor">
-				<anchored height="0" width="0">
-					<top offset="2" />
-					<right />
-				</anchored>
-			</genericcontrol>
-			<button_idelete name="idelete1">
-				<anchored to="rightanchor">
-					<top />
-					<right anchor="left" relation="relative" offset="-5" />
-				</anchored>
-				<editmode>abilities_iedit</editmode>
-			</button_idelete>
-			<button_idelete name="idelete2">
-				<anchored to="rightanchor">
-					<top />
-					<right anchor="left" relation="relative" offset="-5" />
-				</anchored>
-				<editmode>signatureabilities_iedit</editmode>
-			</button_idelete>
-			<button_idelete name="idelete3">
-				<anchored to="rightanchor">
-					<top />
-					<right anchor="left" relation="relative" offset="-5" />
-				</anchored>
-				<editmode>heroicabilities_iedit</editmode>
-			</button_idelete>
-			<button_idelete name="idelete4">
-				<anchored to="rightanchor">
-					<top />
-					<right anchor="left" relation="relative" offset="-5" />
-				</anchored>
-				<editmode>triggeredabilities_iedit</editmode>
-			</button_idelete>
-			<linkcontrol_static name="link">
-				<anchored to="rightanchor" width="20" height="20">
-					<top />
-					<right anchor="left" relation="relative" offset="-5" />
-				</anchored>
+			<anchor_listitem_left_sm name="leftanchor" />
+			<anchor_listitem_right_sm name="rightanchor" />
+
+			<button_listitem_idelete_left name="idelete" />
+			<linkc_listitem_left name="shortcut">
 				<class>ability</class>
-			</linkcontrol_static>
-			<string_textlistitem name="name">
-				<anchored to="rightanchor">
-					<top />
-					<left parent="" offset="5" />
-					<right anchor="left" relation="relative" offset="-5" />
-				</anchored>
-				<multilinespacing>20</multilinespacing>
-			</string_textlistitem>
+			</linkc_listitem_left>
+			<number_listitem_left name="ability_level">
+				<nodrag />
+			</number_listitem_left>
+			<string_listitem_center name="name">
+				<anchored width="180" />
+				<font>sheetlabel</font>
+				<empty textres="classfeaturechoice_empty_choicetype" />
+			</string_listitem_center>
 		</sheetdata>
 	</windowclass>	
 </root>

@@ -55,7 +55,7 @@
 	<string name="ancestry_header_features">SIGNATURE TRAIT</string>
 	<string name="ancestry_header_featurechoices">PURCHASED TRAITS</string>
 	<string name="library_recordtype_empty_classfeature">&#171; New Class Feature &#187;</string>
-	<string name="library_recordtype_empty_classfeaturechoice">&#171; New Class Feature Choice &#187;</string>
+	<string name="library_recordtype_empty_classfeaturechoice">&#171; New Sublass Feature &#187;</string>
 	<string name="library_recordtype_empty_ancestryfeature">&#171; New Ancestry Feature &#187;</string>
 	<string name="library_recordtype_empty_ancestryfeaturechoice">&#171; New Ancestry Feature Choice &#187;</string>
 	<string name="label_selected">Purchased</string>
@@ -209,6 +209,7 @@
 	<string name="char_label_languages">Languages</string>
 	<string name="char_label_notes">Notes</string>
 	<string name="char_label_perks">Perks &#38; Titles</string>
+	<string name="char_label_subclassfeatures">Subclass Features</string>
 	<string name="char_label_projectnotes">Project Notes</string>
 	<string name="char_label_projects">Projects</string>
 	<string name="char_label_magicitems">Consumables, Trinkets, Treasures, and Artifacts</string>
