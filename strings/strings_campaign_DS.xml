@@ -8,7 +8,7 @@
 <root>
 	<!-- General -->
 	<string name="char_label_name">NAME</string>
-	<string name="char_label_classresource">CLASS RESOURCE</string>
+	<string name="char_label_classresource">HEROIC RESOURCE</string>
 	<string name="char_label_class">CLASS</string>
 	<string name="char_label_subclass">SUBCLASS</string>
 	<string name="char_label_level">LEVEL</string>
@@ -36,7 +36,6 @@
 	<string name="char_label_money">Wealth Level</string>
 	<string name="char_label_max">Max</string>
 	<string name="char_label_temp">Temp</string>
-	<string name="char_label_classresource">Heroic Resource</string>
 	<string name="char_label_kitbonuses">Kit Bonuses</string>
 	<string name="char_label_damagebonuses">Damage Bonuses</string>
 	<string name="char_label_languages">Languages</string>

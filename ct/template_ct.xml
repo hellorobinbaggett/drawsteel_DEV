@@ -345,9 +345,8 @@
 				<top offset="-5" />
 				<left anchor="right" relation="relative" offset="-10" postoffset="2" />
 			</anchored>
-			<tooltip textres="ct_tooltip_remove" />
-			<state icon="ct_remove" />
-			<state icon="ct_gone" />
+			<state icon="ct_gone" tooltipres="ct_tooltip_turn" />
+			<state icon="ct_remove" tooltipres="ct_tooltip_remove"/>
 			<gmeditonly />
 		</buttonfield>
 	</template>

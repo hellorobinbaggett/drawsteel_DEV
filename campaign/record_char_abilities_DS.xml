@@ -157,27 +157,32 @@
 				<static textres="char_label_herotokens" />
 			</label_charfieldtop> -->
 
-			<initiative_roll name="classresource_roll">
+			<classresource_roll name="classresource_roll">
                 <anchored to="classresourcetitle" width="30" height="30">
 					<top anchor="bottom" offset="8" />
-					<left anchor="center" offset="-60" />
+					<left anchor="center" offset="-67" />
 				</anchored>
                 <tooltip textres="char_tooltip_classresource" />
                 <script>	
                     function action(draginfo)
                         local nodeWin = window.getDatabaseNode();
-						local current = DB.getValue(nodeWin, "classresource");
+    					local sCharSheetID = DB.getPath(nodeWin);
+    					local CharSheetID = DB.findNode(sCharSheetID);
 
+						Debug.chat(CharSheetID);
+
+						local classresource_current = DB.getValue(nodeWin, "classresource");
+						local classresource_name = DB.getChild(nodeWin, "classresource_label");
+						local node = window.getDatabaseNode();
                         local rRoll = { 
                             sType = "dice", 
                             sDesc = "Heroic Resource:", 
                             aDice = { "d3" },
 							nMod = 0,
+							nResource = classresource_current,
+							sSource = CharSheetID,
                         };
-                        ActionsManager.performAction(draginfo, rActor, rRoll);
-						
-						-- NOT WORKING grab the rolled amount, then add it to class resource
-						-- local node = window.getDatabaseNode();
+                        local rRoll = ActionsManager.performAction(draginfo, rActor, rRoll);
 
                         return true;
                     end
@@ -189,15 +194,8 @@
                     function onButtonPress()
                         return action();
                     end
-
-					function incrementResource()
-						
-					end				
-
-					<!-- TODO: write function to add result of roll to Heroic Resources -->
                 </script>
-        	</initiative_roll>
-
+        	</classresource_roll>
 
 
 			<!-- abilities  section-->

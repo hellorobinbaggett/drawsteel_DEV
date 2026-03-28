@@ -11,6 +11,8 @@
 	<icon name="power_roll_down" file="graphics/buttons/DS_power_roll_2d10_down.png" />
 	<icon name="NEW_power_roll" file="graphics/buttons/NEW_power_roll_red.png" />
 	<icon name="NEW_power_roll_down" file="graphics/buttons/NEW_power_roll_red_down.png" />
+	<icon name="button_start_turn" file="graphics/buttons/button_start_turn.png" />
+	<icon name="button_start_turn_down" file="graphics/buttons/button_start_turn_down.png" />
 
 	<icon name="might_block" file="graphics/buttons/M_black.png" />
 	<icon name="agility_block" file="graphics/buttons/A_black.png" />

@@ -449,7 +449,8 @@
 	<string name="char_tooltip_size">Size</string>
 	<string name="char_tooltip_speed">Speed</string>
 	<string name="char_tooltip_stability">Stability</string>
-	<string name="char_tooltip_classresource">d3</string>
+	<string name="char_tooltip_classresource">get resource</string>
+	<string name="char_tooltip_startturn">get resource</string>
 	<string name="char_tooltip_stamina">Current Stamina</string>
 	<string name="char_tooltip_max">Max Stamina</string>
 	<string name="char_tooltip_surges">Surges</string>
@@ -695,6 +696,8 @@
 	<string name="char_emptylist_respite">'%s' has taken a respite.</string>
 	<string name="char_emptylist_levelup">'%s' is now Level '%s'.</string>
 
+	<!-- resources -->
+	<string name="char_emptylist_resource">'%s' gained 2 '%s'.</string>
 
 	<!-- Kits -->
 	<string name="kit_label_equipment">Equipment</string>
