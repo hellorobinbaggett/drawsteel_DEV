@@ -270,4 +270,29 @@
 			<state icon="presence_block" tooltipres="char_tooltip_characteristic_presence" />
 		</buttonfield>
 	</template>
+
+	<template name="button_ability">
+		<buttonfield>
+			<state icon="button_prof" tooltipres="char_tooltip_prof_off" />
+			<state icon="button_prof_down" tooltipres="char_tooltip_prof_on" />
+		</buttonfield>
+	</template>
+	<template name="button_signature">
+		<buttonfield>
+			<state icon="button_prof" tooltipres="char_tooltip_prof_off" />
+			<state icon="button_prof_down" tooltipres="char_tooltip_prof_on" />
+		</buttonfield>
+	</template>
+	<template name="button_Maneuver">
+		<buttonfield>
+			<state icon="button_prof" tooltipres="char_tooltip_prof_off" />
+			<state icon="button_prof_down" tooltipres="char_tooltip_prof_on" />
+		</buttonfield>
+	</template>
+	<template name="button_heroic">
+		<buttonfield>
+			<state icon="button_prof" tooltipres="char_tooltip_prof_off" />
+			<state icon="button_prof_down" tooltipres="char_tooltip_prof_on" />
+		</buttonfield>
+	</template>
 </root>

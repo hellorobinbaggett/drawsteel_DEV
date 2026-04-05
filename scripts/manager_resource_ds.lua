@@ -28,18 +28,32 @@ function action(draginfo)
 	local classresource_name = DB.getValue(nodeWin, "classresource_label");
 
 	if (className == "Censor") or (className == "Elementalist" ) or (className == "Null") or (className == "Tactician") then
-		newTotal = (classresource_current + 2);
-		DB.setValue(nodeWin, "classresource", "number", newTotal);
-		ChatManager.SystemMessageResource("char_emptylist_resource", tostring(characterName), tostring(classresource_name));
-    	local rRoll = ActionsManager.performAction(draginfo, rActor, rRoll);
-		return true;
+		local newTotal = (classresource_current + 2);
+		-- DB.setValue(nodeWin, "classresource", "number", newTotal);
+		-- ChatManager.SystemMessageResource("char_emptylist_resource", tostring(characterName), tostring(classresource_name));
+    	-- local rRoll = ActionsManager.performAction(draginfo, rActor, rRoll);
+		-- return true;
+		local node = window.getDatabaseNode();
+    	local rRoll = {
+			sType = "dice",
+			sDesc = "[START OF TURN] Heroic Resource: Gained 2 " .. classresource_name,
+			aDice = { "d0" },
+			nMod = 2,
+			nCurrent = classresource_current,
+			nResource = classresource_currentpath,
+			sCharSheetID = sCharSheetID,
+			sResourceName = classresource_name
+		};
+		local rRoll = ActionsManager.performAction(draginfo, rActor, rRoll);
+	
+    return true;
 	end
 
 	-- for other classes, roll a d3
 	local node = window.getDatabaseNode();
     local rRoll = {
         sType = "dice",
-        sDesc = "Heroic Resource:",
+        sDesc = "[START OF TURN] Heroic Resource: Gained 1d3 " .. classresource_name,
         aDice = { "d3" },
 		nMod = 0,
 		nCurrent = classresource_current,

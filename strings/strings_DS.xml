@@ -4,6 +4,9 @@
 	<string name="monsters">Monsters</string>
 	<string name="items">Items</string>
 
+
+	<!-- come on, you gotta organize this mess! DO ITTTTT -->
+
 	<!-- Utility -->
 	<string name="library_recordtype_label_npc">Monsters</string>
 	<string name="library_recordtype_single_npc">Monster</string>
@@ -188,11 +191,10 @@
 	<string name="char_label_attributes">Attributes</string>
 	<string name="char_label_skills">Skills</string>
 	<string name="char_label_features">Features</string>
-	<string name="char_label_heroicabilities">Heroic Abilities</string>
+	<string name="char_label_heroicabilities">Heroic Abilities | Cost</string>
 	<string name="char_label_kitabilities">Kit Abilities</string>
 	<string name="char_label_signatureability">Signature Ability</string>
 	<string name="char_label_signatureabilities">Signature Abilities</string>
-	<string name="char_label_heroicabilities">Heroic Abilities</string>
 	<string name="char_label_triggeredactions">Triggered Actions</string>
 	<string name="char_label_freestrikes">Free Strikes</string>
 	<string name="char_level_skills">Skills</string>
@@ -531,7 +533,6 @@
 	<string name="char_label_abilities">Abilities</string>
 	<string name="char_label_kitabilities">Kit Abilities</string>
 	<string name="char_label_signatureabilities">Signature Abilities</string>
-	<string name="char_label_heroicabilities">Heroic Abilities</string>
 	<string name="char_label_maneuversandtriggeredactions">Maneuver|Triggered</string>
     <string name="char_label_actions">Actions</string>
 	<string name="char_label_abilities">Abilities</string>
@@ -739,22 +740,29 @@
 	<string name="ct_emptylist_monsters">Drop NPC or encounter links to add entries.</string>
 
 	<!-- Hero Tokens -->
-	<string name="tooltip_herotokengm">Hero Token (drag off to remove)
+	<string name="tooltip_herotokengm">Hero Token (drag off to remove)</string>
+	<string name="tooltip_herotokengm_gm">Hero Token (drag off to remove) \nnCTRL+MouseWheel to manually adjust.</string>
+
+	<!-- TODO: it would be nice to create a custom chat message to beautify the text -->
+
+	<string name="herotoken_player_user_by_user">'%s' spent a Hero Token.
+	\n---HERO TOKENS---
 	\nSpend 1 token to gain 2 surges. 
 	\nSpend 1 hero token to succeed on a save. 
 	\nSpend 1 to reroll a test. You must use the new roll.
 	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
-	<string name="tooltip_herotokengm_gm">Hero Token(drag off to remove)\nCTRL+MouseWheel to manually adjust.
-	\nAt the start of a new game session, the heroes have a number of hero tokens equal to the number of heroes in the party. 
+	<string name="herotoken_player_played_by_gm">A Hero Token has been spent by the Director.
+	\n---HERO TOKENS---
 	\nSpend 1 token to gain 2 surges. 
 	\nSpend 1 hero token to succeed on a save. 
 	\nSpend 1 to reroll a test. You must use the new roll.
 	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
-
-
-	<string name="herotoken_player_user_by_user">'%s' spent a Hero Token.</string>
-	<string name="herotoken_player_played_by_gm">A Hero Token has been spent by the Director.</string>
 	<string name="herotoken_player_user_by_user_for_character">A Hero Token has been spent by '%s', for character '%s'.</string>
 	<string name="herotoken_player_decremented">Hero Tokens are reduced to '%s'.</string>
-	<string name="herotoken_gm_used">The director spent a Hero Token.</string>
+	<string name="herotoken_gm_used">The director spent a Hero Token.
+	\n---HERO TOKENS---
+	\nSpend 1 token to gain 2 surges. 
+	\nSpend 1 hero token to succeed on a save. 
+	\nSpend 1 to reroll a test. You must use the new roll.
+	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
 </root>

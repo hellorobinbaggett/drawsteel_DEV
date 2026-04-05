@@ -126,7 +126,7 @@ function createActionMessage(rSource, rRoll)
 	end
 
 	-- For resource rolls
-	if string.match(rMessage.text, "Heroic Resource:") then	
+	if string.find(rMessage.text, "Heroic Resource:") then	
 		rMessage = ResourceManager.resourceRoll(rMessage, rRoll);
 	end
 	

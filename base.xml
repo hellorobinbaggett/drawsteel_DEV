@@ -6,12 +6,13 @@
 -->
 
 <root version="1.0" release="1" logo="logo.png">
-	<announcement text="Draw Steel Ruleset (v1.011) by EXXODIS" font="emotefont" icon="" />
+	<announcement text="Draw Steel Ruleset (v1.012) by EXXODIS" font="emotefont" icon="" />
 
 	<!-- Attributes -->
 	<description>
+	<!-- file names for the .pak should be "DrawSteel" for prod and "Draw Steel_dev" for dev -->
 		<displayname>Draw Steel_dev</displayname>
-		<!-- replace with <displayname>Draw Steel</displayname> for live version -->
+		<!-- <displayname>Draw Steel</displayname> -->
 		<author>EXXODIS, MoonWizard</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>

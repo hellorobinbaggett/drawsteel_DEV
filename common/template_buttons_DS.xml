@@ -56,4 +56,32 @@
 			<tooltip textres="char_tooltip_respite" />
 		</buttoncontrol>
 	</template>
+
+	<template name="ability_button">
+		<buttoncontrol>
+			<anchored width="32" height="32" />
+			<icon normal="button_roll" pressed="button_roll_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="signature_button">
+		<buttoncontrol>
+			<anchored width="32" height="32" />
+			<icon normal="button_action_attack" pressed="button_action_attack_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="maneuver_button">
+		<buttoncontrol>
+			<anchored width="32" height="32" />
+			<icon normal="button_action_heal" pressed="button_action_heal_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="heroic_button">
+		<buttoncontrol>
+			<anchored width="32" height="32" />
+			<icon normal="button_action_damage" pressed="button_action_damage_down" />
+		</buttoncontrol>
+	</template>
 </root>
