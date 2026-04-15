@@ -36,4 +36,7 @@
 	<icon name="button_prof_down" file="graphics/buttons/button_prof_down.png" />
 	<icon name="ct_gone" file="graphics/token/token_cond_helpless.png" />
 	<icon name="ct_remove" file="graphics/token/token_cond_helpless_old.png" />
+
+	<!-- Logo -->
+	<icon name="logo_ds" file="logo.png" />
 </root>

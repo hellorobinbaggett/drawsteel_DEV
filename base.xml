@@ -6,25 +6,25 @@
 -->
 
 <root version="1.0" release="1" logo="logo.png">
-	<announcement text="Draw Steel Ruleset (v1.012) by EXXODIS" font="emotefont" icon="" />
+	<announcement text="Draw Steel Ruleset (v1.013) by EXXODIS" font="emotefont" icon="logo_DS" />
 
 	<!-- Attributes -->
 	<description>
 	<!-- file names for the .pak should be "DrawSteel" for prod and "Draw Steel_dev" for dev -->
-		<displayname>Draw Steel_dev</displayname>
-		<!-- <displayname>Draw Steel</displayname> -->
+		<!-- <displayname>Draw Steel_dev</displayname> -->
+		<displayname>Draw Steel</displayname>
 		<author>EXXODIS, MoonWizard</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>
 
 	<!-- Announcements --> 
 	<announcement text="Draw Steel Ruleset is an independent product published under the DRAW STEEL Creator License and is not affiliated with MCDM Productions, LLC. DRAW STEEL &#169; 2024 MCDM Productions, LLC. https://www.mcdmproductions.com/draw-steel-creator-license
-	" font="emotefont" icon="" />
+	" font="emotefont" icon="logo.png" />
 	<announcement text="Check out these community modules:" />
 	<announcement text="\r\n Heroes for Draw Steel https://forge.fantasygrounds.com/shop/items/2300/view
-	" font="emotefont" icon="" />
+	" font="emotefont" icon="logo.png" />
 	<announcement text="\r\n Monsters for Draw Steel https://forge.fantasygrounds.com/shop/items/2335/view
-	" font="emotefont" icon="" />
+	" font="emotefont" icon="logo.png" />
 	
 	<!-- This allows the ruleset to pull from CoreRPG for the basic scripts and functionality -->
 	<importruleset source="CoreRPG" />
@@ -55,6 +55,7 @@
 	<!-- Top Level Windows -->
 	<includefile source="campaign/campaign_masterindex_DS.xml" />
 	<includefile source="utility/utility_effects_DS.xml" />
+	<includefile source="utility/utility_setup_DS.xml" />
 
 	<!-- Campaign Records -->
 	<includefile source="campaign/template_monster_ability.xml" />

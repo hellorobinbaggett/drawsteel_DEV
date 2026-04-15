@@ -133,6 +133,8 @@ function handleRemoveStoryPointPCChits(msgOOB)
 				if msgOOB.username ~= "" then
 					local sFormat = Interface.getString("herotoken_player_user_by_user");
 					msg.text = string.format(sFormat, msgOOB.username);
+					Comm.deliverMessage(msg.text);
+					Comm.deliverChatMessage(msg.text);
 					--msg.text = "A Story Point (Player) chit has been used by  " .. msguser;
 				elseif msgOOB.username == "GM" then
 					msg.text = Interface.getString("herotoken_player_played_by_gm");
@@ -277,7 +279,12 @@ function onDragEnd(draginfo)
 					--msg.text = "Story Point (GM) has been decremented to " ..  StoryPointGMnode.getValue();
 					msg.text = Interface.getString("herotoken_gm_used");
 					--msg.text = "A Story Point (GM) chit has been used by the GM";
-					Comm.deliverChatMessage(msg);
+					local chatmsg = {
+						font = "narratorfont",
+						text = msg.text,
+						secret = bHost;
+					};
+					Comm.deliverChatMessage(chatmsg);
 					-- create  new Story Point (Player) node, or find it if it already exists
 					StoryPointPCnode = DB.createNode("StoryPointPCchit.chits", "number");
 					if StoryPointPCnode then

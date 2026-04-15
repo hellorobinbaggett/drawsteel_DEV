@@ -283,7 +283,12 @@ function onDragEnd(draginfo)
 					--msg.text = "Story Point (GM) has been decremented to " ..  StoryPointGMnode.getValue();
 					msg.text = Interface.getString("storypoint_gm_used");
 					--msg.text = "A Story Point (GM) chit has been used by the GM";
-					Comm.deliverChatMessage(msg);
+					local chatmsg = {
+						font = "narratorfont",
+						text = msg.text,
+						secret = bHost;
+					};
+					Comm.deliverChatMessage(chatmsg);
 					-- create  new Story Point (Player) node, or find it if it already exists
 					StoryPointPCnode = DB.createNode("StoryPointPCchit.chits", "number");
 					if StoryPointPCnode then

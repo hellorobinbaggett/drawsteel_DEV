@@ -143,6 +143,7 @@ function handleRemoveStoryPointPCChits(msgOOB)
 					--msg.text = "A Story Point (Player) chit has been used by  " .. msguser;
 				elseif msgOOB.username == "GM" then
 					msg.text = Interface.getString("storypoint_player_played_by_gm");
+					Comm.deliverOOBMessage(msgOOB, "");
 					--msg.text = "A Story Point (Player) chit has been played by the GM on behalf of the players.";
 				else
 					local sFormat = Interface.getString("storypoint_player_user_by_user_for_character");

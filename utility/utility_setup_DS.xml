@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the license.html file included with this distribution for
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="button_setup_link">
+		<button_text>
+			<script>
+				function onButtonPress()
+					if urlres then
+						UtilityManager.sendToLink(Interface.getString(urlres[1]));
+					elseif url then
+						UtilityManager.sendToLink(url[1]);
+					elseif class then
+						Interface.openWindow(class[1], "");
+					end
+				end
+			</script>
+		</button_text>
+	</template>
+	<template name="button_setup_left_link">
+		<button_setup_link>
+			<anchored to="contentanchor">
+				<top relation="relative" offset="10" postoffset="10" />
+				<left offset="5" />
+				<right anchor="center" offset="-5" />
+			</anchored>
+		</button_setup_link>
+	</template>
+	<template name="button_setup_right_link">
+		<button_setup_link>
+			<anchored to="contentanchor">
+				<top relation="current" offset="-30" />
+				<left anchor="center" offset="5" />
+				<right offset="-5" />
+			</anchored>
+		</button_setup_link>
+	</template>
+	<template name="button_setup_center_link">
+		<button_setup_link>
+			<anchored to="contentanchor">
+				<top relation="relative" offset="10" postoffset="10" />
+				<left offset="5" />
+				<right offset="-5" />
+			</anchored>
+		</button_setup_link>
+	</template>
+
+	<windowclass name="setup">
+		<frame>utilitybox</frame>
+		<placement>
+			<nosave />
+		</placement>
+		<sizelimits>
+			<minimum width="600" height="500" />
+		</sizelimits>
+		<sheetdata>
+			<windowtitlebar_utilitybox name="title" />
+			<windowmenubar_utilitybox name="menubar" />
+
+			<anchor_content_utilitybox_top />
+			<anchor_content_utilitybox_bottom />
+
+			<sub_content_buttons_groupbox_bottom name="sub_buttons">
+				<class>setup_buttons</class>
+			</sub_content_buttons_groupbox_bottom>
+
+			<area_content_framed_groupbox name="contentframe" />
+			<subwindow name="content">
+				<anchored to="contentframe" position="over" />
+				<class>setup_content</class>
+				<fastinit />
+				<activate />
+			</subwindow>
+			<scrollbar_content />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="setup_buttons">
+		<margins control="0,0,0,5" />
+		<sheetdata>
+			<button_text name="button_ok">
+				<anchored position="insidetopright" offset="10,5" width="60" />
+				<state textres="button_dialog_ok" />
+				<script>
+					function onButtonPress()
+						WindowManager.getTopWindow(window).close();
+					end
+				</script>
+			</button_text>
+
+			<buttonc_checkbox name="showonload">
+				<anchored height="20" width="20">
+					<top offset="5" />
+					<left anchor="center" offset="40" />
+				</anchored>
+				<script>
+					function onInit()
+						setValue(CampaignSetupManager.getShowOnLoad() and 1 or 0);
+					end
+					function onClose()
+						CampaignSetupManager.setShowOnLoad(getValue() == 1);
+					end
+				</script>
+			</buttonc_checkbox>
+			<label name="showonload_label">
+				<anchored to="showonload" position="lefthigh" offset="10,0" height="20" width="90" />
+				<static textres="setup_label_showonload" />
+			</label>
+		</sheetdata>
+	</windowclass>
+	<windowclass name="setup_content">
+		<sheetdata>
+			<anchor_content_top />
+
+			<imagecontrol name="picture">
+				<anchored position="insidetop" offset="0,10" width="300" height="150" />
+				<bitmap>logo.png</bitmap>
+				<locked />
+			</imagecontrol>
+
+			<image type="image">
+				<color>#FFFFFFFF</color>
+				<layers>
+					<layer>
+						<name>Cover.png</name>
+						<id>0</id>
+						<parentid>-1</parentid>
+						<type>image</type>
+						<bitmap>images/Books/Cover.png</bitmap>
+					</layer>
+				</layers>
+			</image>
+
+			<icon name="logo">
+				<bounds>30,30,70,70</bounds>
+			</icon>
+
+			<spacer_content_top>
+				<anchored height="175" />
+			</spacer_content_top>
+            
+            <header_content_framed_headersimple name="header">
+				<static textres="setup_header_help_DS" />
+			</header_content_framed_headersimple>
+			<stringc_content_noframe_noscroll_static_top>
+				<static textres="setup_text_help_DS" />
+			</stringc_content_noframe_noscroll_static_top>
+
+			<button_setup_left_link name="button_manual_DS">
+				<state textres="setup_button_tutorial_DS" />
+				<urlres>setup_url_tutorial</urlres>
+			</button_setup_left_link>
+			<button_setup_right_link name="button_forums_DS">
+				<state textres="setup_button_forumthread_DS" />
+				<urlres>setup_url_forumthread</urlres>
+			</button_setup_right_link>
+
+			<spacer_content_top>
+				<anchored height="20" />
+			</spacer_content_top>
+
+			<header_content_framed_headersimple name="header">
+				<static textres="setup_header_help" />
+			</header_content_framed_headersimple>
+			<stringc_content_noframe_noscroll_static_top>
+				<static textres="setup_text_help" />
+			</stringc_content_noframe_noscroll_static_top>
+
+			<button_setup_left_link name="button_manual">
+				<state textres="setup_button_manual" />
+				<urlres>setup_url_userguides</urlres>
+			</button_setup_left_link>
+			<button_setup_right_link name="button_forums">
+				<state textres="setup_button_forums" />
+				<urlres>setup_url_forums</urlres>
+			</button_setup_right_link>
+
+			<!-- <spacer_content_top>
+				<anchored height="20" />
+			</spacer_content_top>
+
+			<header_content_framed_headersimple>
+				<static textres="setup_header_purchases" />
+			</header_content_framed_headersimple>
+			<stringc_content_noframe_noscroll_static_top>
+				<static textres="setup_text_purchases" />
+			</stringc_content_noframe_noscroll_static_top>
+			<button_setup_center_link name="button_modules">
+				<state textres="setup_button_modules" />
+				<class>library</class>
+			</button_setup_center_link>
+
+			<spacer_content_top>
+				<anchored height="20" />
+			</spacer_content_top>
+
+			<header_content_framed_headersimple>
+				<static textres="setup_header_options" />
+			</header_content_framed_headersimple>
+			<stringc_content_noframe_noscroll_static_top>
+				<static textres="setup_text_options" />
+			</stringc_content_noframe_noscroll_static_top> -->
+
+			<!-- <button_setup_center_link>
+				<state textres="setup_button_options" />
+				<class>options</class>
+			</button_setup_center_link> -->
+		</sheetdata>
+	</windowclass>
+</root>

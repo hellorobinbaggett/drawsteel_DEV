@@ -105,6 +105,14 @@
                 <script file="scripts/manager_resource_ds.lua" />
         	</classresource_roll>
 
+			<!-- TODO: Add link to class resource description on class add -->
+			<linkcontrol_record name="shortcut">
+				<class>reference_classfeatures</class>
+				<anchored to="classresourcetitle" width="30" height="30">
+					<top anchor="bottom" offset="-25" />
+					<left anchor="center" offset="-83" />
+				</anchored>
+			</linkcontrol_record>
 
 			<!-- abilities  section-->
 			<frame_char name="abilitiesframe">

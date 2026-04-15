@@ -72,6 +72,7 @@ function onDrop(x, y, draginfo)
 
                 -- set name of heroic resource
                 DB.copyNode(DB.getChild(nodeSource, "classResource"), DB.getChild(node, "classresource_label"));
+                -- TODO: Add feature link that explains the heroic resource mechanics for each class
 
                 -- handle adding starting characteristics
                 DB.copyNode(DB.getChild(nodeSource, "startingMight"), DB.getChild(node, "MGT"));

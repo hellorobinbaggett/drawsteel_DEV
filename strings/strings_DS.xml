@@ -464,11 +464,11 @@
 	<string name="char_tooltip_respite">Take A Respite</string>
 	<string name="char_tooltip_surgesdescription">Spend up to 3 surges on an attack to deal extra damage (each surge deals damage equal to your highest characteristic score). 
 	\n Spend 2 surges to increase the potency by 1 for one target</string>
-	<string name="char_tooltip_herotokendescription">At the start of a new game session, the heroes have a number of hero tokens equal to the number of heroes in the party. 
-	\nSpend 1 token to gain 2 surges. 
-	\nSpend 1 hero token to succeed on a save. 
-	\nSpend 1 to reroll a test. You must use the new roll.
-	\nSpend 2 tokens to regain stamina equal to your Recovery value.</string>
+	<string name="char_tooltip_herotokendescription">*You can spend a hero token to gain 2 surges, allowing you to increase the damage or potency of an ability. (See Surges in Classes.)
+	\n*You can spend a hero token when you fail a saving throw, letting you succeed on the save instead.
+	\n*You can spend a hero token to reroll a test. You must use the new roll.
+	\n*You can spend 2 hero tokens on your turn or when you take damage (no action required) to regain Stamina equal to your Recovery value before taking the damage.
+	\n*You can use only one hero token benefit per turn or per test. Unless the Director decides otherwise, unused hero tokens disappear at the end of a session.</string>
 	<string name="char_tooltip_herotokenbtn_surge">Spend 1 token to gain 2 surges.</string>
 	<string name="char_tooltip_herotokenbtn_heal">Spend 2 tokens to regain stamina equal to your Recovery value.</string>
 	<string name="char_tooltip_modifierdescription">Only use this for NPCs (enter the modifier to the power roll)</string>
@@ -747,22 +747,25 @@
 
 	<string name="herotoken_player_user_by_user">'%s' spent a Hero Token.
 	\n---HERO TOKENS---
-	\nSpend 1 token to gain 2 surges. 
-	\nSpend 1 hero token to succeed on a save. 
-	\nSpend 1 to reroll a test. You must use the new roll.
-	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
+	\n*You can spend a hero token to gain 2 surges, allowing you to increase the damage or potency of an ability. (See Surges in Classes.)
+	\n*You can spend a hero token when you fail a saving throw, letting you succeed on the save instead.
+	\n*You can spend a hero token to reroll a test. You must use the new roll.
+	\n*You can spend 2 hero tokens on your turn or when you take damage (no action required) to regain Stamina equal to your Recovery value before taking the damage.
+	\n*You can use only one hero token benefit per turn or per test. Unless the Director decides otherwise, unused hero tokens disappear at the end of a session.</string>
+
 	<string name="herotoken_player_played_by_gm">A Hero Token has been spent by the Director.
 	\n---HERO TOKENS---
-	\nSpend 1 token to gain 2 surges. 
-	\nSpend 1 hero token to succeed on a save. 
-	\nSpend 1 to reroll a test. You must use the new roll.
-	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
-	<string name="herotoken_player_user_by_user_for_character">A Hero Token has been spent by '%s', for character '%s'.</string>
-	<string name="herotoken_player_decremented">Hero Tokens are reduced to '%s'.</string>
+	\n*You can spend a hero token to gain 2 surges, allowing you to increase the damage or potency of an ability. (See Surges in Classes.)
+	\n*You can spend a hero token when you fail a saving throw, letting you succeed on the save instead.
+	\n*You can spend a hero token to reroll a test. You must use the new roll.
+	\n*You can spend 2 hero tokens on your turn or when you take damage (no action required) to regain Stamina equal to your Recovery value before taking the damage.
+	\n*You can use only one hero token benefit per turn or per test. Unless the Director decides otherwise, unused hero tokens disappear at the end of a session.</string>
+
 	<string name="herotoken_gm_used">The director spent a Hero Token.
 	\n---HERO TOKENS---
-	\nSpend 1 token to gain 2 surges. 
-	\nSpend 1 hero token to succeed on a save. 
-	\nSpend 1 to reroll a test. You must use the new roll.
-	\nSpend 2 tokens on your turn or when you take damage (no action required) to regain stamina equal to your Recovery value before taking the damage.</string>
+	\n*You can spend a hero token to gain 2 surges, allowing you to increase the damage or potency of an ability. (See Surges in Classes.)
+	\n*You can spend a hero token when you fail a saving throw, letting you succeed on the save instead.
+	\n*You can spend a hero token to reroll a test. You must use the new roll.
+	\n*You can spend 2 hero tokens on your turn or when you take damage (no action required) to regain Stamina equal to your Recovery value before taking the damage.
+	\n*You can use only one hero token benefit per turn or per test. Unless the Director decides otherwise, unused hero tokens disappear at the end of a session.</string>
 </root>
