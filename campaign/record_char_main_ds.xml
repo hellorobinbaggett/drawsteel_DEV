@@ -87,6 +87,37 @@
 				</anchored>
 			</label_frametop>
 
+			<initiative_roll name="savingthrow_roll">
+                <bounds>200,149,90,45</bounds>
+                <tooltip textres="tooltip_st" />
+                <script>	
+                    function action(draginfo)
+                        local nodeWin = window.getDatabaseNode();
+						local nodeWin = window.getDatabaseNode();
+						local node = window.getDatabaseNode();
+						local overrideValue = DB.getChild(node, "abilities.saveoverride.value");
+						local DC = overrideValue.getValue();
+
+                        local rRoll = { 
+                            sType = "dice", 
+                            sDesc = "Saving Throw:", 
+                            aDice = { "d10" },
+							nMod = 0,
+							nDC = DC
+                        };
+                        ActionsManager_DS.performAction(draginfo, rActor, rRoll);
+                    end
+                    
+                    function onDragStart(button, x, y, draginfo)
+                        return action(draginfo);
+                    end
+
+                    function onButtonPress()
+                        return action();
+                    end
+                </script>
+        	</initiative_roll>
+
 			<basicnumber name="stamina" source="stamina.current">
 				<anchored to="staminaframe" width="48" height="30">
 					<top anchor="top" offset="45" />
@@ -477,6 +508,7 @@
 			<linkcontrol_record name="shortcut">
 				<class>reference_classfeatures</class>
 				<field>*</field>
+				<tooltip textres="char_tooltip_notimplemented" />
 				<anchored to="classresourcetitle" width="30" height="30">
 					<top anchor="bottom" offset="-25" />
 					<left anchor="center" offset="-83" />

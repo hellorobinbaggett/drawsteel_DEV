@@ -68,13 +68,18 @@
 
 	<string name="tooltip_character_builder">
 	MAKING A HERO
-	1. Set your Hero's level
+	1. Set your Hero's level to 1 (you must start at 1)
 	2. Drop Ancestry Record
 	3. Culture (manually add a language and three skills)
 	4. Drop Career Record
-	5. Open classes set Characteristics and Subclass
+	5. Open classes set Characteristics and choose Subclass Features
 	6. Drop Class Record
 	7. Drop Kit Record
+
+	==Leveling Up==
+	1. Change the level in your character sheet header by 1
+	2. Open classes and select features for that level (it will only grab features exactly your level)
+	3. Drag and drop class onto character sheet (repeat for each level)
 
 	Drop links onto the character sheet and it will auto-populate
 	To select subclass, you need to go to the "subclass" tab and select the corresponding features for the subclass you want.
@@ -185,6 +190,7 @@
 	<string name="char_tooltip_inv_equipped">Readied</string>
 	<string name="char_tooltip_recoverydescription">Recovery value is equal to 1/3 your max stamina.</string>
 	<string name="char_tooltip_recovery">Use Recovery</string>
+	<string name="char_tooltip_saveoverride">Overrides the saving throw (default is 6)</string>
 	<string name="skill_tooltip">Click to change characteristic</string>
 	<string name="echelon_tooltip">A grouping of heroic levels that informs players of the types of heroic deeds the heroes can achieve. There are four echelons of play: 1st echelon (1st to 3rd level), 2nd echelon (4th to 6th level), 3rd echelon (7th to 9th level), and 4th echelon (10th level). </string>
 	<string name="wip_tooltip">This button has not been fully implemented yet.</string>
@@ -356,6 +362,9 @@
 	<string name="stability">Stability</string>
 	<string name="disengage">Disengage</string>
 	<string name="potencies">POTENCIES</string>
+	<string name="saveoverride">SAVE OVERRIDE</string>
+	<string name="savingthrow">Saving Throw</string>
+	<string name="value">Value</string>
 	<string name="weight">Weight</string>
 	<string name="victories">Victories</string>
 	<string name="char_label_value">Recovery Value</string>
@@ -427,6 +436,7 @@
 	<string name="tooltip_ir">START COMBAT</string>
 	<string name="tooltip_st">Saving Throw</string>
 	<string name="tooltip_drawsteel">Draw Steel!</string>
+	<string name="tooltip_override">If you save on a number other than 6 or higher, enter that number here.</string>
 
 	<!-- Characters -->
 	<string name="char_label_skills">Skills</string>
@@ -452,6 +462,7 @@
 	<string name="char_tooltip_speed">Speed</string>
 	<string name="char_tooltip_stability">Stability</string>
 	<string name="char_tooltip_classresource">get resource</string>
+	<string name="char_tooltip_notimplemented">This feature hasn't been fully implemented yet.</string>
 	<string name="char_tooltip_startturn">get resource</string>
 	<string name="char_tooltip_stamina">Current Stamina</string>
 	<string name="char_tooltip_max">Max Stamina</string>

@@ -9,10 +9,13 @@
 	<windowclass name="charsheet_modifiers">
 		<sheetdata>
 			<frame_char name="combatframe">
-				<bounds>0,20,145,200</bounds>
+				<bounds>0,20,145,245</bounds>
 			</frame_char>
 			<frame_char name="appearanceframe">
-				<bounds>140,20,-1,200</bounds>
+				<bounds>140,20,-1,245</bounds>
+			</frame_char>
+			<frame_char name="notesframe">
+				<bounds>0,260,-1,-6</bounds>
 			</frame_char>
 
 			<label_frametop>
@@ -201,6 +204,23 @@
 				<static textres="strong" />
 			</string_characteristiclabel>	
 
+			<label>
+				<anchored to="combatframe" position="insidetopleft" offset="33,195" width="130" />
+				<static textres="saveoverride" />
+			</label>
+
+			<number_characteristicscore name="saveoverride" source="abilities.saveoverride.value">
+				<anchored to="combatframe" position="insidetopleft" offset="95,215" width="20" height="17"/>
+				<description textres="savingthrow" />
+				<default>0</default>
+				<hideonvalue>0</hideonvalue>
+				<tooltip textres="tooltip_override" />
+			</number_characteristicscore>
+            <string_characteristiclabel name="save_label">
+				<anchored to="saveoverride" />
+				<static textres="value" />
+			</string_characteristiclabel>
+
 			<!-- <string_labeled name="Kit.Magic.Damage.Tier1" source="Kit.Magic.Damage.Tier1">
 				<anchored to="Kit.Ranged.Damage.Tier3" position="righthigh" offset="25,0" width="20" />
 				<labelres>char_label_magical</labelres>
@@ -215,10 +235,7 @@
 				<default>+0</default>
 			</string_labeled>	 -->
 
-			<frame_char name="notesframe">
-				<bounds>0,215,-1,-6</bounds>
-				<!-- <bounds>0,0,-1,-5</bounds> -->
-			</frame_char>
+
 			<label_frametop>
 				<anchored to="notesframe" />
 				<static textres="char_label_kits" />
