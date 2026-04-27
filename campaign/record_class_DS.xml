@@ -340,7 +340,7 @@
 				<static textres="label_selected_class" />
 				<tooltip textres="char_tooltip_choose" />
 			</label_content_column>
-			<button_checkbox_content_columnh name="checkbox" />
+			<button_checkbox_content_column name="checkbox" />
 
 			<ft_content_column_full name="text" />
 		</sheetdata>

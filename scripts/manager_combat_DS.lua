@@ -36,6 +36,7 @@ function Gone(window)
 end
 
 function notifyGone(window)
+	Debug.chat(notifyGone);
 	local msgOOB = {};
 	msgOOB.type = CombatManagerDS.OOB_MSGTYPE_GONE;
 	msgOOB.user = Session.UserName;
@@ -45,10 +46,12 @@ function notifyGone(window)
 end
 
 function handleGone(msgOOB)
+	Debug.chat("handleGone");
 	CombatManagerDS.performGone(nodeWin, (tonumber(msgOOB.nIsHost) == 1));
 end
 
 function performGone(nodeWin, bHost)
+	Debug.chat("performGone");
 	DB.setValue(nodeWin, "initresult", "number", 1);
 
 	local msg = {
@@ -64,7 +67,7 @@ function onTabletopInit()
 
 	-- OOBManager.registerOOBMsgHandler(CombatManager.OOB_MSGTYPE_ENDTURN, CombatManager.handleEndTurn);
 	-- OOBManager.registerOOBMsgHandler(CombatManager.OOB_MSGTYPE_INITSWAP, CombatManager.handleInitSwap);
-	-- OOBManager.registerOOBMsgHandler(CombatManagerDS.OOB_MSGTYPE_GONE, CombatManagerDS.handleGone);
+	OOBManager.registerOOBMsgHandler(CombatManagerDS.OOB_MSGTYPE_GONE, CombatManagerDS.handleGone);
 
 	CombatManager.initTrackers();
 
@@ -1812,6 +1815,24 @@ function deleteCleanup(v)
 	if CombatManager.isActive(v) then
 		CombatManager.nextActor();
 	end
+end
+
+function calcBattleEV(nodeBattle)
+	local sTargetNPCList = LibraryData.getCustomData("battle", "npclist") or "npclist";
+
+	local nXP = 0;
+	for _, vNPCItem in ipairs(DB.getChildList(nodeBattle, sTargetNPCList)) do
+		local _,sRecord = DB.getValue(vNPCItem, "link", "", "");
+		if sRecord ~= "" then
+			local nodeNPC = DB.findNode(sRecord);
+			if nodeNPC then
+				nXP = nXP + (DB.getValue(vNPCItem, "count", 0) * DB.getValue(nodeNPC, "ev", 0));
+			else
+				local sMsg = string.format(Interface.getString("battle_error_missingnpclink"), DB.getValue(vNPCItem, "name", ""));
+			end
+		end
+	end
+	DB.setValue(nodeBattle, "exp", "number", nXP);
 end
 
 -- DEPRECATED - 2025-03 (Short Release)

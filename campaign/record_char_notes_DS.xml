@@ -32,10 +32,10 @@
 				<anchored to="career" position="righthigh" offset="5,0" width="45" />
 				<labelres>char_label_wealth</labelres>
 			</number_labeled>
-			<number_labeled name="renown">
+			<string_labeled name="renown">
 				<anchored to="wealth" position="righthigh" offset="5,0" width="60" />
 				<labelres>char_label_renown</labelres>
-			</number_labeled>
+			</string_labeled>
 			<number_labeled name="followers">
 				<anchored to="renown" position="righthigh" offset="5,0" width="70" />
 				<labelres>char_label_followers</labelres>

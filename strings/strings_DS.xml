@@ -740,7 +740,7 @@
 	<string name="ct_emptylist_monsters">Drop NPC or encounter links to add entries.</string>
 
 	<!-- Hero Tokens -->
-	<string name="tooltip_herotokengm">Hero Token (drag off to remove)</string>
+	<string name="tooltip_herotokengm">Hero Token</string>
 	<string name="tooltip_herotokengm_gm">Hero Token (drag off to remove) \nnCTRL+MouseWheel to manually adjust.</string>
 
 	<!-- TODO: it would be nice to create a custom chat message to beautify the text -->

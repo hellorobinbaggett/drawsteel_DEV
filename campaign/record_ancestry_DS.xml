@@ -68,7 +68,6 @@
 			<string_listitem_center name="name">
 				<empty textres="library_recordtype_empty_ancestryfeature" />
 				<font>sheetlabel</font>
-				<readonly />
 			</string_listitem_center>
 		</sheetdata>
 	</windowclass>
@@ -84,7 +83,7 @@
 				self.onLockModeChanged(WindowManager.getWindowReadOnlyState(self));
 			end
 			function onLockModeChanged(bReadOnly)
-				local tFields = { "choicetype", "choicecost", "text", };
+				local tFields = { "choicetype", "choicecost", "text" };
 				WindowManager.callSafeControlsSetLockMode(self, tFields, bReadOnly);
 			end
 		</script>
@@ -104,7 +103,7 @@
 			<label_content_column name="repeatable_label">
 				<static textres="label_selected" />
 			</label_content_column>
-			<button_checkbox_content_columnh name="repeatable" />
+			<button_checkbox_content_column name="repeatable" />
 
 			<ft_content_column_full name="text" />
 		</sheetdata>

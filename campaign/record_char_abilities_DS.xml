@@ -285,9 +285,11 @@
 				<font>sheetlabel</font>
 				<empty textres="classfeaturechoice_empty_choicetype" />
 			</string_listitem_left>
-			<heroic_button>
+
+			<!-- TODO: make a button that will roll the ability without having to click open the window -->
+			<!-- <heroic_button>
 				<anchored to="rightanchor" width="20" position="insidetopright" offset="4,0"/>
-			</heroic_button>
+			</heroic_button> -->
 		</sheetdata>
 	</windowclass>	
 </root>

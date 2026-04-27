@@ -376,25 +376,6 @@
 				<nodrag />
 			</stringu>
 
-		<!-- unique effects/ conditions - -->
-			<!-- <frame_char name="conditionsframe">
-				<bounds>340,230,-1,100</bounds>
-			</frame_char>
-			<label_frametop>
-				<anchored to="conditionsframe" />
-				<static textres="char_label_conditions" />
-			</label_frametop>
-			<stringu name="conditions">
-				<anchored to="conditionsframe">
-					<top offset="25" />
-					<left offset="15" />
-					<right offset="-20" />
-					<bottom offset="-15" />
-				</anchored>
-				<multilinespacing>20</multilinespacing>
-				<nodrag />
-			</stringu> -->
-
 		<!-- VICTORIES -->
 		<label_charframetop name="victoriestitle">
 			<anchored height="20" width="80">
@@ -439,7 +420,10 @@
 			</anchored>
 			<font>reference-b-large</font>
 			<description textres="char_tooltip_classresource" />
-			<script file="campaign/scripts/manager_resource_ds.lua" />
+			<script>
+				function onValueChanged()
+				end
+			</script>
 			<target>classresource</target>
 		</basicnumber>
 
@@ -492,37 +476,12 @@
 			<!-- TODO: Add link to class resource description on class add -->
 			<linkcontrol_record name="shortcut">
 				<class>reference_classfeatures</class>
+				<field>*</field>
 				<anchored to="classresourcetitle" width="30" height="30">
 					<top anchor="bottom" offset="-25" />
 					<left anchor="center" offset="-83" />
 				</anchored>
 			</linkcontrol_record>
-
-			<initiative_roll name="savingthrow_roll">
-                <bounds>200,149,90,45</bounds>
-                <tooltip textres="tooltip_st" />
-                <script>	
-                    function action(draginfo)
-                        local nodeWin = window.getDatabaseNode();
-
-                        local rRoll = { 
-                            sType = "dice", 
-                            sDesc = "Saving Throw:", 
-                            aDice = { "d10" },
-							nMod = 0,
-                        };
-                        ActionsManager_DS.performAction(draginfo, rActor, rRoll);
-                    end
-                    
-                    function onDragStart(button, x, y, draginfo)
-                        return action(draginfo);
-                    end
-
-                    function onButtonPress()
-                        return action();
-                    end
-                </script>
-        	</initiative_roll>
 
 		</sheetdata>
 	</windowclass>

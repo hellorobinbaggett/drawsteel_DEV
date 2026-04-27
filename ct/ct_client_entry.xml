@@ -20,15 +20,16 @@
 	<windowclass name="client_ct_entry_heroes" copy="client_ct_entry">
 		<sheetdata>
 			<button_initiative_toggle name="initresult" insertbefore="token">
-				<readonly />
 				<script>
 					function onClickDown()
 						return true;
 					end
 					function onClickRelease()
 						if Session.IsHost then
+							Debug.chat("GM");
 							CombatManagerDS.Gone(window);
 						else
+							Debug.chat("Player");
 							CombatManagerDS.notifyGone(window);
 						end
 					end
