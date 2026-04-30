@@ -103,7 +103,7 @@
 			<label_content_column name="repeatable_label">
 				<static textres="label_selected" />
 			</label_content_column>
-			<button_checkbox_content_column name="repeatable" />
+			<button_checkbox_content_column name="checkbox" />
 
 			<ft_content_column_full name="text" />
 		</sheetdata>

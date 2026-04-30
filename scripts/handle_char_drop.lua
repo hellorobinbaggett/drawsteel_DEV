@@ -44,7 +44,7 @@ function onDrop(x, y, draginfo)
 
                 local tNodes = DB.getChildren(nodeSource, "features")
                 for key,value in pairs(tNodes) do
-                    local checkbox = DB.createChild(value, "repeatable");
+                    local checkbox = DB.createChild(value, "checkbox");
                     if(checkbox.getValue() == 1) then
                         DB.createChildAndCopy(nodeAncestryList, value);
                     end

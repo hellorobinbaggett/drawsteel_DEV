@@ -32,7 +32,6 @@ function onInit()
 
 	-- Languages
 	languages = {
-		-- Human languages
 		[Interface.getString("language_value_uvalic")] = "",
         [Interface.getString("language_value_higaran")] = "Dynastic",
         [Interface.getString("language_value_oaxuatl")] = "",
@@ -42,7 +41,6 @@ function onInit()
         [Interface.getString("language_value_riojan")] = "",
         [Interface.getString("language_value_vanric")] = "",
         [Interface.getString("language_value_vaslorian")] = "",
-        -- Standard languages
         [Interface.getString("language_value_anjali")] = "Infernal",
         [Interface.getString("language_value_axiomatic")] = "Cybertronian",
         [Interface.getString("language_value_caelian")] = "",
@@ -68,8 +66,6 @@ function onInit()
         [Interface.getString("language_value_yllyric")] = "Celestial",
         [Interface.getString("language_value_zahariax")] = "Cybertronian",
         [Interface.getString("language_value_zaliac")] = "Dwarven",
-
-		-- Exotic languages
 		[Interface.getString("language_value_ananjali")] = "Infernal",
         [Interface.getString("language_value_high_rhyvian")] = "Quenya",
         [Interface.getString("language_value_khamish")] = "",
@@ -78,8 +74,7 @@ function onInit()
         [Interface.getString("language_value_old_variac")] = "",
         [Interface.getString("language_value_phorialtic")] = "",
         [Interface.getString("language_value_rallarian")] = "",
-        [Interface.getString("language_value_ullorvic")] = "",
-
+        [Interface.getString("language_value_ullorvic")] = ""
 	};
 
     languagefonts = {
@@ -108,10 +103,10 @@ function onInit()
 		["Timescape"] = "Timescape"
 	}	
     
-	languagestandard = {
-		Interface.getString("language_value_caelian"),
+	-- languagestandard = {
+	-- 	Interface.getString("language_value_caelian"),
 
-	};
+	-- };
 end
 
 function getCharSelectDetailHost(nodeChar)
