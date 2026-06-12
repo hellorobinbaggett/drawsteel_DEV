@@ -237,7 +237,7 @@
 	<string name="ct_label_stamina">STAMINA</string>
 	<string name="ct_label_order">Order</string>
 	<string name="ct_label_malice">MALICE</string>
-	<string name="ct_label_victories">Hero Victories</string>
+	<string name="ct_label_victories">Victories</string>
 	<string name="ct_label_herotokens">HERO TOKENS</string>
 	<string name="ct_tooltip_gone">Gone</string>
 	<string name="ct_tooltip_ta">Triggered Action</string>

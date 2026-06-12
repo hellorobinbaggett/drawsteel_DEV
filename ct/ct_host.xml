@@ -8,26 +8,31 @@
 <root>
 	<windowclass name="combattracker_host" merge="join">
 		<sizelimits>
-			<minimum width="600" height="690" />
+			<minimum width="600" height="300" />
 		</sizelimits>
 		<sheetdata>
+			<!-- Set to 0 width because if I remove this it will use the default from CoreRPG -->
 			<list_ct_host name="list">
 				<script file="ct/scripts/ct_DS.lua" />
+				<bounds>0,0,0,0</bounds>
 			</list_ct_host>
-
-			<sub_ct_malice />
-			<sub_ct_victories />
-
-			<sub_ct_heroes_host />
-			<sub_ct_monsters_host />
-
+			<sub_ct_heroes_host>
+				<script file="ct/scripts/ct_DS.lua" />
+			</sub_ct_heroes_host>
+			<sub_ct_monsters_host>
+				<script file="ct/scripts/ct_DS.lua" />
+			</sub_ct_monsters_host>
 			<ct_drawsteel />
 			<ct_initiative_roll />
+			<!-- <button_ct_header_visibility name="button_global_visibility" /> -->
+			<sub_ct_malice />
+			<sub_ct_victories />
 		</sheetdata>
 	</windowclass>
 	<windowclass name="sub_ct_header_host" merge="join">
 		<sheetdata>
 			<label_ct_header_initresult name="label_init" merge="delete" />
+			<bounds>0,0,0,0</bounds>
 		</sheetdata>
 	</windowclass>
 	<windowclass name="sub_ct_controls_host" merge="join">

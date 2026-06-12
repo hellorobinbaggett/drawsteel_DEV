@@ -13,9 +13,9 @@ function onFilter(w)
 	local nodeCT = w.getDatabaseNode();
 	local bShow;
 	if flag_heroes then
-		bShow = (ActorManager.isPC(nodeCT) and not ActorManager_DS.isInitSet(nodeCT));
+		bShow = (ActorManager.isPC(nodeCT) );
 	elseif flag_monsters then
-		bShow = (not ActorManager.isPC(nodeCT) and not ActorManager_DS.isInitSet(nodeCT));
+		bShow = (not ActorManager.isPC(nodeCT) );
 	else
 		bShow = ActorManager_DS.isInitSet(nodeCT);
 	end

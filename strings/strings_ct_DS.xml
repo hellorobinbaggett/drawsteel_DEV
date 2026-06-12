@@ -6,7 +6,7 @@
 -->
 
 <root>
-	<string name="ct_emptylist">Assign initiative below to add heroes and monsters</string>
+	<string name="ct_emptylist"> </string>
 
 	<string name="class_header_features">Class Features</string>
 	<string name="subclass_header_features">Subclass Features</string>

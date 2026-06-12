@@ -97,7 +97,7 @@
 	<script name="Desktop" file="scripts/data_desktop.lua" />
 	<script name="ActionsManager" file="scripts/manager_actions.lua" />
 	<script name="CombatRecordManager" file="scripts/manager_combat_record.lua" />
-	<script name="EffectManager" file="scripts/manager_effect.lua" />
+	<!-- <script name="EffectManager" file="scripts/manager_effect.lua" /> -->
 
 	<script name="ActionsManager_DS" file="scripts/manager_actions_DS.lua" />
 	<script name="ActorManager_DS" file="scripts/manager_actor_DS.lua" />

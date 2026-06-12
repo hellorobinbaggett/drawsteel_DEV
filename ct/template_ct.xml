@@ -76,77 +76,25 @@
 		</initiative_roll>
 	</template>
 
-	<template name="sub_ct_malice">
-		<subwindow name="sub_malice">
-			<anchored to="sub_header" width="90" height="55">
-				<top offset="-15" />
-				<left anchor="center" offset="-45" />
-			</anchored>
-			<frame name="metalplate" />
-			<class>ct_malice</class>
-			<activate />
-			<fastinit />
-		</subwindow>
+<template name="button_ct_header_visibility">
+		<buttonc_listitem_icon_simple_base name="button_global_visibility">
+			<bounds>-40,-3,20,20</bounds>
+			<state icon="button_toolbar_visibility_off" tooltipres="ct_tooltip_shownpcallon" merge="add" />
+			<state icon="button_toolbar_visibility_on" tooltipres="ct_tooltip_shownpcalloff" merge="add" />
+			<script>
+				function onValueChanged()
+					WindowManager.getTopWindow(window).list.toggleVisibility();
+				end
+			</script>
+		</buttonc_listitem_icon_simple_base>
 	</template>
-	<windowclass name="ct_malice">
-		<sheetdata>
-			<number_ct_crosslink name="malice">
-				<source>malice</source>
-				<anchored width="50" height="25">
-					<top offset="8" />
-					<left anchor="center" offset="-25" />
-				</anchored>
-				<font>reference-b-large</font>
-				<gmeditonly />
-			</number_ct_crosslink>
-			<label name="label_malice">
-				<color>dec790</color>
-				<anchored position="insidetop">
-					<top parent="malice" anchor="bottom" />
-				</anchored>
-				<static textres="ct_label_malice" />
-				<center />
-			</label>
-		</sheetdata>
-	</windowclass>
-
-	<template name="sub_ct_victories">
-		<subwindow name="sub_victories">
-			<anchored to="sub_header" width="100" height="60">
-				<top offset="-23" />
-				<left anchor="right" offset="-110" />
-			</anchored>
-			<class>ct_victories</class>
-			<activate />
-			<fastinit />
-		</subwindow>
-	</template>
-
-	<windowclass name="ct_victories">
-		<sheetdata>
-			<number_ct_crosslink name="victories">
-				<source>victories</source>
-				<anchored width="40" height="20">
-					<top offset="17" />
-					<left anchor="center" offset="-20" />
-				</anchored>
-				<font>reference-b-large</font>
-				<gmeditonly />
-			</number_ct_crosslink>
-			<label name="label_victories">
-				<anchored position="insidetop">
-					<top parent="victories" anchor="bottom" />
-				</anchored>
-				<static textres="ct_label_victories" />
-				<center />
-			</label>
-		</sheetdata>
-	</windowclass>
 
 	<template name="sub_ct_heroes_base">
 		<sub_content_bottom name="sub_heroes">
-			<anchored height="300">
+			<anchored>
 				<right anchor="center" />
+				<top offset="20" />
+				<bottom offset="-13" />
 			</anchored>
 		</sub_content_bottom>
 	</template>
@@ -175,11 +123,11 @@
 			<anchor_content_top />
 			<anchor_content_bottom />
 
-			<area_content_framed_groupbox_top name="header">
+			<area_content_top name="header">
 				<anchored height="30" />
-			</area_content_framed_groupbox_top>
+			</area_content_top>
 			<label name="label">
-				<anchored to="header" position="insidetop" offset="0,5" />
+				<anchored to="header" position="insidetop" offset="0,0" />
 				<static textres="ct_label_name_heroes" />
 				<center />
 			</label>
@@ -195,11 +143,11 @@
 			<anchor_content_top />
 			<anchor_content_bottom />
 
-			<area_content_framed_groupbox_top name="header">
+			<area_content_top name="header">
 				<anchored height="30" />
-			</area_content_framed_groupbox_top>
+			</area_content_top>
 			<label name="label">
-				<anchored to="header" position="insidetop" offset="0,5" />
+				<anchored to="header" position="insidetop" offset="0,0" />
 				<static textres="ct_label_name_monsters" />
 				<center />
 			</label>
@@ -262,6 +210,72 @@
 		</sheetdata>
 	</windowclass>
 
+		<template name="sub_ct_malice">
+		<subwindow name="sub_malice">
+			<anchored to="sub_header" width="90" height="55">
+				<top offset="-15" />
+				<left anchor="center" offset="-45" />
+			</anchored>
+			<frame name="metalplate" />
+			<class>ct_malice</class>
+			<activate />
+			<fastinit />
+		</subwindow>
+	</template>
+	<windowclass name="ct_malice">
+		<sheetdata>
+			<number_ct_crosslink name="malice">
+				<source>malice</source>
+				<anchored width="50" height="25">
+					<top offset="8" />
+					<left anchor="center" offset="-25" />
+				</anchored>
+				<font>reference-b-large</font>
+				<gmeditonly />
+			</number_ct_crosslink>
+			<label name="label_malice">
+				<color>dec790</color>
+				<anchored position="insidetop">
+					<top parent="malice" anchor="bottom" />
+				</anchored>
+				<static textres="ct_label_malice" />
+				<center />
+			</label>
+		</sheetdata>
+	</windowclass>
+
+	<template name="sub_ct_victories">
+		<subwindow name="sub_victories">
+			<anchored to="sub_header" width="100" height="60">
+				<top offset="-22" />
+				<left anchor="left" offset="0" />
+			</anchored>
+			<class>ct_victories</class>
+			<activate />
+			<fastinit />
+		</subwindow>
+	</template>
+
+	<windowclass name="ct_victories">
+		<sheetdata>
+			<number_ct_crosslink name="victories">
+				<source>victories</source>
+				<anchored width="40" height="20">
+					<top offset="17" />
+					<left anchor="center" offset="-20" />
+				</anchored>
+				<font>reference-b-large</font>
+			</number_ct_crosslink>
+			<label name="label_victories">
+				<anchored position="insidetop">
+					<top parent="victories" anchor="bottom" />
+				</anchored>
+				<static textres="ct_label_victories" />
+				<center />
+			</label>
+		</sheetdata>
+	</windowclass>
+
 	<template name="list_ct_heroes_base">
 		<list_content name="list_heroes">
 			<datasource>.list</datasource>
@@ -310,12 +324,18 @@
 			<script file="ct/scripts/ct_menu_DS.lua" />
 		</button_listitem_text_left_sm>
 	</template>
+	<!-- THIS IS IT -->
 	<template name="button_ct_controls_nextround" merge="join">
 		<buttoncontrol>
 			<script>
 				function onButtonPress()
 					local nodeWin = window.getDatabaseNode();
+					local aEntries = CombatManager.getSortedCombatantList();
+					
 					CombatManagerDS.nextRound(1, nodeWin);
+					for i,v in pairs(aEntries) do		
+						DB.setValue(v, "initresult", "number", 0);
+					end
 				end
 			</script>
 		</buttoncontrol>
@@ -346,8 +366,7 @@
 				<left anchor="right" relation="relative" offset="-10" postoffset="2" />
 			</anchored>
 			<state icon="ct_gone" tooltipres="ct_tooltip_turn" />
-			<state icon="ct_remove" tooltipres="ct_tooltip_remove"/>
-			<gmeditonly />
+			<state icon="ct_remove" tooltipres="ct_tooltip_gone"/>
 		</buttonfield>
 	</template>
 </root>

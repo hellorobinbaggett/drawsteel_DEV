@@ -12,6 +12,7 @@ CT_COMBATANT_PATH = "combattracker.list_heroes.*";
 CT_COMBATANT_PARENT = "combattracker.list_heroes";
 CT_LIST = "combattracker.list_heroes";
 CT_ROUND = "combattracker.round";
+CT_MALICE = "combattracker.malice";
 
 local _bTrackersInit = false;
 
@@ -1230,6 +1231,7 @@ function resetInit()
 
 	-- Reset the round counter
 	DB.setValue(CombatManagerHeroes.CT_ROUND, "number", 0);
+	DB.setValue(CombatManagerMonsters.CT_MALICE, "number", 0);
 
 	CombatManagerHeroes.onCombatResetEvent();
 end

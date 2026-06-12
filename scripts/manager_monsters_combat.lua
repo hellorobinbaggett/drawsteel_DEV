@@ -12,6 +12,7 @@ CT_COMBATANT_PATH = "combattracker.list_monsters.*";
 CT_COMBATANT_PARENT = "combattracker.list_monsters";
 CT_LIST = "combattracker.list_monsters";
 CT_ROUND = "combattracker.round";
+CT_MALICE = "combattracker.malice";
 
 local _bTrackersInit = false;
 
@@ -853,13 +854,13 @@ function sortfuncDnD(node1, node2)
 			local nValue1 = DB.getValue(node1, "initresult", 0);
 			local nValue2 = DB.getValue(node2, "initresult", 0);
 			if nValue1 ~= nValue2 then
-				return nValue1 > nValue2;
+				return nValue1 < nValue2;
 			end
 
 			nValue1 = DB.getValue(node1, "init", 0);
 			nValue2 = DB.getValue(node2, "init", 0);
 			if nValue1 ~= nValue2 then
-				return nValue1 > nValue2;
+				return nValue1 < nValue2;
 			end
 		else
 			if sFaction1 ~= sFaction2 then
@@ -1228,6 +1229,7 @@ function resetInit()
 
 	-- Reset the round counter
 	DB.setValue(CombatManagerMonsters.CT_ROUND, "number", 0);
+	DB.setValue(CombatManagerMonsters.CT_MALICE, "number", 0);
 
 	CombatManagerMonsters.onCombatResetEvent();
 end
