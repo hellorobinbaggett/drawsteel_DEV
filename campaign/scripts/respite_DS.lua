@@ -1,7 +1,7 @@
 function onButtonPress()
     local nodeWin = window.getDatabaseNode();
     local nExperience = DB.getValue(nodeWin, "xptitle");
-    local nLevel = DB.getValue(nodeWin, "levelnumbertitle");
+    local nLevel = DB.getValue(nodeWin, "level");
     local nVictories = DB.getValue(nodeWin, "victories");
     local nMaxStamina = DB.getValue(nodeWin, "stamina.max");
     local nRecoveries = DB.getValue(nodeWin, "recoverycurrent");
@@ -21,7 +21,7 @@ function onButtonPress()
     DB.setValue(nodeWin, "classresource", "number", 0);
 
     -- Check if level went up
-    local nNewLevel = DB.getValue(nodeWin, "levelnumbertitle");
+    local nNewLevel = DB.getValue(nodeWin, "level");
     if(nNewLevel > nLevel) then
         ChatManager.SystemMessageResource("char_emptylist_levelup", tostring(sHeroName), tostring(nNewLevel));
 

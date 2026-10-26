@@ -10,9 +10,11 @@
 	<string name="tab_main">Main</string>
 	<string name="tab_skills">Skills</string>
 	<string name="tab_abilities">Abilities</string>
+	<string name="tab_combat">Combat</string>
 	<string name="tab_notes">Notes</string>
 	<string name="tab_basics">Basics</string>
 	<string name="tab_modifiers">Modifiers</string>
+	<string name="tab_mods">Mods</string>
 	<string name="tab_downtime">Downtime</string>
 	<string name="tab_projects">Projects</string>
 	<string name="tab_career">Career</string>

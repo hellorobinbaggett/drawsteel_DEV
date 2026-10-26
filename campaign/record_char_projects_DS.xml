@@ -12,7 +12,7 @@
 				<bounds>0,0,-1,40</bounds>
 			</frame_char>
 			<label_frametop>
-				<anchored to="projectslabelframe" offset="0,12"/>
+				<anchored to="projectslabelframe" offset="0,0"/>
 				<static textres="char_label_downtimeprojects" />
 			</label_frametop>
 
@@ -92,13 +92,67 @@
 				<labelres>char_label_roll</labelres>
 			</string_labeled>
 
+			<string_labeled name="project5">
+				<anchored to="projectsframe" position="insidetopleft" offset="15,125" width="165" />
+				<labelres>char_label_project</labelres>
+			</string_labeled>
+			<string_labeled name="assigned5">
+				<anchored to="project5" position="righthigh" offset="5,0" width="125" />
+				<labelres>char_label_assigned</labelres>
+			</string_labeled>
+			<string_labeled name="points5">
+				<anchored to="assigned5" position="righthigh" offset="5,0" width="50" />
+				<labelres>char_label_points</labelres>
+				<default>0/0</default>
+			</string_labeled>
+			<string_labeled name="roll5">
+				<anchored to="points5" position="righthigh" offset="5,0" width="100" />
+				<labelres>char_label_roll</labelres>
+			</string_labeled>
+
+			<string_labeled name="project6">
+				<anchored to="projectsframe" position="insidetopleft" offset="15,150" width="165" />
+				<labelres>char_label_project</labelres>
+			</string_labeled>
+			<string_labeled name="assigned6">
+				<anchored to="project6" position="righthigh" offset="5,0" width="125" />
+				<labelres>char_label_assigned</labelres>
+			</string_labeled>
+			<string_labeled name="points6">
+				<anchored to="assigned6" position="righthigh" offset="5,0" width="50" />
+				<labelres>char_label_points</labelres>
+				<default>0/0</default>
+			</string_labeled>
+			<string_labeled name="roll6">
+				<anchored to="points6" position="righthigh" offset="5,0" width="100" />
+				<labelres>char_label_roll</labelres>
+			</string_labeled>
+
+			<string_labeled name="project7">
+				<anchored to="projectsframe" position="insidetopleft" offset="15,175" width="165" />
+				<labelres>char_label_project</labelres>
+			</string_labeled>
+			<string_labeled name="assigned7">
+				<anchored to="project7" position="righthigh" offset="5,0" width="125" />
+				<labelres>char_label_assigned</labelres>
+			</string_labeled>
+			<string_labeled name="points7">
+				<anchored to="assigned7" position="righthigh" offset="5,0" width="50" />
+				<labelres>char_label_points</labelres>
+				<default>0/0</default>
+			</string_labeled>
+			<string_labeled name="roll7">
+				<anchored to="points7" position="righthigh" offset="5,0" width="100" />
+				<labelres>char_label_roll</labelres>
+			</string_labeled>
+
 
 			<frame_char name="inventorylabelframe">
 				<bounds>0,270,-1,40</bounds>
 			</frame_char>
 
 			<label_frametop>
-				<anchored to="inventorylabelframe" offset="0,12"/>
+				<anchored to="inventorylabelframe" offset="0,0"/>
 				<static textres="char_label_magicitems" />
 			</label_frametop>
 

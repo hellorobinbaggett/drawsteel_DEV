@@ -1,11 +1,11 @@
 function onValueChanged()
     local nodeWin = window.getDatabaseNode();
-    local nLevel = DB.getValue(nodeWin, "levelnumbertitle");
+    local nLevel = DB.getValue(nodeWin, "level");
     local nEchelon = DB.getValue(nodeWin, "echelonnumbertitle");
 
     -- Max Level is 10
     if(nLevel > 10) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 10);
+        DB.setValue(nodeWin, "level", "number", 10);
     end
 
     if(nLevel < 4) then

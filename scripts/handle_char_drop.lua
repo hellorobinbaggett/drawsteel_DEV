@@ -20,7 +20,7 @@ function onDrop(x, y, draginfo)
                 local nodeSource = DB.findNode(sRecord); -- kit record
                 local kitName = DB.getChild(nodeSource, "name"); -- kit name
                 local kitAbility = DB.getChild(nodeSource, "signatureabilities"); -- kit ability
-                local heroKit = DB.getChild(node, "kittitle"); -- charactersheet kit title
+                local heroKit = DB.getChild(node, "kittitle"); -- charactersheet kit kittitle
                 local nodeKitList = DB.createChild(node, "kit"); -- charactersheet kit details
                 local nodeKitAbilityList = DB.createChild(node, "signatureabilities"); -- charactersheet abilities
 
@@ -59,7 +59,8 @@ function onDrop(x, y, draginfo)
                 local heroClass = DB.getChild(node, "classtitle");
                 local heroFeaturesList = DB.createChild(node, "featureslist");
                 local heroChoiceList = DB.createChild(node, "classfeaturechoicelist");
-                local heroLevel = DB.getChild(node, "levelnumbertitle");
+                local heroLevel = DB.getChild(node, "level");
+                local classlink = DB.getChild(node, "classlink");
 
                 local nodeSource = DB.findNode(sRecord);
                 local className = DB.getChild(nodeSource, "name");

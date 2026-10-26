@@ -1,36 +1,36 @@
 function onValueChanged()
     local nodeWin = window.getDatabaseNode();
     local nExperience = DB.getValue(nodeWin, "xptitle");
-    local nLevel = DB.getValue(nodeWin, "levelnumbertitle");
+    local nLevel = DB.getValue(nodeWin, "level");
 
-    DB.setValue(nodeWin, "levelnumbertitle", "number", 1);
+    DB.setValue(nodeWin, "level", "number", 1);
 
     -- Max Level is 10
     if(nExperience >= 16) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 2);
+        DB.setValue(nodeWin, "level", "number", 2);
     end
     if(nExperience >= 32) then  
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 3);
+        DB.setValue(nodeWin, "level", "number", 3);
     end
     if(nExperience >= 48) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 4);
+        DB.setValue(nodeWin, "level", "number", 4);
     end
     if(nExperience >= 64) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 5);
+        DB.setValue(nodeWin, "level", "number", 5);
     end
     if(nExperience >= 80) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 6);
+        DB.setValue(nodeWin, "level", "number", 6);
     end
     if(nExperience >= 96) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 7);
+        DB.setValue(nodeWin, "level", "number", 7);
     end
     if(nExperience >= 112) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 8);
+        DB.setValue(nodeWin, "level", "number", 8);
     end
     if(nExperience >= 128) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 9);
+        DB.setValue(nodeWin, "level", "number", 9);
     end
     if(nExperience > 143) then
-        DB.setValue(nodeWin, "levelnumbertitle", "number", 10);
+        DB.setValue(nodeWin, "level", "number", 10);
     end
 end

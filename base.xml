@@ -6,7 +6,7 @@
 -->
 
 <root version="1.0" release="1" logo="logo.png">
-	<announcement text="Draw Steel Ruleset (v1.02) by EXXODIS" font="emotefont" icon="logo_DS" />
+	<announcement text="Draw Steel Ruleset (v1.025) by EXXODIS" font="emotefont" icon="logo_DS" />
 
 	<!-- Attributes -->
 	<description>
@@ -83,9 +83,10 @@
 	<!-- COMBAT TRACKER -->
 	<includefile source="ct/template_ct.xml" />
 	<includefile source="ct/ct_host.xml" />
-	<includefile source="ct/ct_client.xml" />
+	<!-- Currently there is no difference between the client and host CT -->
+	<!-- <includefile source="ct/ct_client.xml" />
+	<includefile source="ct/ct_client_entry.xml" /> -->
 	<includefile source="ct/ct_host_entry.xml" />
-	<includefile source="ct/ct_client_entry.xml" />
 	<script name="OverlayCombatManager" file="scripts/manager_overlay_combat_DS.lua" />
 
 	<!-- Global scripts -->

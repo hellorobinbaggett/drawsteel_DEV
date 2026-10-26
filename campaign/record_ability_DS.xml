@@ -181,6 +181,12 @@
 			</label_column>
 			<number_columnh name="ability_level">
 			</number_columnh>
+
+			<label_column name="ability_source_label">
+				<static textres="ability_label_source" />
+			</label_column>
+			<string_columnh name="ability_source_string">
+			</string_columnh>
 		</sheetdata>
 	</windowclass>
 </root>

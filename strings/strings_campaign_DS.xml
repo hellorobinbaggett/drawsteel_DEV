@@ -98,5 +98,6 @@
 	<string name="ability_label_tier3">17+</string>
 	<string name="ability_grouped_label_name">Name</string>
 	<string name="ability_grouped_label_cost">Cost</string>
+	<string name="ability_label_source">Source</string>
 	
 </root>

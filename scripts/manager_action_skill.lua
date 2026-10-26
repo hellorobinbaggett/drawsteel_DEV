@@ -18,7 +18,7 @@ function getNPCRoll(rActor, sSkill, nSkill)
 end
 function performNPCRoll(draginfo, rActor, sSkill, nSkill)
 	local rRoll = getNPCRoll(rActor, sSkill, nSkill);
-	ActionsManager.performAction(draginfo, rActor, rRoll);
+	ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 end
 
 function performPartySheetRoll(draginfo, rActor, sSkill)
@@ -48,13 +48,13 @@ function performPartySheetRoll(draginfo, rActor, sSkill)
 		rRoll.bTower = true;
 	end
 	
-	ActionsManager.performAction(draginfo, rActor, rRoll);
+	ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 end
 
 function performRoll(draginfo, rActor, nodeSkill, nTargetDC, bSecretRoll)
 	local rRoll = getRoll(rActor, nodeSkill, nTargetDC, bSecretRoll);
 	
-	ActionsManager.performAction(draginfo, rActor, rRoll);
+	ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 end
 
 function getRoll(rActor, nodeSkill)

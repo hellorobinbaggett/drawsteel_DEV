@@ -164,11 +164,7 @@
 			<class>ct_heroes_client</class>
 		</sub_ct_heroes_base>
 	</template>
-	<template name="sub_ct_monsters_client">
-		<sub_ct_monsters_base>
-			<class>ct_monsters_client</class>
-		</sub_ct_monsters_base>
-	</template>
+
 	<windowclass name="ct_heroes_client">
 		<sheetdata>
 			<anchor_content_top />
@@ -189,26 +185,7 @@
 			<scrollbar_list />
 		</sheetdata>
 	</windowclass>
-	<windowclass name="ct_monsters_client">
-		<sheetdata>
-			<anchor_content_top />
-			<anchor_content_bottom />
 
-			<area_content_framed_groupbox_top name="header">
-				<anchored height="30" />
-			</area_content_framed_groupbox_top>
-			<label name="label">
-				<anchored to="header" position="insidetop" offset="0,5" />
-				<static textres="ct_label_name_monsters" />
-				<center />
-			</label>
-
-			<list_ct_monsters_client name="list">
-				<script file="ct/scripts/ct_DS.lua" />
-			</list_ct_monsters_client>
-			<scrollbar_list />
-		</sheetdata>
-	</windowclass>
 
 		<template name="sub_ct_malice">
 		<subwindow name="sub_malice">
@@ -311,13 +288,7 @@
 			<script file="ct/scripts/clientct.lua" />
 		</list_ct_heroes_base>
 	</template>
-	<template name="list_ct_monsters_client">
-		<list_ct_monsters_base>
-			<class>client_ct_entry_monsters</class>
-			<empty font="list-empty-ct" textres="ct_emptylist_monsters" />
-			<script file="ct/scripts/clientct.lua" />
-		</list_ct_monsters_base>
-	</template>
+
 	
 	<template name="button_ct_controls_menu" merge="join">
 		<button_listitem_text_left_sm>

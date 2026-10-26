@@ -268,7 +268,7 @@ function encodeActors(draginfo, rSource, aTargets)
 	end
 end
 function encodeActorActiveEffectNodes(draginfo, rActor, nActorIndex)
-	local tActive = ActorManager.getActiveEffectNodes(rActor);
+	local tActive = ActorEffectManager.getActiveEffectNodes(rActor);
 	local sMetaKey = "__actor" .. nActorIndex .. "_active";
 	for kActive,vActive in ipairs(tActive) do
 		if type(vActive) == "databasenode" then

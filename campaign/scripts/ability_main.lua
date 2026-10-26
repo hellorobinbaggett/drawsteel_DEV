@@ -65,5 +65,7 @@ function update()
 	WindowManager.callSafeControlUpdate(self, "ability_cost", bReadOnly);
 	WindowManager.callSafeControlUpdate(self, "ability_cost_string", bReadOnly);
 	WindowManager.callSafeControlUpdate(self, "ability_level", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "ability_source", bReadOnly);
+	WindowManager.callSafeControlUpdate(self, "ability_source_string", bReadOnly);
 
 end

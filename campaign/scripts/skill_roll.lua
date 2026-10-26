@@ -50,7 +50,7 @@ function action(draginfo)
         t3 = DB.getValue(nodeWin, "tier3");
     };
     ActionsManager_DS.encodeDesktopMods(rRoll);
-    ActionsManager.performAction(draginfo, rActor, rRoll);
+    ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
     return true;
 end
 

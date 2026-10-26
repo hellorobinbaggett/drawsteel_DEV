@@ -20,7 +20,7 @@
 	<string name="tab_notes">Notes</string>
 	<!-- <string name="tab_kit">Kits</string> -->
 	<string name="tab_modifiers">Modifiers</string>
-	<string name="tab_combat">Stats</string>
+	<string name="tab_combat">Combat</string>
 	<string name="tab_downtime">Downtime</string>
 	<string name="tab_career">Career</string>
 	<string name="tab_order">Order</string>
@@ -501,7 +501,6 @@
 	<string name="char_label_classresource">CLASS RESOURCE</string>
 	<string name="char_label_class">CLASS</string>
 	<string name="char_label_subclass">SUBCLASS</string>
-	<string name="char_label_level">LEVEL</string>
 	<string name="char_label_echelon">ECHELON</string>
 	<string name="char_label_race">ANCESTRY</string>
 	<string name="char_label_gender">GENDER</string>
@@ -513,7 +512,7 @@
 	<string name="char_label_points">POINTS</string>
 	<string name="char_label_complication">COMPLICATION</string>
 	<string name="char_label_kit">KIT</string>
-	<string name="char_label_modifier">KIT</string>
+	<string name="char_label_modifier">KITS &amp; ENCHANTMENTS</string>
 	<string name="char_label_stats">STATS</string>
 	<string name="char_label_type">TYPE</string>
 	<string name="char_label_name">NAME</string>
@@ -671,6 +670,7 @@
 	<string name="ability_label_ancestry">Ancestry</string>
 	<string name="ability_label_abilitytype">Ability Type</string>
 	<string name="ability_label_abilitylevel">Level</string>
+	<string name="ability_label_source">Source</string>
 	<string name="ability_label_keywords">Keywords</string>
 	<string name="ability_label_type">Type</string>
 	<string name="ability_label_distance">Distance</string>
@@ -723,6 +723,7 @@
 	<string name="kit_label_disengagebonus">Disengage Bonus</string>
 	<string name="kit_label_meleedamagebonus">Melee Damage Bonus</string>
 	<string name="kit_label_rangeddamagebonus">Ranged Damage Bonus</string>
+	<string name="kit_label_name">Kit Name</string>
 	<string name="kit_label_weapon">Weapon</string>
 	<string name="kit_label_armor">Armor</string>
 

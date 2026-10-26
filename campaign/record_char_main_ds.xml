@@ -335,16 +335,16 @@
 				<color>000000</color>
 			</label_frametop>
 
-		<!-- SKILLS -->
-			<frame_char name="skillsframe">
-				<bounds>0,190,350,80</bounds>
+		<!-- MOVEMENT -->
+			<frame_char name="movementframe">
+				<bounds>0,190,190,80</bounds>
 			</frame_char>
 			<label_frametop>
-				<anchored to="skillsframe" />
-				<static textres="char_label_skills" />
+				<anchored to="movementframe" />
+				<static textres="char_label_movement" />
 			</label_frametop>
-			<stringu name="skillslist">
-				<anchored to="skillsframe">
+			<stringu name="movement">
+				<anchored to="movementframe">
 					<top offset="25" />
 					<left offset="15" />
 					<right offset="-20" />
@@ -354,16 +354,16 @@
 				<nodrag />
 			</stringu>
 
-		<!-- MOVEMENT -->
-			<frame_char name="movementframe">
-				<bounds>340,190,-1,80</bounds>
+		<!-- SKILLS -->
+			<frame_char name="skillsframe">
+				<bounds>180,190,-1,80</bounds>
 			</frame_char>
 			<label_frametop>
-				<anchored to="movementframe" />
-				<static textres="char_label_movement" />
+				<anchored to="skillsframe" />
+				<static textres="char_label_skills" />
 			</label_frametop>
-			<stringu name="movement">
-				<anchored to="movementframe">
+			<stringu name="skillslist">
+				<anchored to="skillsframe">
 					<top offset="25" />
 					<left offset="15" />
 					<right offset="-20" />
@@ -504,16 +504,12 @@
                 <script file="scripts/manager_resource_ds.lua" />
         	</classresource_roll>
 
-			<!-- TODO: Add link to class resource description on class add -->
-			<linkcontrol_record name="shortcut">
-				<class>reference_classfeatures</class>
-				<field>*</field>
-				<tooltip textres="char_tooltip_notimplemented" />
-				<anchored to="classresourcetitle" width="30" height="30">
+			<linkcontrol name="classlink">
+				<anchored to="classresourcetitle" width="20" height="20">
 					<top anchor="bottom" offset="-25" />
-					<left anchor="center" offset="-83" />
+					<left anchor="center" offset="-100" />
 				</anchored>
-			</linkcontrol_record>
+			</linkcontrol>
 
 		</sheetdata>
 	</windowclass>
