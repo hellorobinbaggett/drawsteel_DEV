@@ -6,12 +6,28 @@
 -->
 
 <root>
+	<windowclass name="charselect_host" merge="join">
+		<sheetdata>
+			<button_charwizard name="button_characterwizard" insertbefore="filter">
+				<anchored to="contentanchor" position="aboveleft" offset="5,0" />
+			</button_charwizard>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="charselect_client" merge="join">
+		<sheetdata>
+			<button_charwizard name="button_characterwizard" insertbefore="filter">
+				<anchored to="contentanchor" position="aboveleft" offset="5,0" />
+			</button_charwizard>
+		</sheetdata>
+	</windowclass>
+
 	<windowclass name="charsheet" copy="charsheet_base">
 		<placement>
 			<size width="525" height="555" />
 		</placement>
 		<sizelimits>
-			<minimum width="525" height="555" />
+			<minimum width="540" height="555" />
 			<dynamic />
 		</sizelimits>
 		<sheetdata>
@@ -99,7 +115,7 @@
 			<!-- ANCESTRY -->
 			<string_labeled name="ancestry">
 				<anchored to="name" position="righthigh" offset="5,-1" width="85" />
-				<labelres>char_label_race</labelres>
+				<labelres>char_label_ancestry</labelres>
 			</string_labeled>
 
 			<!-- KIT (incorrect data field label; but left to avoid breakage) -->

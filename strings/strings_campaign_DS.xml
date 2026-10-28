@@ -15,6 +15,7 @@
 	<string name="char_label_echelon">ECHELON</string>
 	<string name="char_label_xp">XP</string>
 	<string name="char_label_race">ANCESTRY</string>
+	<string name="char_label_ancestry">ANCESTRY</string>
 	<string name="char_label_career">CAREER</string>
 	<string name="char_label_title">TITLE</string>
 	<string name="char_label_itemweight">En</string>
