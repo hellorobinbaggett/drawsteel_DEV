@@ -11,8 +11,8 @@
 	<!-- Attributes -->
 	<description>
 	<!-- file names for the .pak should be "Draw Steel" for prod and "Draw Steel_dev" for dev -->
-		<!-- <displayname>Draw Steel_dev</displayname> -->
-		<displayname>DrawSteel</displayname> 
+		<displayname>Draw Steel_dev</displayname>
+		<!-- <displayname>DrawSteel</displayname>  -->
 		<author>EXXODIS, MoonWizard</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>

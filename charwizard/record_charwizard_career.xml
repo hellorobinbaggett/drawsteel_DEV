@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+	Please see the license.html file included with this distribution for
+	attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charwizard_sub_career">
+		<sheetdata>
+			<anchor_content_top />
+			<anchor_content_bottom />
+
+			<sub_content_top name="sub_instructions">
+				<class>charwizard_career_instructions</class>
+			</sub_content_top>
+
+			<header_content_framed_metalplate_icon name="career_select_header">
+				<icon>char_career</icon>
+				<static textres="charwizard_title_career" />
+			</header_content_framed_metalplate_icon>
+
+			<button_text name="button_changecareer">
+				<anchored position="insidetopright" offset="25,10" width="120" height="15" />
+				<state textres="charwizard_label_changecareer" />
+				<invisible />
+				<script>
+					function onButtonPress()
+						CharWizardCareerManager.resetCareer(window);
+					end
+				</script>
+			</button_text>
+
+			<sub_content_top name="sub_careerselection">
+				<class>sub_charwizard_career_careerselection</class>
+			</sub_content_top>
+			<list_content_top name="list_features">
+				<class>list_entry_charwizard_careerfeatures</class>
+				<invisible />
+			</list_content_top>
+		</sheetdata>
+	</windowclass>
+	<windowclass name="charwizard_career_instructions" copy="charwizard_instructions">
+		<sheetdata>
+			<stringc_content_noframe_noscroll_static_top name="text">
+				<static textres="charwizard_message_instructions_career" />
+			</stringc_content_noframe_noscroll_static_top>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="sub_charwizard_career_careerselection">
+		<script file="charwizard/scripts/career_sub_careerselections.lua" />
+		<sheetdata>
+			<anchor_content_top />
+
+			<filter_label_content_top name="label_source">
+				<static textres="charwizard_label_filtersource" />
+			</filter_label_content_top>
+			<filter_comboboxc_content_top name="filter_source">
+				<listdirection>down</listdirection>
+				<listmaxsize>8</listmaxsize>
+			</filter_comboboxc_content_top>
+			<filter_label_content_top name="label_name">
+				<static textres="charwizard_label_filtername" />
+			</filter_label_content_top>
+			<filter_stringc_content_top name="filter_name" />
+			<spacer_content_top name="spacer">
+				<anchored height="5" />
+			</spacer_content_top>
+
+			<list_content_top name="list">
+				<class>list_entry_charwizard_careerselection</class>
+				<sortby><control>name</control></sortby>
+				<empty textres="charwizard_empty_list" />
+			</list_content_top>
+
+			<sub_content_paging_top name="sub_paging" />
+		</sheetdata>
+	</windowclass>
+	<windowclass name="list_entry_charwizard_careerselection" copy="list_entry_charwizard_item_selection" />
+
+	<windowclass name="list_entry_charwizard_careerfeatures" copy="list_entry_charwizard_item">
+		<sheetdata>
+			<hlinkc name="shortcut">
+				<class>reference_careerfeature</class>
+			</hlinkc>
+			<list_content_noscroll_top name="list_decisions">
+				<class>list_entry_charwizard_careerfeature_decisions</class>
+			</list_content_noscroll_top>
+		</sheetdata>
+	</windowclass>
+	<windowclass name="list_entry_charwizard_careerfeature_decisions" copy="list_entry_charwizard_item_decision" />
+
+	<windowclass name="decision_sub_careerfeat_choice">
+		<script file="charwizard/scripts/decision_sub_feat_choice.lua" />
+		<sheetdata>
+			<anchor_content_top />
+			<anchor_content_bottom />
+
+			<filter_label_content_top name="label_source">
+				<anchored width="70" />
+				<static textres="charwizard_label_filtersource" />
+			</filter_label_content_top>
+			<filter_comboboxc_content_top name="filter_source">
+				<anchored to="contentanchor" height="20">
+					<left offset="115" />
+				</anchored>
+				<listdirection>down</listdirection>
+				<listmaxsize>8</listmaxsize>
+			</filter_comboboxc_content_top>
+			<filter_label_content_top name="label_category">
+				<anchored width="70" />
+				<static textres="charwizard_label_filtercategory" />
+			</filter_label_content_top>
+			<filter_comboboxc_content_top name="filter_category">
+				<anchored to="contentanchor" height="20">
+					<left offset="115" />
+				</anchored>
+				<listdirection>down</listdirection>
+				<listmaxsize>8</listmaxsize>
+			</filter_comboboxc_content_top>
+			<filter_label_content_top name="label_name">
+				<anchored width="70" />
+				<static textres="charwizard_label_filtername" />
+			</filter_label_content_top>
+			<filter_stringc_content_top name="filter_name">
+				<anchored to="contentanchor" height="20">
+					<left offset="115" />
+				</anchored>
+			</filter_stringc_content_top>
+			<spacer_content_top name="spacer">
+				<anchored height="5" />
+			</spacer_content_top>
+
+			<sub_content_paging name="sub_paging" />
+
+			<list_content_noscroll_top name="list">
+				<class>list_entry_decision_careerfeat</class>
+				<sortby><control>name</control></sortby>
+				<empty textres="charwizard_empty_list" />
+			</list_content_noscroll_top>
+		</sheetdata>
+	</windowclass>
+	<windowclass name="list_entry_decision_careerfeat" copy="list_entry_charwizard_item_selection" />
+</root>

@@ -24,7 +24,7 @@
 			<line_column name="divider1" />
 
 			<label_column name="equipment_label" source="equipment">
-				<static textres="kit_label_equipment" />
+				<static textres="kit_label_kit" />
 			</label_column>
 			<string_columnh name="equipment">
 				<delaykeyupdate />

@@ -140,7 +140,7 @@
 	<string name="char_label_subclass">SUBCLASS</string>
 	<string name="char_label_level">LEVEL</string>
 	<string name="char_label_echelon">ECHELON</string>
-	<string name="char_label_race">ANCESTRY</string>
+	<string name="char_label_ancestry">ANCESTRY</string>
 	<string name="char_label_career">CAREER</string>
 	<string name="char_label_title">TITLE</string>
 	<string name="char_label_environment">ENVIRONMENT</string>
@@ -157,7 +157,7 @@
 	<string name="char_label_complication">COMPLICATION</string>
 	<string name="char_label_kit">KIT</string>
 	<string name="char_label_type">TYPE</string>
-	<string name="char_label_equipment">EQUIPMENT</string>
+	<string name="char_label_kit">EQUIPMENT</string>
 	<string name="char_label_armor">ARMOR</string>
 	<string name="char_label_weapon">WEAPON</string>
 	<string name="char_label_stamina">Stamina</string>
@@ -502,7 +502,7 @@
 	<string name="char_label_class">CLASS</string>
 	<string name="char_label_subclass">SUBCLASS</string>
 	<string name="char_label_echelon">ECHELON</string>
-	<string name="char_label_race">ANCESTRY</string>
+	<string name="char_label_ancestry">ANCESTRY</string>
 	<string name="char_label_gender">GENDER</string>
 	<string name="char_label_age">AGE</string>
 	<string name="char_label_height">HEIGHT</string>
@@ -516,7 +516,7 @@
 	<string name="char_label_stats">STATS</string>
 	<string name="char_label_type">TYPE</string>
 	<string name="char_label_name">NAME</string>
-	<string name="char_label_equipment">EQUIPMENT</string>
+	<string name="char_label_kit">EQUIPMENT</string>
 	<string name="char_label_armor">ARMOR</string>
 	<string name="char_label_weapon">WEAPON</string>
 	<string name="char_label_skill">Skill</string>
@@ -712,7 +712,7 @@
 	<string name="char_emptylist_resource">'%s' gained 2 '%s'.</string>
 
 	<!-- Kits -->
-	<string name="kit_label_equipment">Equipment</string>
+	<string name="kit_label_kit">Equipment</string>
 	<string name="kit_label_staminabonus">Stamina Bonus (per echelon)</string>
 	<string name="kit_label_speedbonus">Speed Bonus</string>
 	<string name="kit_label_stabilitybonus">Stability Bonus</string>

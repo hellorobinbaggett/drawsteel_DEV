@@ -333,7 +333,7 @@
 							effect = DB.getValue(nodeWin, "effect_2");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -505,7 +505,7 @@
 							effect = DB.getValue(nodeWin, "effect_3");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -677,7 +677,7 @@
 							effect = DB.getValue(nodeWin, "effect_4");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -849,7 +849,7 @@
 							effect = DB.getValue(nodeWin, "effect_5");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -1021,7 +1021,7 @@
 							effect = DB.getValue(nodeWin, "effect_6");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -1193,7 +1193,7 @@
 							effect = DB.getValue(nodeWin, "effect_7");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -1365,7 +1365,7 @@
 							effect = DB.getValue(nodeWin, "effect_8");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -1537,7 +1537,7 @@
 							effect = DB.getValue(nodeWin, "effect_9");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -1709,7 +1709,7 @@
 							effect = DB.getValue(nodeWin, "effect_10");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -1881,7 +1881,7 @@
 							effect = DB.getValue(nodeWin, "effect_11");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -2053,7 +2053,7 @@
 							effect = DB.getValue(nodeWin, "effect_12");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -2225,7 +2225,7 @@
 							effect = DB.getValue(nodeWin, "effect_13");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -2397,7 +2397,7 @@
 							effect = DB.getValue(nodeWin, "effect_14");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -2569,7 +2569,7 @@
 							effect = DB.getValue(nodeWin, "effect_15");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -2741,7 +2741,7 @@
 							effect = DB.getValue(nodeWin, "effect_16");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -2913,7 +2913,7 @@
 							effect = DB.getValue(nodeWin, "effect_17");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -3085,7 +3085,7 @@
 							effect = DB.getValue(nodeWin, "effect_18");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -3257,7 +3257,7 @@
 							effect = DB.getValue(nodeWin, "effect_19");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -3429,7 +3429,7 @@
 							effect = DB.getValue(nodeWin, "effect_20");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -3601,7 +3601,7 @@
 							effect = DB.getValue(nodeWin, "effect_21");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -3773,7 +3773,7 @@
 							effect = DB.getValue(nodeWin, "effect_22");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -3945,7 +3945,7 @@
 							effect = DB.getValue(nodeWin, "effect_23");
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -4106,7 +4106,7 @@
 							effect = DB.getValue(nodeWin, "malice_effect")
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -4259,7 +4259,7 @@
 							effect = DB.getValue(nodeWin, "malice_effect_2")
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -4412,7 +4412,7 @@
 							effect = DB.getValue(nodeWin, "malice_effect_3")
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
@@ -4565,7 +4565,7 @@
 							effect = DB.getValue(nodeWin, "malice_effect_4")
 						};
 						ActionsManager_DS.encodeDesktopMods(rRoll);
-						ActionsManager.performAction(draginfo, rActor, rRoll);
+						ActionsManager.performMultiAction(draginfo, rActor, sType, rRolls);
 						return true;
 					end
 					
