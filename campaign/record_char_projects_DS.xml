@@ -12,12 +12,12 @@
 				<bounds>0,0,-1,40</bounds>
 			</frame_char>
 			<label_frametop>
-				<anchored to="projectslabelframe" offset="0,0"/>
+				<anchored to="projectslabelframe" offset="0,8"/>
 				<static textres="char_label_downtimeprojects" />
 			</label_frametop>
 
 			<frame_char name="projectsframe">
-				<bounds>0,27,-1,245</bounds>
+				<bounds>0,32,-1,220</bounds>
 			</frame_char>
 
 			<string_labeled name="project1">
@@ -148,16 +148,16 @@
 
 
 			<frame_char name="inventorylabelframe">
-				<bounds>0,270,-1,40</bounds>
+				<bounds>0,248,-1,40</bounds>
 			</frame_char>
 
 			<label_frametop>
-				<anchored to="inventorylabelframe" offset="0,0"/>
+				<anchored to="inventorylabelframe" offset="0,8"/>
 				<static textres="char_label_magicitems" />
 			</label_frametop>
 
 			<frame_char name="inventoryframe">
-				<bounds>0,297,-1,-10</bounds>
+				<bounds>0,280,-1,-10</bounds>
 			</frame_char>
 			
 			<label name="count_label">

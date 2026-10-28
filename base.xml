@@ -10,9 +10,9 @@
 
 	<!-- Attributes -->
 	<description>
-	<!-- file names for the .pak should be "DrawSteel" for prod and "Draw Steel_dev" for dev -->
-		<displayname>Draw Steel_dev</displayname>
-		<!-- <displayname>Draw Steel</displayname>  -->
+	<!-- file names for the .pak should be "Draw Steel" for prod and "Draw Steel_dev" for dev -->
+		<!-- <displayname>Draw Steel_dev</displayname> -->
+		<displayname>DrawSteel</displayname> 
 		<author>EXXODIS, MoonWizard</author>
 		<website>https://www.fantasygrounds.com</website>
 	</description>
@@ -116,4 +116,33 @@
 	<script name="StaminaManagerMonster" file="campaign/scripts/stamina_monster.lua" />
 	<script name="TokenManager_DS" file="scripts/manager_token_DS.lua" />
 	<script name="WindowManager_DS" file="scripts/manager_window_DS.lua" />
+
+	<!-- WIP: Character Wizard -->
+	<script name="CharWizardManager" file="charwizard/scripts/manager_charwizard.lua" />
+	<script name="CharWizardDecisionManager" file="charwizard/scripts/manager_charwizard_decision.lua" />
+	<script name="CharWizardAncestryManager" file="charwizard/scripts/manager_charwizard_ancestry.lua" />
+	<script name="CharWizardClassManager" file="charwizard/scripts/manager_charwizard_class.lua" />
+	<script name="CharWizardAbilitiesManager" file="charwizard/scripts/manager_charwizard_abilities.lua" />
+	<script name="CharWizardCareerManager" file="charwizard/scripts/manager_charwizard_career.lua" />
+	<script name="CharWizardKitManager" file="charwizard/scripts/manager_charwizard_kit.lua" />
+	<script name="CharWizardData" file="charwizard/scripts/data_charwizard.lua" />
+	<script name="CharWizardDataAction" file="charwizard/scripts/data_charwizard_action.lua" />
+
+	<script name="CharManager" file="scripts/manager_char.lua" />
+	<script name="CharAncestryManager" file="scripts/manager_char_ancestry.lua" />
+
+
+	<includefile source="charwizard/record_charwizard_abilities.xml" />
+	<includefile source="charwizard/record_charwizard_ancestry.xml" />
+	<includefile source="charwizard/record_charwizard_career.xml" />
+	<includefile source="charwizard/record_charwizard_class.xml" />
+	<includefile source="charwizard/record_charwizard_commit.xml" />
+	<includefile source="charwizard/record_charwizard_kit.xml" />
+	<includefile source="charwizard/template_charwizard.xml" />
+	<includefile source="charwizard/record_charwizard.xml" />
+	<includefile source="charwizard/record_charwizard_levelup.xml" />
+
+	
+
+	<includefile source="strings/strings_5E_char_build.xml" />
 </root>
