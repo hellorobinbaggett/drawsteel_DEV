@@ -237,7 +237,6 @@
 	<string name="ct_label_stamina">STAMINA</string>
 	<string name="ct_label_order">Order</string>
 	<string name="ct_label_malice">MALICE</string>
-	<string name="ct_label_victories">Victories</string>
 	<string name="ct_label_herotokens">HERO TOKENS</string>
 	<string name="ct_tooltip_gone">Gone</string>
 	<string name="ct_tooltip_ta">Triggered Action</string>
@@ -587,6 +586,7 @@
 	
 	<!-- BATTLE -->
 	<string name="battle_tooltip_refreshev">Calculate EV</string>
+	<string name="battle_label_difficulty">Difficulty</string>
 
 	<!-- NPCs -->
 	<string name="organization_tooltip">Organization</string>
@@ -703,6 +703,7 @@
 	<string name="char_emptylist_ancestryfeatures">Drop ancestry link to populate.</string>
 	<string name="char_emptylist_kit">Drop kit link to populate.</string>
 	<string name="char_emptylist_classfeatures">Drop class link to populate.</string>
+	<string name="char_characterwizard">This is not yet implemented.</string>
 
 	<!-- advancement -->
 	<string name="char_emptylist_respite">'%s' has taken a respite.</string>

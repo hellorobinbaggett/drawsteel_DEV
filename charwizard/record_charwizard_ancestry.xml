@@ -107,7 +107,6 @@
 				super.onModuleValueChanged();
 
 				local tAncestries = CharAncestryManager.getAncestryOptions(shortcut.getTargetDatabaseNode());
-				Debug.chat(tAncestries);
 				if #tAncestries > 0 then
 					ancestries.closeAll();
 					for _,v in ipairs(tAncestries) do

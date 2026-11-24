@@ -33,7 +33,7 @@
 
 			<button_refresh name="button_refreshxp">
 				<anchored to="area_details" position="insidetopright" offset="5,0" />
-				<tooltip textres="battle_tooltip_refreshxp" />
+				<tooltip textres="battle_tooltip_refreshev" />
 				<script>
 					function onButtonPress()
 						CombatManagerDS.calcBattleEV(window.getDatabaseNode());
@@ -48,6 +48,16 @@
 				<anchored to="exp" position="lefthigh" offset="10,0" />
 				<static textres="EV" />
 			</label>
+
+			<label_column name="difficulty_name_label">
+				<static textres="battle_label_difficulty" />
+				<bounds>5,43,60,20</bounds>
+			</label_column>
+			<string_column name="difficulty_name">
+				<bounds>70,43,120,20</bounds>
+				<nodragselect />
+				<default>  [WIP]</default>
+			</string_column>
 		</sheetdata>
 	</windowclass>
 </root>

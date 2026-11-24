@@ -18,6 +18,8 @@
 		<sheetdata>
 			<button_charwizard name="button_characterwizard" insertbefore="filter">
 				<anchored to="contentanchor" position="aboveleft" offset="5,0" />
+				<readonly />
+				<tooltip textres="char_characterwizard" />
 			</button_charwizard>
 		</sheetdata>
 	</windowclass>
