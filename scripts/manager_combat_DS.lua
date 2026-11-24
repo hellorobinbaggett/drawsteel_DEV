@@ -36,7 +36,6 @@ function Gone(window)
 end
 
 function notifyGone(window)
-	Debug.chat(notifyGone);
 	local msgOOB = {};
 	msgOOB.type = CombatManagerDS.OOB_MSGTYPE_GONE;
 	msgOOB.user = Session.UserName;
@@ -46,12 +45,10 @@ function notifyGone(window)
 end
 
 function handleGone(msgOOB)
-	Debug.chat("handleGone");
 	CombatManagerDS.performGone(nodeWin, (tonumber(msgOOB.nIsHost) == 1));
 end
 
 function performGone(nodeWin, bHost)
-	Debug.chat("performGone");
 	DB.setValue(nodeWin, "initresult", "number", 1);
 
 	local msg = {
@@ -1115,9 +1112,13 @@ function nextActor(bSkipBell, bNoRoundAdvance)
 	end
 end
 function tablelength(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
+	local aEntries = CombatManager.getSortedCombatantList();
+	local count = 0
+	for i,v in pairs(aEntries) do
+		local count = 0;
+		count = count + 1;
+		table.insert(aEntries, count);
+	end
 end
 function nextRound(nRounds, nodeWin)
 	if not Session.IsHost then
@@ -1134,29 +1135,32 @@ function nextRound(nRounds, nodeWin)
 	local nodeCT = CombatManager.resolveNode(vEntry);
 	local aHeroes = {};
 	local aVictories = {};
+	local currentMalice = DB.getValue(nodeWin, "malice", "number", malice);
+	local numberOfHeroes = 0;
+	-- Calculate Avg. Victories (The first round, the Director gets malice equal to the average character victory total)
+	local averageVictories = 0;
+	local victoriesTotal = 0;
+	
+	--foreach PC entry, grab victories
 	for i,v in pairs(aEntries) do
-		local count = 0;
-		local victories = 0;
-		
 		if CombatManager.getFactionFromCT(v) == "friend" then
-			--count number of heroes
-			count = count + 1;
-			table.insert(aHeroes, count);
+			numberOfHeroes = numberOfHeroes + 1;
+			--get the PC Node
+			local nodePC = ActorManager.getCreatureNode(v);
+			--grab victories from each PC
+			local victories = DB.getValue(nodePC,"victories");
+			victoriesTotal = victoriesTotal + victories;
 		end
 	end
+	averageVictories = math.floor(victoriesTotal / numberOfHeroes);
 
-	local victories = DB.getValue(nodeWin, "victories", "number", victories);
-	local currentMalice = DB.getValue(nodeWin, "malice", "number", malice);
-	local numberOfHeroes = CombatManagerDS.tablelength(aHeroes);
-
-	if nCurrent == 1 then
-		local newMalice = numberOfHeroes + currentMalice + nRounds;
-		DB.setValue(nodeWin, "malice", "number", newMalice);
-	else 
-		local firstTurnMalice = victories + numberOfHeroes + currentMalice + nRounds;
+	if nCurrent <= 0 then
+		local firstTurnMalice = averageVictories + numberOfHeroes + currentMalice + nRounds;
 		DB.setValue(nodeWin, "malice", "number", firstTurnMalice);
-	end
-	
+	else
+		local newMalice = numberOfHeroes + currentMalice + 1 + nCurrent;
+		DB.setValue(nodeWin, "malice", "number", newMalice);
+	end	
 
 	if nodeActive then
 		DB.setValue(nodeActive, "active", "number", 0);

@@ -12,7 +12,7 @@
         <!-- CRAFTING SKILLS -->
 
 	        <frame_char name="craftingskillsframe_char">
-				<bounds>0,0,260,395</bounds>
+				<bounds>0,0,255,395</bounds>
 			</frame_char>
             <label_frametop>
 				<anchored to="craftingskillsframe_char">
@@ -22,7 +22,7 @@
 			</label_frametop>
 
             <frame_char name="explorationskillsframe_char">
-				<bounds>250,0,260,395</bounds>
+				<bounds>250,0,255,395</bounds>
 			</frame_char>
             <label_frametop>
 				<anchored to="explorationskillsframe_char">
@@ -32,7 +32,7 @@
 			</label_frametop>
 
             <frame_char name="interpersonalskillsframe_char">
-				<bounds>0,385,260,505</bounds>
+				<bounds>0,385,255,505</bounds>
 			</frame_char>
             <label_frametop>
 				<anchored to="interpersonalskillsframe_char">
@@ -42,7 +42,7 @@
 			</label_frametop>
 
             <frame_char name="intrigueskillsframe_char">
-				<bounds>250,385,260,460</bounds>
+				<bounds>250,385,255,460</bounds>
 			</frame_char>
             <label_frametop>
 				<anchored to="intrigueskillsframe_char">
@@ -52,7 +52,7 @@
 			</label_frametop>
 
             <frame_char name="loreskillsframe_char">
-				<bounds>250,835,260,460</bounds>
+				<bounds>250,835,255,460</bounds>
 			</frame_char>
             <label_frametop>
 				<anchored to="loreskillsframe_char">

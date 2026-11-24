@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<string name="char_error_missinglink">Unable to find %s record. Ensure correct module is loaded. (%s)</string>
+
+	<!-- Characters - Build -->
+	<string name="char_career_powergroup">Career (%s)</string>
+	<string name="char_class_powergroup">Class (%s)</string>
+	<string name="char_feat_powergroup">Feats</string>
+	<string name="char_ancestry_powergroup">Ancestry (%s)</string>
+	<string name="char_spell_powergroup">Spells (%s)</string>
+	<string name="char_spell_powergroup_base">Spells</string>
+
+	<string name="char_error_missingrecord">Unable to find record to match link dropped. Check to make sure the correct modules are open.</string>
+	<string name="char_error_addancestry">To add this Ancestry to your character, you must choose exactly one Ancestry.</string>
+	<string name="char_error_addclasshd">Unable to find Class Hit Die type (assuming d6).</string>
+	<string name="char_error_addsubclass">Please choose exactly one Subclass option.</string>
+	<string name="char_error_missingsubclass">Unable to find Subclass chosen.</string>
+	<string name="char_error_missingancestry">Unable to find Ancestry chosen.</string>
+	<string name="char_error_missingancestryfromancestry">Unable to find Ancestry from Ancestry chosen.</string>
+
+	<string name="char_build_title_asiorfeat">Select ASI or Feat</string>
+	<string name="char_build_message_asiorfeat">Choose option for Ability Score Improvement or Feat from list below.</string>
+	<string name="char_build_option_asi">Ability Score Improvement</string>
+	<string name="char_build_option_feat">Feat</string>
+
+	<string name="char_build_title_selectabilityadjtype">Select Ability Option</string>
+	<string name="char_build_message_selectabilityadjtype">Choose option for ability score increases from list below.\r(%s)</string>
+	<string name="char_build_option_selectabilityadjby2then1">Increase one ability by +2,\rthen another ability by +1.</string>
+	<string name="char_build_option_selectabilityadj3by1">Increase three abilities by +1.</string>
+	<string name="char_build_option_selectabilityadjby2">Increase one ability by +2.</string>
+	<string name="char_build_option_selectabilityadj2by1">Increase two abilities by +1.</string>
+	<string name="char_build_title_selectabilityincrease">Select Ability Scores</string>
+	<string name="char_build_message_selectabilityincrease">Choose %d ability score(s) to increase by %+d.</string>
+
+	<string name="char_build_title_selectsize">Select Size</string>
+	<string name="char_build_message_selectsize">Choose a Size from the list below.</string>
+	<string name="char_build_title_selectprofs">Select Proficiencies</string>
+	<string name="char_build_message_selectprofs">Choose %s Proficiency option(s) from the list below.</string>
+	<string name="char_build_title_selectprofincreases">Select Proficiency Increase</string>
+	<string name="char_build_message_selectprofincreases">Choose %s Proficiency option(s) to increase from the list below.</string>
+	<string name="char_build_title_selectexpertises">Select Expertise</string>
+	<string name="char_build_message_selectexpertises">Choose %s Expertise option(s) to increase from the list below.</string>
+	<string name="char_build_title_selectancestry">Select Ancestry</string>
+	<string name="char_build_message_selectancestry">Choose Ancestry option from the list below.</string>
+	<string name="char_build_title_selectspecialization">Select Subclass</string>
+	<string name="char_build_message_selectspecialization">Choose Subclass option from the list below.</string>
+	<string name="char_build_title_selectfeats">Select Feats</string>
+	<string name="char_build_message_selectfeats">Choose %s Feat(s) from the list below.</string>
+	<string name="char_build_title_selectlanguages">Select Languages</string>
+	<string name="char_build_message_selectlanguages">Choose %s Language(s) from the list below.</string>
+	<string name="char_build_title_selectspells">Select Spells</string>
+	<string name="char_build_message_selectspells">Choose %s Spell(s) from the list below.</string>
+	<string name="char_build_title_selectspellscantrip">Select Cantrips</string>
+	<string name="char_build_message_selectspellscantrip">Choose %s Cantrip(s) from the list below.</string>
+	<string name="char_build_title_selectspellsknown">Select Known Spells</string>
+	<string name="char_build_message_selectspellsknown">Choose %s Known Spell(s) from the list below.</string>
+	<string name="char_build_title_selectspellsprepared">Select Prepared Spells</string>
+	<string name="char_build_message_selectspellsprepared">Choose %s Prepared Spell(s) from the list below.</string>
+	<string name="char_build_title_selectspellability">Select Spellcasting Ability</string>
+	<string name="char_build_message_selectspellability">Choose a Spellcasting Ability from the list below.</string>
+	<string name="char_build_title_selectclassfeaturechoices">Select Class Choice</string>
+	<string name="char_build_message_selectclassfeaturechoices">Choose %s Class Feature Choice(s) from the list below.</string>
+	<string name="char_build_title_selectKitpack">Select Equipment Pack</string>
+	<string name="char_build_message_selectKitpack">Choose %s Equipment Pack Choice(s) from the list below.</string>
+
+	<string name="char_abilities_message_classadd">One level of Class '%s' added to '%s'.</string>
+	<string name="char_abilities_message_ancestryadd">Ancestry '%s' added to '%s'.</string>
+	<string name="char_abilities_message_ancestryadd">Ancestry '%s' added to '%s'.</string>
+	<string name="char_abilities_message_careeradd">Career '%s' added to '%s'.</string>
+
+	<string name="char_abilities_message_abilityadd">Ability adjustment '%s %+d' applied to '%s'.</string>
+	<string name="char_abilities_message_abilityset">Ability %s set to %d for '%s'.</string>
+	<string name="char_abilities_message_hpaddmax">Maximum hit points for first %s level added to '%s'. (%d)</string>
+	<string name="char_abilities_message_hpaddavg">Average hit points for additional %s level added to '%s'. (%d)</string>
+	<string name="char_abilities_message_hpaddtrait">Hit points for trait '%s' added to '%s'. (%d)</string>
+	<string name="char_abilities_message_hpaddfeature">Hit points for feature '%s' added to '%s'. (%d)</string>
+	<string name="char_abilities_message_hpaddfeat">Hit points for feat '%s' added to '%s'. (%d)</string>
+	<string name="char_abilities_message_saveadd">Saving throw proficiency '%s' added to '%s'.</string>
+	<string name="char_abilities_message_featureadd">Feature '%s' added to '%s'.</string>
+	<string name="char_abilities_message_skilladd">Skill '%s' added to '%s'.</string>
+	<string name="char_abilities_message_expertiseadd">Skill Expertise '%s' added to '%s'.</string>
+	<string name="char_abilities_message_featadd">Feat '%s' added to '%s'.</string>
+	<string name="char_abilities_message_profadd">Proficiency '%s' added to '%s'.</string>
+	<string name="char_abilities_message_traitadd">Trait '%s' added to '%s'.</string>
+	<string name="char_abilities_message_languageadd">Language '%s' added to '%s'.</string>
+	<string name="char_abilities_message_initadd">Initiative adjustment %+d applied to '%s'.</string>
+	<string name="char_abilities_message_passiveadd">Passive Perception adjustment %+d applied to '%s'.</string>
+	<string name="char_abilities_message_basespeedset">Base speed set to %d for '%s'.</string>
+	<string name="char_abilities_message_basespeedadj">Base speed adjusment %+d applied to '%s'.</string>
+
+	<!-- Character Wizard -->
+	<string name="charwizard_error_import_missingclass">Unable to import. Unable to open Class record(s) not loaded.</string>
+	<string name="charwizard_error_import_missingsubclass">Unable to import. Unable to open Subclass record(s) not loaded.</string>
+
+	<string name="charwizard_window_title">Character Wizard</string>
+	<string name="charwizard_levelup_window_title">Character Level Up</string>
+	<string name="charwizard_label_home">Home</string>
+	<string name="charwizard_label_ancestry">Ancestry</string>
+	<string name="charwizard_label_class">Class</string>
+	<string name="charwizard_label_abilities">Abilities</string>
+	<string name="charwizard_label_career">Career</string>
+	<string name="charwizard_label_kit">Equipment</string>
+	<string name="charwizard_label_commit">Commit</string>
+	<string name="charwizard_label_save">Save</string>
+    <string name="charwizard_label_career">Career</string>
+	<string name="charwizard_label_kit">Kit</string>
+
+	<string name="charwizard_header_instructions">INSTRUCTIONS</string>
+	<string name="charwizard_message_instructions_class">Choose your hero&apos;s class. \rThis choice has the biggest impact on how your hero interacts with the rules of the game, particularly the rules for combat. Your class provides your starting characteristic scores that determine your character&apos;s physical and mental acumen, as well as the Stamina and Recoveries that determine your physical hardiness. A class also provides your character with skills, several abilities-the unique features that define what your hero can do-and other features and benefits. You can be a censor, conduit, elementalist, fury, null, shadow, tactician, talent, or troubadour. See Chapter 5: Classes for more information on each class, as well as the diferent types of abilities- signature abilities, heroic abilities, and more-that heroes of a specific class have access to.</string>
+	<string name="charwizard_message_instructions_career">Choose or create your hero&apos;s culture. \rAlthough ancestry gives your hero any number of physiological benefits, your culture describes the community that raised you and gives you languages and skills. See Culture in Chapter 4: Career of the Heroes book for more information.</string>
+	<string name="charwizard_message_instructions_ancestry">Choose your hero&apos;s ancestry. \rChoose your humanoid ancestry from among the range of ancestries available in the game-devil, dragon knight, dwarf, wode elf, high elf, hakaan, human, memonek, orc, polder, revenant, or time raider. Future supplements will introduce additional ancestries you can choose from. See Chapter 3: Ancestries in the Heroes book for more information.</string>
+	<string name="charwizard_message_instructions_abilities">Choose your Starting Ability method and details.\r\r1.Choose a Ability Score generation method by clicking on the Method drop-down selection box.\r2A. For Dice Roll, either click the roll button to make an automatic 3d6 dice roll for ability scores.\r2B. For Point Buy, click on the up/down buttons in the Base section to spend the points noted in the Abilities header.\r2C. For Standard Array, click and drag the Base scores between each other to swap values.</string>
+	<string name="charwizard_message_instructions_kit">Choose your kit. \rYour class might grant your hero a kit that helps define your approach to martial combat. The kit you choose provides you with equipment and a fighting style that grants a signature ability, as well as bonuses to one or more of your game statistics. See Chapter 6: Kits of Heroes book for more information.</string>
+	<string name="charwizard_message_instructions_commit">To complete your hero, take the following steps.\r\r1. Review warnings (if any) and return to previous sections to resolve.\r2. Enter your character name.\r3. Review character to make sure everything looks right.\r4. Click the Save button to finalize and create Character record.</string>
+	<string name="charwizard_message_instructions_class_levelup">Choose the Character Class that you want to Level Up.\r\r1. Click the Level Up button to level up one of your existing classes; or click the Add Class button to add a new class.</string>
+	<string name="charwizard_message_instructions_commit_levelup">To complete your Character level up, take the following steps.\r\r1. Review warnings and return to previous sections to resolve.\r2. Review character to make sure everything looks right.\r3. Click the Save button to finalize Character Level Up changes.</string>
+
+	<string name="charwizard_label_ancestryselection">ANCESTRY</string>
+	<string name="charwizard_label_changeancestry">Change Ancestry</string>
+	<string name="charwizard_label_changecareer">Change Career</string>
+
+	<string name="charwizard_label_ancestryselection_alert">Select Ancestry</string>
+
+	<string name="charwizard_label_decision_skill">Select Skill</string>
+	<string name="charwizard_label_decision_expertise">Select Expertise</string>
+	<string name="charwizard_label_decision_armorprof">Select Armor Training</string>
+	<string name="charwizard_label_decision_weaponprof">Select Weapon Proficiency</string>
+	<string name="charwizard_label_decision_toolprof">Select Tool Proficiency</string>
+	<string name="charwizard_label_decision_language">Select Language</string>
+	<string name="charwizard_label_decision_feat">Select Feat</string>
+	<string name="charwizard_label_decision_spell">Select Spell</string>
+	<string name="charwizard_label_decision_asiorfeat">Select Option</string>
+	<string name="charwizard_label_decision_subclass">Select Subclass</string>
+	<string name="charwizard_label_decision_size">Select Size</string>
+	<string name="charwizard_label_decision_asiclassoption">Select Ability Score Option</string>
+	<string name="charwizard_label_decision_asiclass">Increase Ability Score %+d</string>
+	<string name="charwizard_label_decision_asicareeroption">Select Ability Score Option</string>
+	<string name="charwizard_label_decision_asicareer">Increase Ability Score %+d</string>
+	<string name="charwizard_label_decision_asiancestryoption">Select Ability Score Option</string>
+	<string name="charwizard_label_decision_asiancestry">Increase Ability Score %+d</string>
+	<string name="charwizard_label_decision_variabletrait">Select Variable Trait</string>
+	<string name="charwizard_label_decision_featuredecision">Select Feature Choice</string>
+
+	<string name="charwizard_label_class_add">Add Class</string>
+	<string name="charwizard_label_class_levelup">Level Up</string>
+	<string name="charwizard_label_class_cancel">Cancel</string>
+
+	<string name="charwizard_label_kit_changemethod">Change Method/Reset</string>
+	<string name="charwizard_label_kit_selectstartkit">Select Starting Kit</string>
+	<string name="charwizard_label_kit_wealth">Currency</string>
+	<string name="charwizard_label_kit_rolledwealth">Rolled</string>
+	<string name="charwizard_tooltip_kit_rolledwealth">Rolled Wealth will disable kit selection until rolled wealth reset to zero.</string>
+	<string name="charwizard_label_kit_rolledwealth_roll">Roll</string>
+	<string name="charwizard_label_kit_careerwealth">Career</string>
+	<string name="charwizard_label_kit_classwealth">Class</string>
+	<string name="charwizard_label_kit_customwealth">Custom</string>
+	<string name="charwizard_label_kit_finalwealth">Total</string>
+	<string name="charwizard_header_kit_careerkit">Career Equipment</string>
+	<string name="charwizard_header_kit_classkit">Class Kit</string>
+
+	<string name="charwizard_label_features">Features</string>
+	<string name="charwizard_label_prepare">Prepare</string>
+
+	<string name="charwizard_label_weapon">Weapons</string>
+	<string name="charwizard_label_gear">Gear</string>
+	<string name="charwizard_label_armor">Armor</string>
+
+	<string name="charwizard_home_sources_header">Sources</string>
+	<string name="module_use">Use</string>
+
+	<string name="charwizard_spell_learn">Learn</string>
+	<string name="charwizard_spell_unlearn">Unlearn</string>
+
+	<string name="charwizard_label_add">Add</string>
+	<string name="charwizard_label_remove">Remove</string>
+	<string name="charwizard_empty_list">No items available to select.</string>
+	<string name="charwizard_empty_inventory">No items currently added to inventory.</string>
+
+	<string name="charwizard_title_class">CLASSES</string>
+	<string name="charwizard_label_filtersource">Source</string>
+	<string name="charwizard_label_filtercategory">Category</string>
+	<string name="charwizard_label_filtername">Name</string>
+	<string name="charwizard_label_level">Level</string>
+	<string name="charwizard_label_cantrips">Cantrips:</string>
+	<string name="charwizard_label_preparedspells">Prepared Spells:</string>
+	<string name="charwizard_label_knownspells">Known Spells:</string>
+	<string name="charwizard_header_spellsknown">Known</string>
+	<string name="charwizard_header_spells">Spells</string>
+	<string name="charwizard_title_career">CAREER</string>
+	<string name="charwizard_title_abilityscores">ABILITY SCORES</string>
+	<string name="charwizard_label_method">Method</string>
+	<string name="charwizard_label_pointsremaining">Points Remaining</string>
+	<string name="charwizard_label_asi">ASI</string>
+	<string name="charwizard_title_kit">STARTING EQUIPMENT AND CURRENCY</string>
+	<string name="charwizard_label_warnings">WARNINGS</string>
+	<string name="charwizard_title_save">SAVE</string>
+	<string name="charwizard_title_summary">SUMMARY</string>
+	<string name="charwizard_label_base">Base</string>
+
+	<string name="charwizard_label_languages">Languages</string>
+	<string name="charwizard_message_languages">Your character knows at least three languages: Common plus two languages you roll or choose from the Standard Languages table. Knowledge of a language means your character can communicate in it, read it, and write it.</string>
+</root>

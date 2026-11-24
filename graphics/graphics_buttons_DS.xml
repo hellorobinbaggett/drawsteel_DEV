@@ -38,5 +38,5 @@
 	<icon name="ct_remove" file="graphics/token/token_cond_helpless_old.png" />
 
 	<!-- Logo -->
-	<icon name="logo_ds" file="logo.png" />
+	<icon name="logo" file="logo.png" />
 </root>

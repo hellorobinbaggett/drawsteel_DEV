@@ -10,7 +10,6 @@
         <script file="campaign/scripts/monster_abilities_ds.lua" />
             <sheetdata>
                 <anchor_column name="columnanchor" />
-                    Debug.console("campaign/scripts/template_monster_ability");
                     <line_column name="divider1" />
 
                     <basicstring name="abilityname">
@@ -87,7 +86,7 @@
                             <left offset="97" />
                             <right offset="-5" />
                         </anchored>
-                        <bounds>10,14,40,40</bounds>
+                        <bounds>10,15,30,30</bounds>
                         <tooltip textres="tooltip_pr" />
                         <script>	
                             function action(draginfo)
